@@ -1,0 +1,919 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="res_for_sheratonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ResAreaCodes">
+    <Key>
+      <PropertyRef Name="GovId" />
+      <PropertyRef Name="AreaId" />
+    </Key>
+    <Property Name="GovId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="AreaId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="AreaNameA" Type="varchar" MaxLength="150" />
+    <Property Name="AreaNameE" Type="varchar" MaxLength="150" />
+    <Property Name="ServiceVal" Type="numeric" Precision="7" Scale="2" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="InsertDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResCookStatusCodes">
+    <Key>
+      <PropertyRef Name="CookStatus" />
+    </Key>
+    <Property Name="CookStatus" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="CookStatusNameA" Type="varchar" MaxLength="50" />
+    <Property Name="CookStatusNameE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ResCustomer">
+    <Key>
+      <PropertyRef Name="CustId" />
+    </Key>
+    <Property Name="CustId" Type="numeric" Precision="9" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustNameA" Type="varchar" MaxLength="80" />
+    <Property Name="CustNameE" Type="varchar" MaxLength="80" />
+    <Property Name="CustAddressA" Type="nvarchar" MaxLength="150" />
+    <Property Name="CustAddressE" Type="nvarchar" MaxLength="150" />
+    <Property Name="GovId" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="AreaId" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="Street" Type="nvarchar" MaxLength="50" />
+    <Property Name="BuildingNo" Type="int" />
+    <Property Name="ApartmentNo" Type="int" />
+    <Property Name="Tel1" Type="varchar" MaxLength="15" />
+    <Property Name="Tel2" Type="varchar" MaxLength="15" />
+    <Property Name="Tel3" Type="varchar" MaxLength="15" />
+    <Property Name="Comment" Type="nvarchar" MaxLength="150" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="InsertDt" Type="datetime" />
+    <Property Name="CustType" Type="numeric" Precision="1" Scale="0" />
+  </EntityType>
+  <EntityType Name="ResCustomerTypes">
+    <Key>
+      <PropertyRef Name="CustType" />
+    </Key>
+    <Property Name="CustType" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="CustTypeNameA" Type="varchar" MaxLength="50" />
+    <Property Name="CustTypeNameE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ResDeliveryStatus">
+    <Key>
+      <PropertyRef Name="DeliveryStatus" />
+    </Key>
+    <Property Name="DeliveryStatus" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="DeliveryStatusNameA" Type="varchar" MaxLength="50" />
+    <Property Name="DeliveryStatusNameE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ResEmployeeBasic">
+    <Key>
+      <PropertyRef Name="EmpId" />
+    </Key>
+    <Property Name="EmpId" Type="numeric" Precision="7" Scale="0" Nullable="false" />
+    <Property Name="EmpName" Type="varchar" MaxLength="150" />
+    <Property Name="JobId" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="WorkStatus" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="Tel1" Type="varchar" MaxLength="15" />
+    <Property Name="Tel2" Type="varchar" MaxLength="15" />
+    <Property Name="InsertDt" Type="datetime" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ResGovCodes">
+    <Key>
+      <PropertyRef Name="GovId" />
+    </Key>
+    <Property Name="GovId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="GovNameA" Type="varchar" MaxLength="150" />
+    <Property Name="GovNameE" Type="varchar" MaxLength="150" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="InsertDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResInstructionCodes">
+    <Key>
+      <PropertyRef Name="InstructionId" />
+    </Key>
+    <Property Name="InstructionId" Type="numeric" Precision="3" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InstructionNameA" Type="varchar" MaxLength="100" />
+    <Property Name="InstructionNameE" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="ResItemCodes">
+    <Key>
+      <PropertyRef Name="ItemId" />
+    </Key>
+    <Property Name="ItemId" Type="numeric" Precision="12" Scale="0" Nullable="false" />
+    <Property Name="MainCategoryId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="SubCategoryId" Type="numeric" Precision="7" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PropertyId" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="Property2Id" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="MenuSalesId" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="CostPrice" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="SalesPrice" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="OpenQty" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="CurrentQty" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="Comment" Type="varchar" MaxLength="100" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="InsertDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResItemTypes">
+    <Key>
+      <PropertyRef Name="TypeId" />
+    </Key>
+    <Property Name="TypeId" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="TypeNameA" Type="varchar" MaxLength="50" />
+    <Property Name="TypeNameE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ResJOBCodes">
+    <Key>
+      <PropertyRef Name="JobId" />
+    </Key>
+    <Property Name="JobId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="JobNameA" Type="varchar" MaxLength="100" />
+    <Property Name="JobNameE" Type="varchar" MaxLength="100" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="InsertDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResMainCategoryCodes">
+    <Key>
+      <PropertyRef Name="MainCategoryId" />
+    </Key>
+    <Property Name="MainCategoryId" Type="numeric" Precision="3" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MainCategoryNameA" Type="varchar" MaxLength="150" />
+    <Property Name="MainCategoryNameE" Type="varchar" MaxLength="150" />
+    <Property Name="PrintGroupNo" Type="numeric" Precision="3" Scale="0" />
+    <Property Name="ShowInInvoice" Type="numeric" Precision="1" Scale="0" />
+    <Property Name="TypeId" Type="numeric" Precision="1" Scale="0" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="InsertDt" Type="datetime" />
+    <Property Name="CountableStatus" Type="numeric" Precision="1" Scale="0" />
+    <Property Name="MainImage" Type="image" />
+  </EntityType>
+  <EntityType Name="ResMenuSalesCodes">
+    <Key>
+      <PropertyRef Name="MenuSalesId" />
+    </Key>
+    <Property Name="MenuSalesId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="MenuSalesNameA" Type="varchar" MaxLength="50" />
+    <Property Name="MenuSalesNameE" Type="varchar" MaxLength="50" />
+    <Property Name="seq" Type="numeric" Precision="3" Scale="0" />
+  </EntityType>
+  <EntityType Name="ResOrderDtl">
+    <Key>
+      <PropertyRef Name="OrederId" />
+      <PropertyRef Name="SeqNo" />
+    </Key>
+    <Property Name="OrederId" Type="numeric" Precision="12" Scale="0" Nullable="false" />
+    <Property Name="SeqNo" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="ItemId" Type="numeric" Precision="12" Scale="0" Nullable="false" />
+    <Property Name="Qty" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="Price" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="CookStatus" Type="numeric" Precision="1" Scale="0" />
+    <Property Name="CookStatusTime" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResOrderDtlInstruction">
+    <Key>
+      <PropertyRef Name="OrederId" />
+      <PropertyRef Name="SeqNo" />
+      <PropertyRef Name="InstructionId" />
+    </Key>
+    <Property Name="OrederId" Type="numeric" Precision="12" Scale="0" Nullable="false" />
+    <Property Name="SeqNo" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="InstructionId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ResOrderHd">
+    <Key>
+      <PropertyRef Name="OrederId" />
+    </Key>
+    <Property Name="OrederId" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BranchId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="OrderNo" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="OrderDt" Type="datetime" Nullable="false" />
+    <Property Name="OrderType" Type="numeric" Precision="1" Scale="0" />
+    <Property Name="OrderTime" Type="datetime" />
+    <Property Name="ShiftId" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="CustId" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+    <Property Name="TotalPrice" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="PriceAdd" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="DiscountRatio" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="DiscountVal" Type="numeric" Precision="9" Scale="2" />
+    <Property Name="ServiceVal" Type="numeric" Precision="9" Scale="0" />
+    <Property Name="NetPrice" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="CashVal" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="RemainderVal" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="SwDelete" Type="numeric" Precision="1" Scale="0" />
+    <Property Name="OrderStatus" Type="numeric" Precision="1" Scale="0" />
+    <Property Name="DeliveryId" Type="numeric" Precision="7" Scale="0" />
+    <Property Name="DeliveryStatus" Type="numeric" Precision="1" Scale="0" />
+    <Property Name="ToDeliveryTime" Type="datetime" />
+    <Property Name="DeliveryTimeRequired" Type="datetime" />
+    <Property Name="FromDeliveryTime" Type="datetime" />
+    <Property Name="TableNo" Type="int" />
+    <Property Name="PeopleCount" Type="int" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="UserNameDeleted" Type="varchar" MaxLength="100" />
+    <Property Name="Comment" Type="varchar" MaxLength="150" />
+    <Property Name="InsertDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResOrderStatus">
+    <Key>
+      <PropertyRef Name="OrderStatus" />
+    </Key>
+    <Property Name="OrderStatus" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="StatusNameA" Type="varchar" MaxLength="50" />
+    <Property Name="StatusNameE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ResOrderTypes">
+    <Key>
+      <PropertyRef Name="OrderType" />
+    </Key>
+    <Property Name="OrderType" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="SaleNameA" Type="varchar" MaxLength="50" />
+    <Property Name="SaleNameE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ResPayment">
+    <Key>
+      <PropertyRef Name="DocNo" />
+    </Key>
+    <Property Name="DocNo" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrederId" Type="numeric" Precision="12" Scale="0" Nullable="false" />
+    <Property Name="CashVal" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+    <Property Name="CardVal" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="InsertDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResProperty2Codes">
+    <Key>
+      <PropertyRef Name="Property2Id" />
+    </Key>
+    <Property Name="Property2Id" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="Property2NameA" Type="varchar" MaxLength="50" />
+    <Property Name="Property2NameE" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="InsertDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResPropertyCodes">
+    <Key>
+      <PropertyRef Name="PropertyId" />
+    </Key>
+    <Property Name="PropertyId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="PropertyNameA" Type="varchar" MaxLength="50" />
+    <Property Name="PropertyNameE" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="InsertDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResShiftsCodes">
+    <Key>
+      <PropertyRef Name="ShiftId" />
+    </Key>
+    <Property Name="ShiftId" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="ShiftNameE" Type="varchar" MaxLength="50" />
+    <Property Name="ShiftNamea" Type="varchar" MaxLength="50" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="InsertDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResStoresCodes">
+    <Key>
+      <PropertyRef Name="BranchId" />
+    </Key>
+    <Property Name="BranchId" Type="numeric" Precision="3" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BranchNameA" Type="varchar" MaxLength="100" />
+    <Property Name="BranchNameE" Type="varchar" MaxLength="100" />
+    <Property Name="GovId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="AddressA" Type="varchar" MaxLength="150" />
+    <Property Name="AddressE" Type="varchar" MaxLength="150" />
+    <Property Name="Tel1" Type="varchar" MaxLength="15" />
+    <Property Name="Tel2" Type="varchar" MaxLength="15" />
+    <Property Name="Tel3" Type="varchar" MaxLength="15" />
+    <Property Name="ServiceRatio" Type="numeric" Precision="5" Scale="2" />
+    <Property Name="MinChargeVal" Type="numeric" Precision="12" Scale="2" />
+    <Property Name="StartDt" Type="datetime" />
+    <Property Name="CloseSw" Type="numeric" Precision="1" Scale="0" />
+    <Property Name="CloseDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResSubCategoryCodes">
+    <Key>
+      <PropertyRef Name="MainCategoryId" />
+      <PropertyRef Name="SubCategoryId" />
+    </Key>
+    <Property Name="MainCategoryId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="SubCategoryId" Type="numeric" Precision="7" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="SubCategoryNameA" Type="varchar" MaxLength="150" />
+    <Property Name="SubCategoryNameE" Type="varchar" MaxLength="150" />
+    <Property Name="SubImage" Type="image" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" />
+    <Property Name="InsertDt" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ResTablesCodes">
+    <Key>
+      <PropertyRef Name="TableNo" />
+    </Key>
+    <Property Name="TableNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TableName" Type="varchar" MaxLength="50" />
+    <Property Name="StatusId" Type="numeric" Precision="1" Scale="0" />
+  </EntityType>
+  <EntityType Name="ResTablesStatusCodes">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+    <Property Name="StatusDesc" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="ResTransTypes">
+    <Key>
+      <PropertyRef Name="trans_type" />
+    </Key>
+    <Property Name="trans_type" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="TransNameE" Type="varchar" MaxLength="30" />
+    <Property Name="TransNameA" Type="varchar" MaxLength="30" />
+    <Property Name="TransFunction" Type="numeric" Precision="1" Scale="0" />
+  </EntityType>
+  <EntityType Name="ResWorkStatus">
+    <Key>
+      <PropertyRef Name="WorkStatus" />
+    </Key>
+    <Property Name="WorkStatus" Type="numeric" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="WorkStatusNameA" Type="varchar" MaxLength="50" />
+    <Property Name="WorkStatusNameE" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="SecForms">
+    <Key>
+      <PropertyRef Name="ModuleNo" />
+      <PropertyRef Name="FormNo" />
+    </Key>
+    <Property Name="ModuleNo" Type="int" Nullable="false" />
+    <Property Name="FormNo" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="FormNameA" Type="varchar" MaxLength="150" />
+    <Property Name="FormNameE" Type="varchar" MaxLength="150" />
+    <Property Name="FormUrl" Type="varchar" MaxLength="150" />
+    <Property Name="MenuNo" Type="numeric" Precision="2" Scale="0" />
+    <Property Name="rank" Type="int" />
+  </EntityType>
+  <EntityType Name="SecMenues">
+    <Key>
+      <PropertyRef Name="ModuleNo" />
+      <PropertyRef Name="MenuNo" />
+    </Key>
+    <Property Name="ModuleNo" Type="int" Nullable="false" />
+    <Property Name="MenuNo" Type="numeric" Precision="2" Scale="0" Nullable="false" />
+    <Property Name="MenuNameA" Type="varchar" MaxLength="100" />
+    <Property Name="MenuNameE" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SecPermissions">
+    <Key>
+      <PropertyRef Name="ModuleNo" />
+      <PropertyRef Name="UserName" />
+      <PropertyRef Name="FormNo" />
+    </Key>
+    <Property Name="ModuleNo" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="FormNo" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+    <Property Name="UpdatSw" Type="numeric" Precision="1" Scale="0" />
+    <Property Name="InsertSw" Type="numeric" Precision="1" Scale="0" />
+    <Property Name="DeleteSw" Type="numeric" Precision="1" Scale="0" />
+  </EntityType>
+  <EntityType Name="SecSystems">
+    <Key>
+      <PropertyRef Name="ModuleNo" />
+    </Key>
+    <Property Name="ModuleNo" Type="int" Nullable="false" />
+    <Property Name="ModuleNameA" Type="varchar" MaxLength="100" />
+    <Property Name="ModuleNameE" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="SecUsers">
+    <Key>
+      <PropertyRef Name="UserName" />
+    </Key>
+    <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="UserPasswd" Type="varchar" MaxLength="50" />
+    <Property Name="SwSpecialUser" Type="numeric" Precision="1" Scale="0" />
+    <Property Name="InsertDt" Type="datetime" />
+    <Property Name="EmpId" Type="numeric" Precision="7" Scale="0" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <Association Name="FK_ResAreaCodes_ResGovCodes">
+    <End Role="ResGovCodes" Type="Self.ResGovCodes" Multiplicity="1" />
+    <End Role="ResAreaCodes" Type="Self.ResAreaCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResGovCodes">
+        <PropertyRef Name="GovId" />
+      </Principal>
+      <Dependent Role="ResAreaCodes">
+        <PropertyRef Name="GovId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResCustomer_ResAreaCodes">
+    <End Role="ResAreaCodes" Type="Self.ResAreaCodes" Multiplicity="0..1" />
+    <End Role="ResCustomer" Type="Self.ResCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResAreaCodes">
+        <PropertyRef Name="GovId" />
+        <PropertyRef Name="AreaId" />
+      </Principal>
+      <Dependent Role="ResCustomer">
+        <PropertyRef Name="GovId" />
+        <PropertyRef Name="AreaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResCustomer_ResCustomerTypes">
+    <End Role="ResCustomerTypes" Type="Self.ResCustomerTypes" Multiplicity="0..1" />
+    <End Role="ResCustomer" Type="Self.ResCustomer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResCustomerTypes">
+        <PropertyRef Name="CustType" />
+      </Principal>
+      <Dependent Role="ResCustomer">
+        <PropertyRef Name="CustType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResEmployeeBasic_ResJOBCodes">
+    <End Role="ResJOBCodes" Type="Self.ResJOBCodes" Multiplicity="0..1" />
+    <End Role="ResEmployeeBasic" Type="Self.ResEmployeeBasic" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResJOBCodes">
+        <PropertyRef Name="JobId" />
+      </Principal>
+      <Dependent Role="ResEmployeeBasic">
+        <PropertyRef Name="JobId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResItemCodes_ResMenuSalesCodes">
+    <End Role="ResMenuSalesCodes" Type="Self.ResMenuSalesCodes" Multiplicity="0..1" />
+    <End Role="ResItemCodes" Type="Self.ResItemCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResMenuSalesCodes">
+        <PropertyRef Name="MenuSalesId" />
+      </Principal>
+      <Dependent Role="ResItemCodes">
+        <PropertyRef Name="MenuSalesId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResItemCodes_ResProperty2Codes">
+    <End Role="ResProperty2Codes" Type="Self.ResProperty2Codes" Multiplicity="0..1" />
+    <End Role="ResItemCodes" Type="Self.ResItemCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResProperty2Codes">
+        <PropertyRef Name="Property2Id" />
+      </Principal>
+      <Dependent Role="ResItemCodes">
+        <PropertyRef Name="Property2Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResItemCodes_ResPropertyCodes">
+    <End Role="ResPropertyCodes" Type="Self.ResPropertyCodes" Multiplicity="0..1" />
+    <End Role="ResItemCodes" Type="Self.ResItemCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResPropertyCodes">
+        <PropertyRef Name="PropertyId" />
+      </Principal>
+      <Dependent Role="ResItemCodes">
+        <PropertyRef Name="PropertyId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResItemCodes_ResSusCategoryCodes">
+    <End Role="ResSubCategoryCodes" Type="Self.ResSubCategoryCodes" Multiplicity="1" />
+    <End Role="ResItemCodes" Type="Self.ResItemCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResSubCategoryCodes">
+        <PropertyRef Name="MainCategoryId" />
+        <PropertyRef Name="SubCategoryId" />
+      </Principal>
+      <Dependent Role="ResItemCodes">
+        <PropertyRef Name="MainCategoryId" />
+        <PropertyRef Name="SubCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResMainCategoryCodes_ResItemTypes">
+    <End Role="ResItemTypes" Type="Self.ResItemTypes" Multiplicity="0..1" />
+    <End Role="ResMainCategoryCodes" Type="Self.ResMainCategoryCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResItemTypes">
+        <PropertyRef Name="TypeId" />
+      </Principal>
+      <Dependent Role="ResMainCategoryCodes">
+        <PropertyRef Name="TypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResOrderDtl_ResOrderHd">
+    <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="1" />
+    <End Role="ResOrderDtl" Type="Self.ResOrderDtl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResOrderHd">
+        <PropertyRef Name="OrederId" />
+      </Principal>
+      <Dependent Role="ResOrderDtl">
+        <PropertyRef Name="OrederId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResOrderDtlInstruction_ResInstructionCodes">
+    <End Role="ResInstructionCodes" Type="Self.ResInstructionCodes" Multiplicity="1" />
+    <End Role="ResOrderDtlInstruction" Type="Self.ResOrderDtlInstruction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResInstructionCodes">
+        <PropertyRef Name="InstructionId" />
+      </Principal>
+      <Dependent Role="ResOrderDtlInstruction">
+        <PropertyRef Name="InstructionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResOrderDtlInstruction_ResOrderDtl">
+    <End Role="ResOrderDtl" Type="Self.ResOrderDtl" Multiplicity="1" />
+    <End Role="ResOrderDtlInstruction" Type="Self.ResOrderDtlInstruction" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResOrderDtl">
+        <PropertyRef Name="OrederId" />
+        <PropertyRef Name="SeqNo" />
+      </Principal>
+      <Dependent Role="ResOrderDtlInstruction">
+        <PropertyRef Name="OrederId" />
+        <PropertyRef Name="SeqNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResOrderHd_ResDeliveryStatus">
+    <End Role="ResDeliveryStatus" Type="Self.ResDeliveryStatus" Multiplicity="0..1" />
+    <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResDeliveryStatus">
+        <PropertyRef Name="DeliveryStatus" />
+      </Principal>
+      <Dependent Role="ResOrderHd">
+        <PropertyRef Name="DeliveryStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResPayment_ResOrderHd1">
+    <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="1" />
+    <End Role="ResPayment" Type="Self.ResPayment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResOrderHd">
+        <PropertyRef Name="OrederId" />
+      </Principal>
+      <Dependent Role="ResPayment">
+        <PropertyRef Name="OrederId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResSALES_DTL_ResItemCodes">
+    <End Role="ResItemCodes" Type="Self.ResItemCodes" Multiplicity="1" />
+    <End Role="ResOrderDtl" Type="Self.ResOrderDtl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResItemCodes">
+        <PropertyRef Name="ItemId" />
+      </Principal>
+      <Dependent Role="ResOrderDtl">
+        <PropertyRef Name="ItemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResSALES_DTL_ResKITCHEN_STATUSCodes">
+    <End Role="ResCookStatusCodes" Type="Self.ResCookStatusCodes" Multiplicity="0..1" />
+    <End Role="ResOrderDtl" Type="Self.ResOrderDtl" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResCookStatusCodes">
+        <PropertyRef Name="CookStatus" />
+      </Principal>
+      <Dependent Role="ResOrderDtl">
+        <PropertyRef Name="CookStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResSALES_HD_ResCustomer">
+    <End Role="ResCustomer" Type="Self.ResCustomer" Multiplicity="1" />
+    <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResCustomer">
+        <PropertyRef Name="CustId" />
+      </Principal>
+      <Dependent Role="ResOrderHd">
+        <PropertyRef Name="CustId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResSALES_HD_ResEmployeeBasic">
+    <End Role="ResEmployeeBasic" Type="Self.ResEmployeeBasic" Multiplicity="0..1" />
+    <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResEmployeeBasic">
+        <PropertyRef Name="EmpId" />
+      </Principal>
+      <Dependent Role="ResOrderHd">
+        <PropertyRef Name="DeliveryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResSALES_HD_ResOrderStatus">
+    <End Role="ResOrderStatus" Type="Self.ResOrderStatus" Multiplicity="0..1" />
+    <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResOrderStatus">
+        <PropertyRef Name="OrderStatus" />
+      </Principal>
+      <Dependent Role="ResOrderHd">
+        <PropertyRef Name="OrderStatus" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResSALES_HD_ResSALES_TYPES">
+    <End Role="ResOrderTypes" Type="Self.ResOrderTypes" Multiplicity="0..1" />
+    <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResOrderTypes">
+        <PropertyRef Name="OrderType" />
+      </Principal>
+      <Dependent Role="ResOrderHd">
+        <PropertyRef Name="OrderType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResSALES_HD_ResShiftsCodes">
+    <End Role="ResShiftsCodes" Type="Self.ResShiftsCodes" Multiplicity="1" />
+    <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResShiftsCodes">
+        <PropertyRef Name="ShiftId" />
+      </Principal>
+      <Dependent Role="ResOrderHd">
+        <PropertyRef Name="ShiftId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResSALES_HD_ResStoresCodes">
+    <End Role="ResStoresCodes" Type="Self.ResStoresCodes" Multiplicity="1" />
+    <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResStoresCodes">
+        <PropertyRef Name="BranchId" />
+      </Principal>
+      <Dependent Role="ResOrderHd">
+        <PropertyRef Name="BranchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResSALES_HD_ResTablesCodes">
+    <End Role="ResTablesCodes" Type="Self.ResTablesCodes" Multiplicity="0..1" />
+    <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResTablesCodes">
+        <PropertyRef Name="TableNo" />
+      </Principal>
+      <Dependent Role="ResOrderHd">
+        <PropertyRef Name="TableNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResStoresCodes_ResGovCodes">
+    <End Role="ResGovCodes" Type="Self.ResGovCodes" Multiplicity="1" />
+    <End Role="ResStoresCodes" Type="Self.ResStoresCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResGovCodes">
+        <PropertyRef Name="GovId" />
+      </Principal>
+      <Dependent Role="ResStoresCodes">
+        <PropertyRef Name="GovId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResSusCategoryCodes_ResMainCategoryCodes">
+    <End Role="ResMainCategoryCodes" Type="Self.ResMainCategoryCodes" Multiplicity="1" />
+    <End Role="ResSubCategoryCodes" Type="Self.ResSubCategoryCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResMainCategoryCodes">
+        <PropertyRef Name="MainCategoryId" />
+      </Principal>
+      <Dependent Role="ResSubCategoryCodes">
+        <PropertyRef Name="MainCategoryId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ResTablesCodes_ResTablesStatusCodes">
+    <End Role="ResTablesStatusCodes" Type="Self.ResTablesStatusCodes" Multiplicity="0..1" />
+    <End Role="ResTablesCodes" Type="Self.ResTablesCodes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ResTablesStatusCodes">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="ResTablesCodes">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SecForms_SecSystems">
+    <End Role="SecSystems" Type="Self.SecSystems" Multiplicity="1" />
+    <End Role="SecForms" Type="Self.SecForms" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SecSystems">
+        <PropertyRef Name="ModuleNo" />
+      </Principal>
+      <Dependent Role="SecForms">
+        <PropertyRef Name="ModuleNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SecMenues_SecSystems">
+    <End Role="SecSystems" Type="Self.SecSystems" Multiplicity="1" />
+    <End Role="SecMenues" Type="Self.SecMenues" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SecSystems">
+        <PropertyRef Name="ModuleNo" />
+      </Principal>
+      <Dependent Role="SecMenues">
+        <PropertyRef Name="ModuleNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SecPermissions_SecForms">
+    <End Role="SecForms" Type="Self.SecForms" Multiplicity="1" />
+    <End Role="SecPermissions" Type="Self.SecPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SecForms">
+        <PropertyRef Name="ModuleNo" />
+        <PropertyRef Name="FormNo" />
+      </Principal>
+      <Dependent Role="SecPermissions">
+        <PropertyRef Name="ModuleNo" />
+        <PropertyRef Name="FormNo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SecPermissions_SecUsers">
+    <End Role="SecUsers" Type="Self.SecUsers" Multiplicity="1" />
+    <End Role="SecPermissions" Type="Self.SecPermissions" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="SecUsers">
+        <PropertyRef Name="UserName" />
+      </Principal>
+      <Dependent Role="SecPermissions">
+        <PropertyRef Name="UserName" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="res_for_sheratonModelStoreContainer">
+    <EntitySet Name="ResAreaCodes" EntityType="Self.ResAreaCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResCookStatusCodes" EntityType="Self.ResCookStatusCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResCustomer" EntityType="Self.ResCustomer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResCustomerTypes" EntityType="Self.ResCustomerTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResDeliveryStatus" EntityType="Self.ResDeliveryStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResEmployeeBasic" EntityType="Self.ResEmployeeBasic" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResGovCodes" EntityType="Self.ResGovCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResInstructionCodes" EntityType="Self.ResInstructionCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResItemCodes" EntityType="Self.ResItemCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResItemTypes" EntityType="Self.ResItemTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResJOBCodes" EntityType="Self.ResJOBCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResMainCategoryCodes" EntityType="Self.ResMainCategoryCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResMenuSalesCodes" EntityType="Self.ResMenuSalesCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResOrderDtl" EntityType="Self.ResOrderDtl" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResOrderDtlInstruction" EntityType="Self.ResOrderDtlInstruction" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResOrderHd" EntityType="Self.ResOrderHd" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResOrderStatus" EntityType="Self.ResOrderStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResOrderTypes" EntityType="Self.ResOrderTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResPayment" EntityType="Self.ResPayment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResProperty2Codes" EntityType="Self.ResProperty2Codes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResPropertyCodes" EntityType="Self.ResPropertyCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResShiftsCodes" EntityType="Self.ResShiftsCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResStoresCodes" EntityType="Self.ResStoresCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResSubCategoryCodes" EntityType="Self.ResSubCategoryCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResTablesCodes" EntityType="Self.ResTablesCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResTablesStatusCodes" EntityType="Self.ResTablesStatusCodes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResTransTypes" EntityType="Self.ResTransTypes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ResWorkStatus" EntityType="Self.ResWorkStatus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SecForms" EntityType="Self.SecForms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SecMenues" EntityType="Self.SecMenues" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SecPermissions" EntityType="Self.SecPermissions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SecSystems" EntityType="Self.SecSystems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="SecUsers" EntityType="Self.SecUsers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_ResAreaCodes_ResGovCodes" Association="Self.FK_ResAreaCodes_ResGovCodes">
+      <End Role="ResGovCodes" EntitySet="ResGovCodes" />
+      <End Role="ResAreaCodes" EntitySet="ResAreaCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResCustomer_ResAreaCodes" Association="Self.FK_ResCustomer_ResAreaCodes">
+      <End Role="ResAreaCodes" EntitySet="ResAreaCodes" />
+      <End Role="ResCustomer" EntitySet="ResCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResCustomer_ResCustomerTypes" Association="Self.FK_ResCustomer_ResCustomerTypes">
+      <End Role="ResCustomerTypes" EntitySet="ResCustomerTypes" />
+      <End Role="ResCustomer" EntitySet="ResCustomer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResEmployeeBasic_ResJOBCodes" Association="Self.FK_ResEmployeeBasic_ResJOBCodes">
+      <End Role="ResJOBCodes" EntitySet="ResJOBCodes" />
+      <End Role="ResEmployeeBasic" EntitySet="ResEmployeeBasic" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResItemCodes_ResMenuSalesCodes" Association="Self.FK_ResItemCodes_ResMenuSalesCodes">
+      <End Role="ResMenuSalesCodes" EntitySet="ResMenuSalesCodes" />
+      <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResItemCodes_ResProperty2Codes" Association="Self.FK_ResItemCodes_ResProperty2Codes">
+      <End Role="ResProperty2Codes" EntitySet="ResProperty2Codes" />
+      <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResItemCodes_ResPropertyCodes" Association="Self.FK_ResItemCodes_ResPropertyCodes">
+      <End Role="ResPropertyCodes" EntitySet="ResPropertyCodes" />
+      <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResItemCodes_ResSusCategoryCodes" Association="Self.FK_ResItemCodes_ResSusCategoryCodes">
+      <End Role="ResSubCategoryCodes" EntitySet="ResSubCategoryCodes" />
+      <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResMainCategoryCodes_ResItemTypes" Association="Self.FK_ResMainCategoryCodes_ResItemTypes">
+      <End Role="ResItemTypes" EntitySet="ResItemTypes" />
+      <End Role="ResMainCategoryCodes" EntitySet="ResMainCategoryCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResOrderDtl_ResOrderHd" Association="Self.FK_ResOrderDtl_ResOrderHd">
+      <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+      <End Role="ResOrderDtl" EntitySet="ResOrderDtl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResOrderDtlInstruction_ResInstructionCodes" Association="Self.FK_ResOrderDtlInstruction_ResInstructionCodes">
+      <End Role="ResInstructionCodes" EntitySet="ResInstructionCodes" />
+      <End Role="ResOrderDtlInstruction" EntitySet="ResOrderDtlInstruction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResOrderDtlInstruction_ResOrderDtl" Association="Self.FK_ResOrderDtlInstruction_ResOrderDtl">
+      <End Role="ResOrderDtl" EntitySet="ResOrderDtl" />
+      <End Role="ResOrderDtlInstruction" EntitySet="ResOrderDtlInstruction" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResOrderHd_ResDeliveryStatus" Association="Self.FK_ResOrderHd_ResDeliveryStatus">
+      <End Role="ResDeliveryStatus" EntitySet="ResDeliveryStatus" />
+      <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResPayment_ResOrderHd1" Association="Self.FK_ResPayment_ResOrderHd1">
+      <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+      <End Role="ResPayment" EntitySet="ResPayment" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResSALES_DTL_ResItemCodes" Association="Self.FK_ResSALES_DTL_ResItemCodes">
+      <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+      <End Role="ResOrderDtl" EntitySet="ResOrderDtl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResSALES_DTL_ResKITCHEN_STATUSCodes" Association="Self.FK_ResSALES_DTL_ResKITCHEN_STATUSCodes">
+      <End Role="ResCookStatusCodes" EntitySet="ResCookStatusCodes" />
+      <End Role="ResOrderDtl" EntitySet="ResOrderDtl" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResSALES_HD_ResCustomer" Association="Self.FK_ResSALES_HD_ResCustomer">
+      <End Role="ResCustomer" EntitySet="ResCustomer" />
+      <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResSALES_HD_ResEmployeeBasic" Association="Self.FK_ResSALES_HD_ResEmployeeBasic">
+      <End Role="ResEmployeeBasic" EntitySet="ResEmployeeBasic" />
+      <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResSALES_HD_ResOrderStatus" Association="Self.FK_ResSALES_HD_ResOrderStatus">
+      <End Role="ResOrderStatus" EntitySet="ResOrderStatus" />
+      <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResSALES_HD_ResSALES_TYPES" Association="Self.FK_ResSALES_HD_ResSALES_TYPES">
+      <End Role="ResOrderTypes" EntitySet="ResOrderTypes" />
+      <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResSALES_HD_ResShiftsCodes" Association="Self.FK_ResSALES_HD_ResShiftsCodes">
+      <End Role="ResShiftsCodes" EntitySet="ResShiftsCodes" />
+      <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResSALES_HD_ResStoresCodes" Association="Self.FK_ResSALES_HD_ResStoresCodes">
+      <End Role="ResStoresCodes" EntitySet="ResStoresCodes" />
+      <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResSALES_HD_ResTablesCodes" Association="Self.FK_ResSALES_HD_ResTablesCodes">
+      <End Role="ResTablesCodes" EntitySet="ResTablesCodes" />
+      <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResStoresCodes_ResGovCodes" Association="Self.FK_ResStoresCodes_ResGovCodes">
+      <End Role="ResGovCodes" EntitySet="ResGovCodes" />
+      <End Role="ResStoresCodes" EntitySet="ResStoresCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResSusCategoryCodes_ResMainCategoryCodes" Association="Self.FK_ResSusCategoryCodes_ResMainCategoryCodes">
+      <End Role="ResMainCategoryCodes" EntitySet="ResMainCategoryCodes" />
+      <End Role="ResSubCategoryCodes" EntitySet="ResSubCategoryCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ResTablesCodes_ResTablesStatusCodes" Association="Self.FK_ResTablesCodes_ResTablesStatusCodes">
+      <End Role="ResTablesStatusCodes" EntitySet="ResTablesStatusCodes" />
+      <End Role="ResTablesCodes" EntitySet="ResTablesCodes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SecForms_SecSystems" Association="Self.FK_SecForms_SecSystems">
+      <End Role="SecSystems" EntitySet="SecSystems" />
+      <End Role="SecForms" EntitySet="SecForms" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SecMenues_SecSystems" Association="Self.FK_SecMenues_SecSystems">
+      <End Role="SecSystems" EntitySet="SecSystems" />
+      <End Role="SecMenues" EntitySet="SecMenues" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SecPermissions_SecForms" Association="Self.FK_SecPermissions_SecForms">
+      <End Role="SecForms" EntitySet="SecForms" />
+      <End Role="SecPermissions" EntitySet="SecPermissions" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SecPermissions_SecUsers" Association="Self.FK_SecPermissions_SecUsers">
+      <End Role="SecUsers" EntitySet="SecUsers" />
+      <End Role="SecPermissions" EntitySet="SecPermissions" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

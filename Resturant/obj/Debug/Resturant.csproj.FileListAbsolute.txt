@@ -1,0 +1,82 @@
+\\VBOXSVR\vm\Visual Studio\Projects\Resturant\Resturant\bin\Debug\Resturant.exe.config
+\\VBOXSVR\vm\Visual Studio\Projects\Resturant\Resturant\obj\Debug\Resturant.csprojResolveAssemblyReference.cache
+\\VBOXSVR\vm\Visual Studio\Projects\Resturant\Resturant\obj\Debug\App.g.cs
+\\VBOXSVR\vm\Visual Studio\Projects\Resturant\Resturant\obj\Debug\Resturant_MarkupCompile.cache
+\\VBOXSVR\vm\Visual Studio\Projects\Resturant\Resturant\bin\Debug\Resturant.exe
+\\VBOXSVR\vm\Visual Studio\Projects\Resturant\Resturant\bin\Debug\Resturant.pdb
+\\VBOXSVR\vm\Visual Studio\Projects\Resturant\Resturant\obj\Debug\MainWindow.baml
+\\VBOXSVR\vm\Visual Studio\Projects\Resturant\Resturant\obj\Debug\MainWindow.g.cs
+\\VBOXSVR\vm\Visual Studio\Projects\Resturant\Resturant\obj\Debug\Resturant.g.resources
+\\VBOXSVR\vm\Visual Studio\Projects\Resturant\Resturant\obj\Debug\Resturant.Properties.Resources.resources
+\\VBOXSVR\vm\Visual Studio\Projects\Resturant\Resturant\obj\Debug\Resturant.csproj.GenerateResource.Cache
+\\VBOXSVR\vm\Visual Studio\Projects\Resturant\Resturant\obj\Debug\Resturant.exe
+\\VBOXSVR\vm\Visual Studio\Projects\Resturant\Resturant\obj\Debug\Resturant.pdb
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\bin\Debug\Resturant.exe.config
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\Resturant.exe
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\Resturant.pdb
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\bin\Debug\Resturant.exe
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\bin\Debug\Resturant.pdb
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\Resturant.csprojResolveAssemblyReference.cache
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\MainWindow.baml
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\MainWindow.g.cs
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\App.g.cs
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\Resturant_MarkupCompile.cache
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\Resturant.g.resources
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\Resturant.Properties.Resources.resources
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\Resturant.csproj.GenerateResource.Cache
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\bin\Debug\EntityFramework.dll
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\bin\Debug\EntityFramework.xml
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\bin\Debug\Resturant.DAL.dll
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\bin\Debug\Resturant.DAL.pdb
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\LoginWindow.baml
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\LoginWindow.g.cs
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\AdminWindow.baml
+C:\Users\ahmed0mohsen\Downloads\Resturant\Resturant\obj\Debug\AdminWindow.g.cs
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\bin\Debug\Resturant.exe.config
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\Resturant.exe
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\Resturant.pdb
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\bin\Debug\Resturant.exe
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\bin\Debug\Resturant.pdb
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\bin\Debug\EntityFramework.dll
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\bin\Debug\Resturant.DAL.dll
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\bin\Debug\Resturant.DAL.pdb
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\bin\Debug\EntityFramework.xml
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\Resturant.csprojResolveAssemblyReference.cache
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\AdminWindow.baml
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\LoginWindow.baml
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\MainWindow.baml
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\AdminWindow.g.cs
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\LoginWindow.g.cs
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\MainWindow.g.cs
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\App.g.cs
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\Resturant_MarkupCompile.cache
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\Resturant.g.resources
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\Resturant.Properties.Resources.resources
+D:\Github\FreeLancer\Hamada-Sherton\Resturant\obj\Debug\Resturant.csproj.GenerateResource.Cache
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\bin\Debug\Resturant.exe.config
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\Resturant.exe
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\Resturant.pdb
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\bin\Debug\Resturant.exe
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\bin\Debug\Resturant.pdb
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\bin\Debug\EntityFramework.dll
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\bin\Debug\Resturant.DAL.dll
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\bin\Debug\Resturant.DAL.pdb
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\bin\Debug\EntityFramework.xml
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\Resturant.csprojResolveAssemblyReference.cache
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\AdminWindow.baml
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\LoginWindow.baml
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\MainWindow.baml
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\NewDelivery.baml
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\AdminWindow.g.cs
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\LoginWindow.g.cs
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\MainWindow.g.cs
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\NewDelivery.g.cs
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\App.g.cs
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\Resturant_MarkupCompile.cache
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\Resturant.g.resources
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\Resturant.Properties.Resources.resources
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\Resturant.csproj.GenerateResource.Cache
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\NewCustomer.baml
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\NewCustomer.g.cs
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\Pilots.baml
+\\Vboxsvr\vm\Hamada-Sherton\Resturant\obj\Debug\Pilots.g.cs

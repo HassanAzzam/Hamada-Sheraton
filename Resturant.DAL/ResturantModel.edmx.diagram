@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1fd08269551b4199bc3110411d7ce330" Name="Diagram1">
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResAreaCode" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResCookStatusCode" Width="1.5" PointX="7.5" PointY="13.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResCustomer" Width="1.5" PointX="5.25" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResCustomerType" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResDeliveryStatu" Width="1.5" PointX="5.25" PointY="10.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResEmployeeBasic" Width="1.5" PointX="5.25" PointY="13.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResGovCode" Width="1.5" PointX="0.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResInstructionCode" Width="1.5" PointX="7.5" PointY="15.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResItemCode" Width="1.5" PointX="7.5" PointY="32" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResItemType" Width="1.5" PointX="0.75" PointY="37.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResJOBCode" Width="1.5" PointX="3" PointY="14.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResMainCategoryCode" Width="1.5" PointX="3" PointY="36.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResMenuSalesCode" Width="1.5" PointX="5.25" PointY="28.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResOrderDtl" Width="1.5" PointX="9.75" PointY="6.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResOrderHd" Width="1.5" PointX="7.5" PointY="3.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResOrderStatu" Width="1.5" PointX="5.25" PointY="17.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResOrderType" Width="1.5" PointX="5.25" PointY="20" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResPayment" Width="1.5" PointX="9.75" PointY="10.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResProperty2Codes" Width="1.5" PointX="5.25" PointY="31" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResPropertyCode" Width="1.5" PointX="5.25" PointY="33.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResShiftsCode" Width="1.5" PointX="5.25" PointY="22.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResStoresCode" Width="1.5" PointX="3" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResTablesCode" Width="1.5" PointX="5.25" PointY="25.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResTablesStatusCode" Width="1.5" PointX="3" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResTransType" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResWorkStatu" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.SecForm" Width="1.5" PointX="14" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.SecMenue" Width="1.5" PointX="14" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.SecPermission" Width="1.5" PointX="16.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.SecSystem" Width="1.5" PointX="11.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.SecUser" Width="1.5" PointX="14" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.sysdiagram" Width="1.5" PointX="11.75" PointY="10.75" IsExpanded="true" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResAreaCodes_ResGovCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResCustomer_ResAreaCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResSALES_DTL_ResKITCHEN_STATUSCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResCustomer_ResCustomerTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResSALES_HD_ResCustomer" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResOrderHd_ResDeliveryStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResEmployeeBasic_ResJOBCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResSALES_HD_ResEmployeeBasic" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResStoresCodes_ResGovCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResItemCodes_ResMenuSalesCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResItemCodes_ResProperty2Codes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResItemCodes_ResPropertyCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResSALES_DTL_ResItemCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResMainCategoryCodes_ResItemTypes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResOrderDtl_ResOrderHd" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResPayment_ResOrderHd1" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResSALES_HD_ResOrderStatus" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResSALES_HD_ResSALES_TYPES" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResSALES_HD_ResShiftsCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResSALES_HD_ResStoresCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResSALES_HD_ResTablesCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResTablesCodes_ResTablesStatusCodes" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_SecForms_SecSystems" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_SecPermissions_SecForms" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_SecMenues_SecSystems" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_SecPermissions_SecUsers" ManuallyRouted="false" />
+        <AssociationConnector Association="res_for_sheratonModel.ResOrderDtlInstruction" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="res_for_sheratonModel.ResSubCategoryCode" Width="1.5" PointX="5.25" PointY="41.25" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResItemCodes_ResSusCategoryCodes1" />
+        <AssociationConnector Association="res_for_sheratonModel.FK_ResSusCategoryCodes_ResMainCategoryCodes1" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

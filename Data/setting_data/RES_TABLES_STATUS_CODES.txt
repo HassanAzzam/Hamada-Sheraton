@@ -1,0 +1,3 @@
+0	not defined
+1	busy 
+NULL	NULL

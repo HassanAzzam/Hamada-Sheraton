@@ -1,0 +1,1856 @@
+
+GO
+
+/****** Object:  Table [dbo].[SecUsers]    Script Date: 02/26/2015 20:23:19 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[SecUsers](
+	[UserName] [varchar](100) NOT NULL,
+	[UserPasswd] [varchar](50) NULL,
+	[SwSpecialUser] [numeric](1, 0) NULL,
+	[InsertDt] [datetime] NULL,
+ CONSTRAINT [PK_SecUsers] PRIMARY KEY CLUSTERED 
+(
+	[UserName] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[SecSystems]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[SecSystems](
+	[ModuleNo] [int] NOT NULL,
+	[ModuleNameA] [varchar](100) NULL,
+	[ModuleNameE] [varchar](100) NULL,
+ CONSTRAINT [PK_SecSystems] PRIMARY KEY CLUSTERED 
+(
+	[ModuleNo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[SecPermissions]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[SecPermissions](
+	[ModuleNo] [int] NOT NULL,
+	[UserName] [varchar](100) NOT NULL,
+	[FormNo] [numeric](3, 0) NOT NULL,
+	[UpdatSw] [numeric](1, 0) NULL,
+	[InsertSw] [numeric](1, 0) NULL,
+	[DeleteSw] [numeric](1, 0) NULL,
+ CONSTRAINT [PK_ResPERMISSIONS] PRIMARY KEY CLUSTERED 
+(
+	[ModuleNo] ASC,
+	[UserName] ASC,
+	[FormNo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·»—‰«„Ã' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecPermissions', @level2type=N'COLUMN',@level2name=N'ModuleNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecPermissions', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·‘«‘Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecPermissions', @level2type=N'COLUMN',@level2name=N'FormNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'’·«ÕÌÂ  ⁄œÌ·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecPermissions', @level2type=N'COLUMN',@level2name=N'UpdatSw'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'’·«ÕÌÂ «÷«›Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecPermissions', @level2type=N'COLUMN',@level2name=N'InsertSw'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'’·«ÕÌÂ «·€«¡' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecPermissions', @level2type=N'COLUMN',@level2name=N'DeleteSw'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[SecMenues]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[SecMenues](
+	[ModuleNo] [int] NOT NULL,
+	[MenuNo] [numeric](2, 0) NOT NULL,
+	[MenuNameA] [varchar](100) NULL,
+	[MenuNameE] [varchar](100) NULL,
+ CONSTRAINT [PK_ResMENUES] PRIMARY KEY CLUSTERED 
+(
+	[ModuleNo] ASC,
+	[MenuNo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·»—‰«„Ã' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecMenues', @level2type=N'COLUMN',@level2name=N'ModuleNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·ﬁ«∆„Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecMenues', @level2type=N'COLUMN',@level2name=N'MenuNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·ﬁ«∆„Â ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecMenues', @level2type=N'COLUMN',@level2name=N'MenuNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·ﬁ«∆„Â «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecMenues', @level2type=N'COLUMN',@level2name=N'MenuNameE'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[SecForms]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[SecForms](
+	[ModuleNo] [int] NOT NULL,
+	[FormNo] [numeric](3, 0) NOT NULL,
+	[FormNameA] [varchar](150) NULL,
+	[FormNameE] [varchar](150) NULL,
+	[FormUrl] [varchar](150) NULL,
+	[MenuNo] [numeric](2, 0) NULL,
+	[rank] [int] NULL,
+ CONSTRAINT [PK_ResFORMS] PRIMARY KEY CLUSTERED 
+(
+	[ModuleNo] ASC,
+	[FormNo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·‰Ÿ«„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecForms', @level2type=N'COLUMN',@level2name=N'ModuleNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·‘«‘Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecForms', @level2type=N'COLUMN',@level2name=N'FormNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·«”„ ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecForms', @level2type=N'COLUMN',@level2name=N'FormNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·«”„ «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecForms', @level2type=N'COLUMN',@level2name=N'FormNameE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'program name in application' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecForms', @level2type=N'COLUMN',@level2name=N'FormUrl'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·ﬁ«∆„Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecForms', @level2type=N'COLUMN',@level2name=N'MenuNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«· — Ì» œ«Œ· «·ﬁ«∆„Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'SecForms', @level2type=N'COLUMN',@level2name=N'rank'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResTransTypes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResTransTypes](
+	[trans_type] [numeric](3, 0) NOT NULL,
+	[TransNameE] [varchar](30) NULL,
+	[TransNameA] [varchar](30) NULL,
+	[TransFunction] [numeric](1, 0) NULL,
+ CONSTRAINT [PK_ResTransTypes] PRIMARY KEY CLUSTERED 
+(
+	[trans_type] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResTablesStatusCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResTablesStatusCodes](
+	[StatusId] [numeric](1, 0) NOT NULL,
+	[StatusDesc] [varchar](50) NULL,
+ CONSTRAINT [PK_ResTABLES_STATUS] PRIMARY KEY CLUSTERED 
+(
+	[StatusId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Õ«·Â «·ÿ«Ê·Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResTablesStatusCodes', @level2type=N'COLUMN',@level2name=N'StatusId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› Õ«·Â «·ÿ«Ê·Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResTablesStatusCodes', @level2type=N'COLUMN',@level2name=N'StatusDesc'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResTablesCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResTablesCodes](
+	[TableNo] [int] IDENTITY(1,1) NOT NULL,
+	[TableName] [varchar](50) NULL,
+	[StatusId] [numeric](1, 0) NULL,
+ CONSTRAINT [PK_ResTablesCodes] PRIMARY KEY CLUSTERED 
+(
+	[TableNo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·ÿ«Ê·Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResTablesCodes', @level2type=N'COLUMN',@level2name=N'TableNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·ÿ«Ê·Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResTablesCodes', @level2type=N'COLUMN',@level2name=N'TableName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Õ«·Â «·ÿ«Ê·Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResTablesCodes', @level2type=N'COLUMN',@level2name=N'StatusId'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResSusCategoryCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResSusCategoryCodes](
+	[MainCategoryId] [numeric](3, 0) NOT NULL,
+	[SubCategoryId] [numeric](7, 0) NOT NULL,
+	[SubCategoryNameA] [varchar](150) NULL,
+	[SubCategoryNameE] [varchar](150) NULL,
+	[SubImage] [image] NULL,
+	[UserName] [varchar](100) NULL,
+	[InsertDt] [datetime] NULL,
+ CONSTRAINT [PK_ResITEM_SUBCodes] PRIMARY KEY CLUSTERED 
+(
+	[MainCategoryId] ASC,
+	[SubCategoryId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·„Ã„Ê⁄Â «·—∆Ì”ÌÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResSusCategoryCodes', @level2type=N'COLUMN',@level2name=N'MainCategoryId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·„Ã„Ê⁄Â «·›—⁄ÌÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResSusCategoryCodes', @level2type=N'COLUMN',@level2name=N'SubCategoryId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·„Ã„Ê⁄Â «·›—⁄ÌÂ ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResSusCategoryCodes', @level2type=N'COLUMN',@level2name=N'SubCategoryNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·„Ã„Ê⁄Â «·›—⁄ÌÂ «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResSusCategoryCodes', @level2type=N'COLUMN',@level2name=N'SubCategoryNameE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'’Ê—Â «·„Ã„Ê⁄Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResSusCategoryCodes', @level2type=N'COLUMN',@level2name=N'SubImage'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResSusCategoryCodes', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«œŒ«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResSusCategoryCodes', @level2type=N'COLUMN',@level2name=N'InsertDt'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResStoresCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResStoresCodes](
+	[BranchId] [numeric](3, 0) IDENTITY(1,1) NOT NULL,
+	[BranchNameA] [varchar](100) NULL,
+	[BranchNameE] [varchar](100) NULL,
+	[GovId] [numeric](3, 0) NOT NULL,
+	[AddressA] [varchar](150) NULL,
+	[AddressE] [varchar](150) NULL,
+	[Tel1] [varchar](15) NULL,
+	[Tel2] [varchar](15) NULL,
+	[Tel3] [varchar](15) NULL,
+	[ServiceRatio] [numeric](5, 2) NULL,
+	[MinChargeVal] [numeric](12, 2) NULL,
+	[StartDt] [datetime] NULL,
+	[CloseSw] [numeric](1, 0) NULL,
+	[CloseDt] [datetime] NULL,
+ CONSTRAINT [PK_STORESCodes] PRIMARY KEY CLUSTERED 
+(
+	[BranchId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·„ÿ⁄„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'BranchId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·Ê’› ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'BranchNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·Ê’› «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'BranchNameE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·„Õ«›ŸÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'GovId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·⁄‰Ê«‰ ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'AddressA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·⁄‰Ê«‰ «‰ÃÌ“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'AddressE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' ·Ì›Ê‰ 1' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'Tel1'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' ·Ì›Ê‰ 2' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'Tel2'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' ·Ì›Ê‰ 3' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'Tel3'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'‰”»Â «·Œœ„Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'ServiceRatio'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬁÌ„Â Õœ «œ‰Ï ··›—œ «·Ê«Õœ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'MinChargeVal'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'»œ«ÌÂ  ‘€Ì· «·„ÿ⁄„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'StartDt'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'„„Ì“ «€·«ﬁ 0-„› ÊÕ 1-„€·ﬁ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'CloseSw'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«€·«ﬁ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResStoresCodes', @level2type=N'COLUMN',@level2name=N'CloseDt'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResShiftsCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResShiftsCodes](
+	[ShiftId] [numeric](1, 0) NOT NULL,
+	[ShiftNameE] [varchar](50) NULL,
+	[ShiftNamea] [varchar](50) NULL,
+	[UserName] [varchar](100) NULL,
+	[InsertDt] [datetime] NULL,
+ CONSTRAINT [PK_ResShiftsCodes] PRIMARY KEY CLUSTERED 
+(
+	[ShiftId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·Ê—œÌÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResShiftsCodes', @level2type=N'COLUMN',@level2name=N'ShiftId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·Ê—œÌÂ ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResShiftsCodes', @level2type=N'COLUMN',@level2name=N'ShiftNameE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·Ê—œÌÂ «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResShiftsCodes', @level2type=N'COLUMN',@level2name=N'ShiftNamea'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResShiftsCodes', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«œŒ«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResShiftsCodes', @level2type=N'COLUMN',@level2name=N'InsertDt'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResPropertyCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResPropertyCodes](
+	[PropertyId] [numeric](3, 0) NOT NULL,
+	[PropertyNameA] [varchar](50) NULL,
+	[PropertyNameE] [varchar](50) NULL,
+	[UserName] [varchar](100) NULL,
+	[InsertDt] [datetime] NULL,
+ CONSTRAINT [PK_ResPropertyCodes] PRIMARY KEY CLUSTERED 
+(
+	[PropertyId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·Œ«’ÌÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResPropertyCodes', @level2type=N'COLUMN',@level2name=N'PropertyId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·Œ«’ÌÂ ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResPropertyCodes', @level2type=N'COLUMN',@level2name=N'PropertyNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·Œ«’ÌÂ «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResPropertyCodes', @level2type=N'COLUMN',@level2name=N'PropertyNameE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResPropertyCodes', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«œŒ«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResPropertyCodes', @level2type=N'COLUMN',@level2name=N'InsertDt'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResProperty2Codes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResProperty2Codes](
+	[Property2Id] [numeric](3, 0) NOT NULL,
+	[Property2NameA] [varchar](50) NULL,
+	[Property2NameE] [varchar](50) NULL,
+	[UserName] [varchar](100) NULL,
+	[InsertDt] [datetime] NULL,
+ CONSTRAINT [PK_ResProperty2Codes] PRIMARY KEY CLUSTERED 
+(
+	[Property2Id] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·Œ«’ÌÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResProperty2Codes', @level2type=N'COLUMN',@level2name=N'Property2Id'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·Œ«’ÌÂ ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResProperty2Codes', @level2type=N'COLUMN',@level2name=N'Property2NameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·Œ«’ÌÂ «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResProperty2Codes', @level2type=N'COLUMN',@level2name=N'Property2NameE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResProperty2Codes', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«œŒ«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResProperty2Codes', @level2type=N'COLUMN',@level2name=N'InsertDt'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResPayment]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResPayment](
+	[DocNo] [numeric](12, 0) IDENTITY(1,1) NOT NULL,
+	[OrederId] [numeric](12, 0) NOT NULL,
+	[CashVal] [numeric](12, 2) NOT NULL,
+	[CardVal] [numeric](12, 2) NULL,
+	[UserName] [varchar](100) NULL,
+	[InsertDt] [datetime] NULL,
+ CONSTRAINT [PK_ResPayment_1] PRIMARY KEY CLUSTERED 
+(
+	[DocNo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·«Ì’«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResPayment', @level2type=N'COLUMN',@level2name=N'DocNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·Õ—ﬂÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResPayment', @level2type=N'COLUMN',@level2name=N'OrederId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬁÌ„Â «·„œ›Ê⁄ ‰ﬁœÏ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResPayment', @level2type=N'COLUMN',@level2name=N'CashVal'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬁÌ„Â «·„œ›Ê⁄ ›Ì“«' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResPayment', @level2type=N'COLUMN',@level2name=N'CardVal'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResPayment', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«œŒ«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResPayment', @level2type=N'COLUMN',@level2name=N'InsertDt'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResOrderTypes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResOrderTypes](
+	[OrderType] [numeric](1, 0) NOT NULL,
+	[SaleNameA] [varchar](50) NULL,
+	[SaleNameE] [varchar](50) NULL,
+ CONSTRAINT [PK_ResSALES_TYPES] PRIMARY KEY CLUSTERED 
+(
+	[OrderType] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'‰Ê⁄ «·«Ê—œ—' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderTypes', @level2type=N'COLUMN',@level2name=N'OrderType'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·‰Ê⁄ ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderTypes', @level2type=N'COLUMN',@level2name=N'SaleNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·‰Ê⁄ «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderTypes', @level2type=N'COLUMN',@level2name=N'SaleNameE'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResOrderStatus]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResOrderStatus](
+	[OrderStatus] [numeric](1, 0) NOT NULL,
+	[StatusNameA] [varchar](50) NULL,
+	[StatusNameE] [varchar](50) NULL,
+ CONSTRAINT [PK_ResOrderStatus] PRIMARY KEY CLUSTERED 
+(
+	[OrderStatus] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Õ«·Â «·«Ê—œ—' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderStatus', @level2type=N'COLUMN',@level2name=N'OrderStatus'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·Õ«·Â ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderStatus', @level2type=N'COLUMN',@level2name=N'StatusNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·Õ«·Â «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderStatus', @level2type=N'COLUMN',@level2name=N'StatusNameE'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResOrderHd]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResOrderHd](
+	[OrederId] [numeric](12, 0) IDENTITY(1,1) NOT NULL,
+	[BranchId] [numeric](3, 0) NOT NULL,
+	[OrderNo] [numeric](9, 0) NOT NULL,
+	[OrderDt] [datetime] NOT NULL,
+	[OrderType] [numeric](1, 0) NULL,
+	[OrderTime] [datetime] NULL,
+	[ShiftId] [numeric](1, 0) NOT NULL,
+	[CustId] [numeric](9, 0) NOT NULL,
+	[TotalPrice] [numeric](12, 2) NULL,
+	[PriceAdd] [numeric](9, 2) NULL,
+	[DiscountRatio] [numeric](9, 2) NULL,
+	[DiscountVal] [numeric](9, 2) NULL,
+	[ServiceVal] [numeric](9, 0) NULL,
+	[NetPrice] [numeric](12, 2) NULL,
+	[CashVal] [numeric](12, 2) NULL,
+	[RemainderVal] [numeric](12, 2) NULL,
+	[SwDelete] [numeric](1, 0) NULL,
+	[OrderStatus] [numeric](1, 0) NULL,
+	[DeliveryId] [numeric](7, 0) NULL,
+	[DeliveryStatus] [numeric](1, 0) NULL,
+	[ToDeliveryTime] [datetime] NULL,
+	[DeliveryTimeRequired] [datetime] NULL,
+	[FromDeliveryTime] [datetime] NULL,
+	[TableNo] [int] NULL,
+	[PeopleCount] [int] NULL,
+	[UserName] [varchar](100) NULL,
+	[UserNameDeleted] [varchar](100) NULL,
+	[Comment] [varchar](150) NULL,
+	[InsertDt] [datetime] NULL,
+ CONSTRAINT [PK_ResSALES_HD] PRIMARY KEY CLUSTERED 
+(
+	[OrederId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·Õ—ﬂÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'OrederId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·«Ê—œ—' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'OrderNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«Ê—œ—' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'OrderDt'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'‰Ê⁄ «·«Ê—œ—' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'OrderType'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Êﬁ  «·»Ì⁄' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'OrderTime'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·Ê—œÌÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'ShiftId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·⁄„Ì·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'CustId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«Ã„«·Ï ﬁÌ„… «·«Ê—œ— »⁄œ «·Œ’„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'TotalPrice'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' ﬂ·›Â «÷«›ÌÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'PriceAdd'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'‰”»… «·Œ’„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'DiscountRatio'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬁÌ„… «·Œ’„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'DiscountVal'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬁÌ„Â «·Œœ„Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'ServiceVal'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'’«›Ï ﬁÌ„… «·«Ê—œ—' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'NetPrice'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«Ã„«·Ï «·„œ›Ê⁄ ‰ﬁœÏ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'CashVal'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„ »ﬁÏ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'RemainderVal'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'„„Ì“ ›« Ê—… 0-  €Ì— „— Ã⁄… Ê€Ì— „”œœ… 1-  „ ”œ«œÂ«3- „ «— Ã«⁄Â«' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'SwDelete'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Õ«·Â «·«Ê—œ—' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'OrderStatus'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·»«∆⁄' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'DeliveryId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Õ«·Â «·œ·Ì›—Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'DeliveryStatus'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Êﬁ  «·œ·Ì›—Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'ToDeliveryTime'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «· ”·Ì„ «·„ÿ·Ê»' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'DeliveryTimeRequired'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Êﬁ  «·œ·Ì›—Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'FromDeliveryTime'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·ÿ«Ê·Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'TableNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'⁄œœ «·«›—«œ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'PeopleCount'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·„” Œœ„ ›Ï Õ«·… «·«·€«¡' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'UserNameDeleted'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'»Ì«‰' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'Comment'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«œŒ«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderHd', @level2type=N'COLUMN',@level2name=N'InsertDt'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResOrderDtlInstruction]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ResOrderDtlInstruction](
+	[OrederId] [numeric](12, 0) NOT NULL,
+	[SeqNo] [numeric](4, 0) NOT NULL,
+	[InstructionId] [numeric](3, 0) NOT NULL,
+ CONSTRAINT [PK_ResOrderDtlInstruction] PRIMARY KEY CLUSTERED 
+(
+	[OrederId] ASC,
+	[SeqNo] ASC,
+	[InstructionId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·Õ—ﬂÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderDtlInstruction', @level2type=N'COLUMN',@level2name=N'OrederId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'„”·”·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderDtlInstruction', @level2type=N'COLUMN',@level2name=N'SeqNo'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResOrderDtl]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[ResOrderDtl](
+	[OrederId] [numeric](12, 0) NOT NULL,
+	[SeqNo] [numeric](4, 0) NOT NULL,
+	[ItemId] [numeric](12, 0) NOT NULL,
+	[Qty] [numeric](9, 2) NULL,
+	[Price] [numeric](12, 2) NULL,
+	[CookStatus] [numeric](1, 0) NULL,
+	[CookStatusTime] [datetime] NULL,
+ CONSTRAINT [PK_ResSALES_DTL] PRIMARY KEY CLUSTERED 
+(
+	[OrederId] ASC,
+	[SeqNo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·Õ—ﬂÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderDtl', @level2type=N'COLUMN',@level2name=N'OrederId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'„”·”·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderDtl', @level2type=N'COLUMN',@level2name=N'SeqNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·’‰›' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderDtl', @level2type=N'COLUMN',@level2name=N'ItemId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·ﬂ„ÌÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderDtl', @level2type=N'COLUMN',@level2name=N'Qty'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'”⁄— «·ÊÕœÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderDtl', @level2type=N'COLUMN',@level2name=N'Price'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Õ«·Â «·„ÿ»Œ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderDtl', @level2type=N'COLUMN',@level2name=N'CookStatus'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ  ÊÊﬁ  Õ«·Â «·„ÿ»Œ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResOrderDtl', @level2type=N'COLUMN',@level2name=N'CookStatusTime'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResMenuSalesCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResMenuSalesCodes](
+	[MenuSalesId] [numeric](3, 0) NOT NULL,
+	[MenuSalesNameA] [varchar](50) NULL,
+	[MenuSalesNameE] [varchar](50) NULL,
+	[seq] [numeric](3, 0) NULL,
+ CONSTRAINT [PK_ResPriorityCodes] PRIMARY KEY CLUSTERED 
+(
+	[MenuSalesId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResMainCategoryCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResMainCategoryCodes](
+	[MainCategoryId] [numeric](3, 0) NOT NULL,
+	[MainCategoryNameA] [varchar](150) NULL,
+	[MainCategoryNameE] [varchar](150) NULL,
+	[PrintGroupNo] [numeric](3, 0) NULL,
+	[ShowInInvoice] [numeric](1, 0) NULL,
+	[MainImage] [image] NULL,
+	[TypeId] [numeric](1, 0) NULL,
+	[UserName] [varchar](100) NULL,
+	[InsertDt] [datetime] NULL,
+ CONSTRAINT [PK_ResITEM_MAINCodes] PRIMARY KEY CLUSTERED 
+(
+	[MainCategoryId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY] TEXTIMAGE_ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„Ã„Ê⁄Â «·—∆Ì”ÌÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResMainCategoryCodes', @level2type=N'COLUMN',@level2name=N'MainCategoryId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·„Ã„Ê⁄Â «·—∆Ì”ÌÂ ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResMainCategoryCodes', @level2type=N'COLUMN',@level2name=N'MainCategoryNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·„Ã„Ê⁄Â «·—∆Ì”ÌÂ «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResMainCategoryCodes', @level2type=N'COLUMN',@level2name=N'MainCategoryNameE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'„Ã„Ê⁄Â ÿ»«⁄Â «’‰«› «Ê—œ— «·„ÿ»Œ ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResMainCategoryCodes', @level2type=N'COLUMN',@level2name=N'PrintGroupNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'0- not show in invoice 1-show in invoice' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResMainCategoryCodes', @level2type=N'COLUMN',@level2name=N'ShowInInvoice'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'’Ê—Â «·„Ã„Ê⁄Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResMainCategoryCodes', @level2type=N'COLUMN',@level2name=N'MainImage'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'‰Ê⁄ «·„Ã„Ê⁄Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResMainCategoryCodes', @level2type=N'COLUMN',@level2name=N'TypeId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResMainCategoryCodes', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«œŒ«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResMainCategoryCodes', @level2type=N'COLUMN',@level2name=N'InsertDt'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResJOBCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResJOBCodes](
+	[JobId] [numeric](3, 0) NOT NULL,
+	[JobNameA] [varchar](100) NULL,
+	[JobNameE] [varchar](100) NULL,
+	[UserName] [varchar](100) NULL,
+	[InsertDt] [datetime] NULL,
+ CONSTRAINT [PK_ResJOBCodes] PRIMARY KEY CLUSTERED 
+(
+	[JobId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·ÊŸÌ›Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResJOBCodes', @level2type=N'COLUMN',@level2name=N'JobId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·Ê’› ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResJOBCodes', @level2type=N'COLUMN',@level2name=N'JobNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·Ê’› «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResJOBCodes', @level2type=N'COLUMN',@level2name=N'JobNameE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResJOBCodes', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«œŒ«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResJOBCodes', @level2type=N'COLUMN',@level2name=N'InsertDt'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResItemTypes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResItemTypes](
+	[TypeId] [numeric](1, 0) NOT NULL,
+	[TypeNameA] [varchar](50) NULL,
+	[TypeNameE] [varchar](50) NULL,
+ CONSTRAINT [PK_ResItemTypes] PRIMARY KEY CLUSTERED 
+(
+	[TypeId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'‰Ê⁄ «·’‰›' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemTypes', @level2type=N'COLUMN',@level2name=N'TypeId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·‰Ê⁄ ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemTypes', @level2type=N'COLUMN',@level2name=N'TypeNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·‰Ê⁄ «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemTypes', @level2type=N'COLUMN',@level2name=N'TypeNameE'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResItemCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResItemCodes](
+	[ItemId] [numeric](12, 0) NOT NULL,
+	[MainCategoryId] [numeric](3, 0) NOT NULL,
+	[SubCategoryId] [numeric](7, 0) NOT NULL,
+	[PropertyId] [numeric](3, 0) NULL,
+	[Property2Id] [numeric](3, 0) NULL,
+	[MenuSalesId] [numeric](3, 0) NULL,
+	[CostPrice] [numeric](12, 2) NULL,
+	[SalesPrice] [numeric](12, 2) NULL,
+	[OpenQty] [numeric](12, 2) NULL,
+	[CurrentQty] [numeric](12, 2) NULL,
+	[Comment] [varchar](100) NULL,
+	[UserName] [varchar](100) NULL,
+	[InsertDt] [datetime] NULL,
+ CONSTRAINT [PK_ResItemCodes] PRIMARY KEY CLUSTERED 
+(
+	[ItemId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·’‰›' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemCodes', @level2type=N'COLUMN',@level2name=N'ItemId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·„Ã„Ê⁄Â «·—∆Ì”ÌÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemCodes', @level2type=N'COLUMN',@level2name=N'MainCategoryId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·„Ã„Ê⁄Â «·›—⁄ÌÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemCodes', @level2type=N'COLUMN',@level2name=N'SubCategoryId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·Œ«’ÌÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemCodes', @level2type=N'COLUMN',@level2name=N'PropertyId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·Œ«’ÌÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemCodes', @level2type=N'COLUMN',@level2name=N'Property2Id'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'”⁄— «· ﬂ·›Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemCodes', @level2type=N'COLUMN',@level2name=N'CostPrice'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'”⁄— «·»Ì⁄' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemCodes', @level2type=N'COLUMN',@level2name=N'SalesPrice'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—’Ìœ «Ê· «·„œÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemCodes', @level2type=N'COLUMN',@level2name=N'OpenQty'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·—’Ìœ «·Õ«·Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemCodes', @level2type=N'COLUMN',@level2name=N'CurrentQty'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'»Ì«‰' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemCodes', @level2type=N'COLUMN',@level2name=N'Comment'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemCodes', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«œŒ«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResItemCodes', @level2type=N'COLUMN',@level2name=N'InsertDt'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResInstructionCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResInstructionCodes](
+	[InstructionId] [numeric](3, 0) IDENTITY(1,1) NOT NULL,
+	[InstructionNameA] [varchar](100) NULL,
+	[InstructionNameE] [varchar](100) NULL,
+ CONSTRAINT [PK_ResInstructionCodes] PRIMARY KEY CLUSTERED 
+(
+	[InstructionId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResGovCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResGovCodes](
+	[GovId] [numeric](3, 0) NOT NULL,
+	[GovNameA] [varchar](150) NULL,
+	[GovNameE] [varchar](150) NULL,
+	[UserName] [varchar](100) NULL,
+	[InsertDt] [datetime] NULL,
+ CONSTRAINT [PK_ResGovCodes] PRIMARY KEY CLUSTERED 
+(
+	[GovId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·„Õ«›ŸÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResGovCodes', @level2type=N'COLUMN',@level2name=N'GovId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·„Õ«›ŸÂ ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResGovCodes', @level2type=N'COLUMN',@level2name=N'GovNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·„Õ«›ŸÂ «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResGovCodes', @level2type=N'COLUMN',@level2name=N'GovNameE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResGovCodes', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«œŒ«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResGovCodes', @level2type=N'COLUMN',@level2name=N'InsertDt'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResEmployeeBasic]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResEmployeeBasic](
+	[EmpId] [numeric](7, 0) NOT NULL,
+	[EmpName] [varchar](150) NULL,
+	[JobId] [numeric](3, 0) NULL,
+	[WorkStatus] [numeric](1, 0) NULL,
+	[Tel1] [varchar](15) NULL,
+	[Tel2] [varchar](15) NULL,
+	[InsertDt] [datetime] NULL,
+	[UserName] [varchar](100) NULL,
+ CONSTRAINT [PK_ResEmployeeBasic] PRIMARY KEY CLUSTERED 
+(
+	[EmpId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·„ÊŸ›' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResEmployeeBasic', @level2type=N'COLUMN',@level2name=N'EmpId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·„ÊŸ›' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResEmployeeBasic', @level2type=N'COLUMN',@level2name=N'EmpName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·ÊŸÌ›Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResEmployeeBasic', @level2type=N'COLUMN',@level2name=N'JobId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'0-in work 9-out' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResEmployeeBasic', @level2type=N'COLUMN',@level2name=N'WorkStatus'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' ·Ì›Ê‰ 1' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResEmployeeBasic', @level2type=N'COLUMN',@level2name=N'Tel1'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' ·Ì›Ê‰ 2' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResEmployeeBasic', @level2type=N'COLUMN',@level2name=N'Tel2'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«œŒ«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResEmployeeBasic', @level2type=N'COLUMN',@level2name=N'InsertDt'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResEmployeeBasic', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResDeliveryStatus]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResDeliveryStatus](
+	[DeliveryStatus] [numeric](1, 0) NOT NULL,
+	[DeliveryStatusNameA] [varchar](50) NULL,
+	[DeliveryStatusNameE] [varchar](50) NULL,
+ CONSTRAINT [PK_ResDeliveryStatus] PRIMARY KEY CLUSTERED 
+(
+	[DeliveryStatus] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Õ«·Â «·œ·Ì›—Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResDeliveryStatus', @level2type=N'COLUMN',@level2name=N'DeliveryStatus'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·Õ«·Â ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResDeliveryStatus', @level2type=N'COLUMN',@level2name=N'DeliveryStatusNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·Õ«·Â «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResDeliveryStatus', @level2type=N'COLUMN',@level2name=N'DeliveryStatusNameE'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResCustomerTypes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResCustomerTypes](
+	[CustType] [numeric](1, 0) NOT NULL,
+	[CustTypeNameA] [varchar](50) NULL,
+	[CustTypeNameE] [varchar](50) NULL,
+ CONSTRAINT [PK_ResCustomerTypes] PRIMARY KEY CLUSTERED 
+(
+	[CustType] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResCustomer]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResCustomer](
+	[CustId] [numeric](9, 0) IDENTITY(1,1) NOT NULL,
+	[CustNameA] [varchar](80) NULL,
+	[CustNameE] [varchar](80) NULL,
+	[CustAddressA] [nvarchar](150) NULL,
+	[CustAddressE] [nvarchar](150) NULL,
+	[GovId] [numeric](3, 0) NULL,
+	[AreaId] [numeric](3, 0) NULL,
+	[Street] [nvarchar](50) NULL,
+	[BuildingNo] [int] NULL,
+	[ApartmentNo] [int] NULL,
+	[Tel1] [varchar](15) NULL,
+	[Tel2] [varchar](15) NULL,
+	[Tel3] [varchar](15) NULL,
+	[Comment] [nvarchar](150) NULL,
+	[UserName] [varchar](100) NULL,
+	[InsertDt] [datetime] NULL,
+	[CustType] [numeric](1, 0) NULL,
+ CONSTRAINT [PK_ResCustomer] PRIMARY KEY CLUSTERED 
+(
+	[CustId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·⁄„Ì·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'CustId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·⁄„Ì· ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'CustNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·⁄„Ì· «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'CustNameE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·⁄‰Ê«‰ ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'CustAddressA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·⁄‰Ê«‰ «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'CustAddressE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·„Õ«›ŸÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'GovId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·„‰ÿﬁÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'AreaId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·‘«—⁄' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'Street'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·„»‰Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'BuildingNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'—ﬁ„ «·‘ﬁÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'ApartmentNo'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' ·Ì›Ê‰ 1' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'Tel1'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' ·Ì›Ê‰ 2' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'Tel2'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' ·Ì›Ê‰ 3' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'Tel3'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'„·«ÕŸ« ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'Comment'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«œŒ«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCustomer', @level2type=N'COLUMN',@level2name=N'InsertDt'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResCookStatusCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResCookStatusCodes](
+	[CookStatus] [numeric](1, 0) NOT NULL,
+	[CookStatusNameA] [varchar](50) NULL,
+	[CookStatusNameE] [varchar](50) NULL,
+ CONSTRAINT [PK_ResKITCHEN_STATUSCodes] PRIMARY KEY CLUSTERED 
+(
+	[CookStatus] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Õ«·Â «·„ÿ»Œ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCookStatusCodes', @level2type=N'COLUMN',@level2name=N'CookStatus'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·Õ«·Â ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCookStatusCodes', @level2type=N'COLUMN',@level2name=N'CookStatusNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'Ê’› «·Õ«·Â «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResCookStatusCodes', @level2type=N'COLUMN',@level2name=N'CookStatusNameE'
+GO
+
+
+GO
+
+/****** Object:  Table [dbo].[ResAreaCodes]    Script Date: 02/26/2015 20:23:20 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[ResAreaCodes](
+	[GovId] [numeric](3, 0) NOT NULL,
+	[AreaId] [numeric](3, 0) NOT NULL,
+	[AreaNameA] [varchar](150) NULL,
+	[AreaNameE] [varchar](150) NULL,
+	[ServiceVal] [numeric](7, 2) NULL,
+	[UserName] [varchar](100) NULL,
+	[InsertDt] [datetime] NULL,
+ CONSTRAINT [PK_ResAreaCodes] PRIMARY KEY CLUSTERED 
+(
+	[GovId] ASC,
+	[AreaId] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·„Õ«›ŸÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResAreaCodes', @level2type=N'COLUMN',@level2name=N'GovId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬂÊœ «·„‰ÿﬁÂ' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResAreaCodes', @level2type=N'COLUMN',@level2name=N'AreaId'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·„‰ÿﬁÂ ⁄—»Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResAreaCodes', @level2type=N'COLUMN',@level2name=N'AreaNameA'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«”„ «·„‰ÿﬁÂ «‰Ã·Ì“Ï' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResAreaCodes', @level2type=N'COLUMN',@level2name=N'AreaNameE'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'ﬁÌ„Â «·Œœ„Â' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResAreaCodes', @level2type=N'COLUMN',@level2name=N'ServiceVal'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N'«·„” Œœ„' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResAreaCodes', @level2type=N'COLUMN',@level2name=N'UserName'
+GO
+
+EXEC sys.sp_addextendedproperty @name=N'MS_Description', @value=N' «—ÌŒ «·«œŒ«·' , @level0type=N'SCHEMA',@level0name=N'dbo', @level1type=N'TABLE',@level1name=N'ResAreaCodes', @level2type=N'COLUMN',@level2name=N'InsertDt'
+GO
+
+ALTER TABLE [dbo].[SecUsers] ADD  CONSTRAINT [DF_SecUsers_SwSpecialUser]  DEFAULT ((0)) FOR [SwSpecialUser]
+GO
+
+ALTER TABLE [dbo].[SecPermissions]  WITH CHECK ADD  CONSTRAINT [FK_SecPermissions_SecForms] FOREIGN KEY([ModuleNo], [FormNo])
+REFERENCES [dbo].[SecForms] ([ModuleNo], [FormNo])
+GO
+
+ALTER TABLE [dbo].[SecPermissions] CHECK CONSTRAINT [FK_SecPermissions_SecForms]
+GO
+
+ALTER TABLE [dbo].[SecPermissions]  WITH CHECK ADD  CONSTRAINT [FK_SecPermissions_SecUsers] FOREIGN KEY([UserName])
+REFERENCES [dbo].[SecUsers] ([UserName])
+GO
+
+ALTER TABLE [dbo].[SecPermissions] CHECK CONSTRAINT [FK_SecPermissions_SecUsers]
+GO
+
+ALTER TABLE [dbo].[SecPermissions] ADD  CONSTRAINT [DF_SecPermissions_UpdatSw]  DEFAULT ((0)) FOR [UpdatSw]
+GO
+
+ALTER TABLE [dbo].[SecPermissions] ADD  CONSTRAINT [DF_SecPermissions_UpdatSw1]  DEFAULT ((0)) FOR [InsertSw]
+GO
+
+ALTER TABLE [dbo].[SecPermissions] ADD  CONSTRAINT [DF_SecPermissions_UpdatSw2]  DEFAULT ((0)) FOR [DeleteSw]
+GO
+
+ALTER TABLE [dbo].[SecMenues]  WITH CHECK ADD  CONSTRAINT [FK_SecMenues_SecSystems] FOREIGN KEY([ModuleNo])
+REFERENCES [dbo].[SecSystems] ([ModuleNo])
+GO
+
+ALTER TABLE [dbo].[SecMenues] CHECK CONSTRAINT [FK_SecMenues_SecSystems]
+GO
+
+ALTER TABLE [dbo].[SecForms]  WITH CHECK ADD  CONSTRAINT [FK_SecForms_SecSystems] FOREIGN KEY([ModuleNo])
+REFERENCES [dbo].[SecSystems] ([ModuleNo])
+GO
+
+ALTER TABLE [dbo].[SecForms] CHECK CONSTRAINT [FK_SecForms_SecSystems]
+GO
+
+ALTER TABLE [dbo].[ResTablesCodes]  WITH CHECK ADD  CONSTRAINT [FK_ResTablesCodes_ResTablesStatusCodes] FOREIGN KEY([StatusId])
+REFERENCES [dbo].[ResTablesStatusCodes] ([StatusId])
+GO
+
+ALTER TABLE [dbo].[ResTablesCodes] CHECK CONSTRAINT [FK_ResTablesCodes_ResTablesStatusCodes]
+GO
+
+ALTER TABLE [dbo].[ResSusCategoryCodes]  WITH CHECK ADD  CONSTRAINT [FK_ResSusCategoryCodes_ResMainCategoryCodes] FOREIGN KEY([MainCategoryId])
+REFERENCES [dbo].[ResMainCategoryCodes] ([MainCategoryId])
+GO
+
+ALTER TABLE [dbo].[ResSusCategoryCodes] CHECK CONSTRAINT [FK_ResSusCategoryCodes_ResMainCategoryCodes]
+GO
+
+ALTER TABLE [dbo].[ResStoresCodes]  WITH CHECK ADD  CONSTRAINT [FK_ResStoresCodes_ResGovCodes] FOREIGN KEY([GovId])
+REFERENCES [dbo].[ResGovCodes] ([GovId])
+GO
+
+ALTER TABLE [dbo].[ResStoresCodes] CHECK CONSTRAINT [FK_ResStoresCodes_ResGovCodes]
+GO
+
+ALTER TABLE [dbo].[ResStoresCodes] ADD  CONSTRAINT [DF_STORESCodes_MinChargeVal]  DEFAULT ((0)) FOR [MinChargeVal]
+GO
+
+ALTER TABLE [dbo].[ResStoresCodes] ADD  CONSTRAINT [DF_STORESCodes_CloseSw]  DEFAULT ((0)) FOR [CloseSw]
+GO
+
+ALTER TABLE [dbo].[ResPayment]  WITH CHECK ADD  CONSTRAINT [FK_ResPayment_ResOrderHd1] FOREIGN KEY([OrederId])
+REFERENCES [dbo].[ResOrderHd] ([OrederId])
+GO
+
+ALTER TABLE [dbo].[ResPayment] CHECK CONSTRAINT [FK_ResPayment_ResOrderHd1]
+GO
+
+ALTER TABLE [dbo].[ResPayment] ADD  CONSTRAINT [DF_ResPayment_CashVal]  DEFAULT ((0)) FOR [CashVal]
+GO
+
+ALTER TABLE [dbo].[ResPayment] ADD  CONSTRAINT [DF_ResPayment_CardVal]  DEFAULT ((0)) FOR [CardVal]
+GO
+
+ALTER TABLE [dbo].[ResOrderStatus] ADD  CONSTRAINT [DF_ResOrderStatus_OrderStatus]  DEFAULT ((0)) FOR [OrderStatus]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd]  WITH CHECK ADD  CONSTRAINT [FK_ResOrderHd_ResDeliveryStatus] FOREIGN KEY([DeliveryStatus])
+REFERENCES [dbo].[ResDeliveryStatus] ([DeliveryStatus])
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] CHECK CONSTRAINT [FK_ResOrderHd_ResDeliveryStatus]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd]  WITH CHECK ADD  CONSTRAINT [FK_ResSALES_HD_ResCustomer] FOREIGN KEY([CustId])
+REFERENCES [dbo].[ResCustomer] ([CustId])
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] CHECK CONSTRAINT [FK_ResSALES_HD_ResCustomer]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd]  WITH CHECK ADD  CONSTRAINT [FK_ResSALES_HD_ResEmployeeBasic] FOREIGN KEY([DeliveryId])
+REFERENCES [dbo].[ResEmployeeBasic] ([EmpId])
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] CHECK CONSTRAINT [FK_ResSALES_HD_ResEmployeeBasic]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd]  WITH CHECK ADD  CONSTRAINT [FK_ResSALES_HD_ResOrderStatus] FOREIGN KEY([OrderStatus])
+REFERENCES [dbo].[ResOrderStatus] ([OrderStatus])
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] CHECK CONSTRAINT [FK_ResSALES_HD_ResOrderStatus]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd]  WITH CHECK ADD  CONSTRAINT [FK_ResSALES_HD_ResSALES_TYPES] FOREIGN KEY([OrderType])
+REFERENCES [dbo].[ResOrderTypes] ([OrderType])
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] CHECK CONSTRAINT [FK_ResSALES_HD_ResSALES_TYPES]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd]  WITH CHECK ADD  CONSTRAINT [FK_ResSALES_HD_ResShiftsCodes] FOREIGN KEY([ShiftId])
+REFERENCES [dbo].[ResShiftsCodes] ([ShiftId])
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] CHECK CONSTRAINT [FK_ResSALES_HD_ResShiftsCodes]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd]  WITH CHECK ADD  CONSTRAINT [FK_ResSALES_HD_ResStoresCodes] FOREIGN KEY([BranchId])
+REFERENCES [dbo].[ResStoresCodes] ([BranchId])
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] CHECK CONSTRAINT [FK_ResSALES_HD_ResStoresCodes]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd]  WITH CHECK ADD  CONSTRAINT [FK_ResSALES_HD_ResTablesCodes] FOREIGN KEY([TableNo])
+REFERENCES [dbo].[ResTablesCodes] ([TableNo])
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] CHECK CONSTRAINT [FK_ResSALES_HD_ResTablesCodes]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] ADD  CONSTRAINT [DF_ResSALES_HD_totalVal]  DEFAULT ((0)) FOR [TotalPrice]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] ADD  CONSTRAINT [DF_ResOrderHd_PriceAdd]  DEFAULT ((0)) FOR [PriceAdd]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] ADD  CONSTRAINT [DF_ResSALES_HD_DiscountRatio]  DEFAULT ((0)) FOR [DiscountRatio]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] ADD  CONSTRAINT [DF_ResSALES_HD_DiscountVal]  DEFAULT ((0)) FOR [DiscountVal]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] ADD  CONSTRAINT [DF_ResSALES_HD_netVal]  DEFAULT ((0)) FOR [NetPrice]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] ADD  CONSTRAINT [DF_ResSALES_HD_CashVal]  DEFAULT ((0)) FOR [CashVal]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] ADD  CONSTRAINT [DF_ResSALES_HD_RemainderVal]  DEFAULT ((0)) FOR [RemainderVal]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] ADD  CONSTRAINT [DF_ResSALES_HD_SwDelete]  DEFAULT ((0)) FOR [SwDelete]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] ADD  CONSTRAINT [DF_ResSALES_HD_OrderStatus]  DEFAULT ((0)) FOR [OrderStatus]
+GO
+
+ALTER TABLE [dbo].[ResOrderHd] ADD  CONSTRAINT [DF_ResOrderHd_delievery_status]  DEFAULT ((0)) FOR [DeliveryStatus]
+GO
+
+ALTER TABLE [dbo].[ResOrderDtlInstruction]  WITH CHECK ADD  CONSTRAINT [FK_ResOrderDtlInstruction_ResInstructionCodes] FOREIGN KEY([InstructionId])
+REFERENCES [dbo].[ResInstructionCodes] ([InstructionId])
+GO
+
+ALTER TABLE [dbo].[ResOrderDtlInstruction] CHECK CONSTRAINT [FK_ResOrderDtlInstruction_ResInstructionCodes]
+GO
+
+ALTER TABLE [dbo].[ResOrderDtlInstruction]  WITH CHECK ADD  CONSTRAINT [FK_ResOrderDtlInstruction_ResOrderDtl] FOREIGN KEY([OrederId], [SeqNo])
+REFERENCES [dbo].[ResOrderDtl] ([OrederId], [SeqNo])
+GO
+
+ALTER TABLE [dbo].[ResOrderDtlInstruction] CHECK CONSTRAINT [FK_ResOrderDtlInstruction_ResOrderDtl]
+GO
+
+ALTER TABLE [dbo].[ResOrderDtl]  WITH CHECK ADD  CONSTRAINT [FK_ResOrderDtl_ResOrderHd] FOREIGN KEY([OrederId])
+REFERENCES [dbo].[ResOrderHd] ([OrederId])
+GO
+
+ALTER TABLE [dbo].[ResOrderDtl] CHECK CONSTRAINT [FK_ResOrderDtl_ResOrderHd]
+GO
+
+ALTER TABLE [dbo].[ResOrderDtl]  WITH CHECK ADD  CONSTRAINT [FK_ResSALES_DTL_ResItemCodes] FOREIGN KEY([ItemId])
+REFERENCES [dbo].[ResItemCodes] ([ItemId])
+GO
+
+ALTER TABLE [dbo].[ResOrderDtl] CHECK CONSTRAINT [FK_ResSALES_DTL_ResItemCodes]
+GO
+
+ALTER TABLE [dbo].[ResOrderDtl]  WITH CHECK ADD  CONSTRAINT [FK_ResSALES_DTL_ResKITCHEN_STATUSCodes] FOREIGN KEY([CookStatus])
+REFERENCES [dbo].[ResCookStatusCodes] ([CookStatus])
+GO
+
+ALTER TABLE [dbo].[ResOrderDtl] CHECK CONSTRAINT [FK_ResSALES_DTL_ResKITCHEN_STATUSCodes]
+GO
+
+ALTER TABLE [dbo].[ResOrderDtl] ADD  CONSTRAINT [DF_ResSALES_DTLQty]  DEFAULT ((0)) FOR [Qty]
+GO
+
+ALTER TABLE [dbo].[ResOrderDtl] ADD  CONSTRAINT [DF_ResSALES_DTLPrice]  DEFAULT ((0)) FOR [Price]
+GO
+
+ALTER TABLE [dbo].[ResOrderDtl] ADD  CONSTRAINT [DF_ResSALES_DTL_kitchen_order_sw]  DEFAULT ((0)) FOR [CookStatus]
+GO
+
+ALTER TABLE [dbo].[ResOrderDtl] ADD  CONSTRAINT [DF_ResSALES_DTL_kitchen_status1]  DEFAULT ((0)) FOR [CookStatusTime]
+GO
+
+ALTER TABLE [dbo].[ResMainCategoryCodes]  WITH CHECK ADD  CONSTRAINT [FK_ResMainCategoryCodes_ResItemTypes] FOREIGN KEY([TypeId])
+REFERENCES [dbo].[ResItemTypes] ([TypeId])
+GO
+
+ALTER TABLE [dbo].[ResMainCategoryCodes] CHECK CONSTRAINT [FK_ResMainCategoryCodes_ResItemTypes]
+GO
+
+ALTER TABLE [dbo].[ResMainCategoryCodes] ADD  CONSTRAINT [DF_ResITEM_MAINCodes_PrintGroupNo]  DEFAULT ((0)) FOR [PrintGroupNo]
+GO
+
+ALTER TABLE [dbo].[ResMainCategoryCodes] ADD  CONSTRAINT [DF_ResITEM_MAINCodes_ShowInInvoice]  DEFAULT ((1)) FOR [ShowInInvoice]
+GO
+
+ALTER TABLE [dbo].[ResMainCategoryCodes] ADD  CONSTRAINT [DF_ResMainCategoryCodes_TypeId]  DEFAULT ((1)) FOR [TypeId]
+GO
+
+ALTER TABLE [dbo].[ResItemCodes]  WITH CHECK ADD  CONSTRAINT [FK_ResItemCodes_ResMenuSalesCodes] FOREIGN KEY([MenuSalesId])
+REFERENCES [dbo].[ResMenuSalesCodes] ([MenuSalesId])
+GO
+
+ALTER TABLE [dbo].[ResItemCodes] CHECK CONSTRAINT [FK_ResItemCodes_ResMenuSalesCodes]
+GO
+
+ALTER TABLE [dbo].[ResItemCodes]  WITH CHECK ADD  CONSTRAINT [FK_ResItemCodes_ResProperty2Codes] FOREIGN KEY([Property2Id])
+REFERENCES [dbo].[ResProperty2Codes] ([Property2Id])
+GO
+
+ALTER TABLE [dbo].[ResItemCodes] CHECK CONSTRAINT [FK_ResItemCodes_ResProperty2Codes]
+GO
+
+ALTER TABLE [dbo].[ResItemCodes]  WITH CHECK ADD  CONSTRAINT [FK_ResItemCodes_ResPropertyCodes] FOREIGN KEY([PropertyId])
+REFERENCES [dbo].[ResPropertyCodes] ([PropertyId])
+GO
+
+ALTER TABLE [dbo].[ResItemCodes] CHECK CONSTRAINT [FK_ResItemCodes_ResPropertyCodes]
+GO
+
+ALTER TABLE [dbo].[ResItemCodes]  WITH CHECK ADD  CONSTRAINT [FK_ResItemCodes_ResSusCategoryCodes] FOREIGN KEY([MainCategoryId], [SubCategoryId])
+REFERENCES [dbo].[ResSusCategoryCodes] ([MainCategoryId], [SubCategoryId])
+GO
+
+ALTER TABLE [dbo].[ResItemCodes] CHECK CONSTRAINT [FK_ResItemCodes_ResSusCategoryCodes]
+GO
+
+ALTER TABLE [dbo].[ResItemCodes] ADD  CONSTRAINT [DF_ResItemCodes_CostPrice]  DEFAULT ((0)) FOR [CostPrice]
+GO
+
+ALTER TABLE [dbo].[ResItemCodes] ADD  CONSTRAINT [DF_Table3_CostPrice1]  DEFAULT ((0)) FOR [SalesPrice]
+GO
+
+ALTER TABLE [dbo].[ResItemCodes] ADD  CONSTRAINT [DF_ResItemCodes_OpenQty]  DEFAULT ((0)) FOR [OpenQty]
+GO
+
+ALTER TABLE [dbo].[ResItemCodes] ADD  CONSTRAINT [DF_ResItemCodes_CurrentQty]  DEFAULT ((0)) FOR [CurrentQty]
+GO
+
+ALTER TABLE [dbo].[ResEmployeeBasic]  WITH CHECK ADD  CONSTRAINT [FK_ResEmployeeBasic_ResJOBCodes] FOREIGN KEY([JobId])
+REFERENCES [dbo].[ResJOBCodes] ([JobId])
+GO
+
+ALTER TABLE [dbo].[ResEmployeeBasic] CHECK CONSTRAINT [FK_ResEmployeeBasic_ResJOBCodes]
+GO
+
+ALTER TABLE [dbo].[ResEmployeeBasic] ADD  CONSTRAINT [DF_ResEmployeeBasic_WorkStatus]  DEFAULT ((0)) FOR [WorkStatus]
+GO
+
+ALTER TABLE [dbo].[ResDeliveryStatus] ADD  CONSTRAINT [DF_ResDeliveryStatus_DeliveryStatus]  DEFAULT ((0)) FOR [DeliveryStatus]
+GO
+
+ALTER TABLE [dbo].[ResDeliveryStatus] ADD  CONSTRAINT [DF_Table1_DeliveryStatus1]  DEFAULT ((0)) FOR [DeliveryStatusNameA]
+GO
+
+ALTER TABLE [dbo].[ResDeliveryStatus] ADD  CONSTRAINT [DF_Table1_DeliveryStatusNameA1]  DEFAULT ((0)) FOR [DeliveryStatusNameE]
+GO
+
+ALTER TABLE [dbo].[ResCustomerTypes] ADD  CONSTRAINT [DF_ResCustomerTypes_CustType]  DEFAULT ((0)) FOR [CustType]
+GO
+
+ALTER TABLE [dbo].[ResCustomer]  WITH CHECK ADD  CONSTRAINT [FK_ResCustomer_ResAreaCodes] FOREIGN KEY([GovId], [AreaId])
+REFERENCES [dbo].[ResAreaCodes] ([GovId], [AreaId])
+GO
+
+ALTER TABLE [dbo].[ResCustomer] CHECK CONSTRAINT [FK_ResCustomer_ResAreaCodes]
+GO
+
+ALTER TABLE [dbo].[ResCustomer]  WITH CHECK ADD  CONSTRAINT [FK_ResCustomer_ResCustomerTypes] FOREIGN KEY([CustType])
+REFERENCES [dbo].[ResCustomerTypes] ([CustType])
+GO
+
+ALTER TABLE [dbo].[ResCustomer] CHECK CONSTRAINT [FK_ResCustomer_ResCustomerTypes]
+GO
+
+ALTER TABLE [dbo].[ResCustomer] ADD  CONSTRAINT [DF_ResCustomer_CustType]  DEFAULT ((0)) FOR [CustType]
+GO
+
+ALTER TABLE [dbo].[ResCookStatusCodes] ADD  CONSTRAINT [DF_ResKITCHEN_STATUSCodes_kitchen_status]  DEFAULT ((0)) FOR [CookStatus]
+GO
+
+ALTER TABLE [dbo].[ResAreaCodes]  WITH CHECK ADD  CONSTRAINT [FK_ResAreaCodes_ResGovCodes] FOREIGN KEY([GovId])
+REFERENCES [dbo].[ResGovCodes] ([GovId])
+GO
+
+ALTER TABLE [dbo].[ResAreaCodes] CHECK CONSTRAINT [FK_ResAreaCodes_ResGovCodes]
+GO
+
+

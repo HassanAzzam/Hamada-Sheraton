@@ -1,0 +1,422 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="res_for_sheratonModelStoreContainer" CdmEntityContainer="res_for_sheratonEntities">
+    <EntitySetMapping Name="ResAreaCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResAreaCode">
+        <MappingFragment StoreEntitySet="ResAreaCodes">
+          <ScalarProperty Name="GovId" ColumnName="GovId" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="AreaNameA" ColumnName="AreaNameA" />
+          <ScalarProperty Name="AreaNameE" ColumnName="AreaNameE" />
+          <ScalarProperty Name="ServiceVal" ColumnName="ServiceVal" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResCookStatusCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResCookStatusCode">
+        <MappingFragment StoreEntitySet="ResCookStatusCodes">
+          <ScalarProperty Name="CookStatus" ColumnName="CookStatus" />
+          <ScalarProperty Name="CookStatusNameA" ColumnName="CookStatusNameA" />
+          <ScalarProperty Name="CookStatusNameE" ColumnName="CookStatusNameE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResCustomers">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResCustomer">
+        <MappingFragment StoreEntitySet="ResCustomer">
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="CustNameA" ColumnName="CustNameA" />
+          <ScalarProperty Name="CustNameE" ColumnName="CustNameE" />
+          <ScalarProperty Name="CustAddressA" ColumnName="CustAddressA" />
+          <ScalarProperty Name="CustAddressE" ColumnName="CustAddressE" />
+          <ScalarProperty Name="GovId" ColumnName="GovId" />
+          <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+          <ScalarProperty Name="Street" ColumnName="Street" />
+          <ScalarProperty Name="BuildingNo" ColumnName="BuildingNo" />
+          <ScalarProperty Name="ApartmentNo" ColumnName="ApartmentNo" />
+          <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+          <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+          <ScalarProperty Name="Tel3" ColumnName="Tel3" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+          <ScalarProperty Name="CustType" ColumnName="CustType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResCustomerTypes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResCustomerType">
+        <MappingFragment StoreEntitySet="ResCustomerTypes">
+          <ScalarProperty Name="CustType" ColumnName="CustType" />
+          <ScalarProperty Name="CustTypeNameA" ColumnName="CustTypeNameA" />
+          <ScalarProperty Name="CustTypeNameE" ColumnName="CustTypeNameE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResDeliveryStatus">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResDeliveryStatu">
+        <MappingFragment StoreEntitySet="ResDeliveryStatus">
+          <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+          <ScalarProperty Name="DeliveryStatusNameA" ColumnName="DeliveryStatusNameA" />
+          <ScalarProperty Name="DeliveryStatusNameE" ColumnName="DeliveryStatusNameE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResEmployeeBasics">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResEmployeeBasic">
+        <MappingFragment StoreEntitySet="ResEmployeeBasic">
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+          <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+          <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+          <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResGovCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResGovCode">
+        <MappingFragment StoreEntitySet="ResGovCodes">
+          <ScalarProperty Name="GovId" ColumnName="GovId" />
+          <ScalarProperty Name="GovNameA" ColumnName="GovNameA" />
+          <ScalarProperty Name="GovNameE" ColumnName="GovNameE" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResInstructionCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResInstructionCode">
+        <MappingFragment StoreEntitySet="ResInstructionCodes">
+          <ScalarProperty Name="InstructionId" ColumnName="InstructionId" />
+          <ScalarProperty Name="InstructionNameA" ColumnName="InstructionNameA" />
+          <ScalarProperty Name="InstructionNameE" ColumnName="InstructionNameE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResItemCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResItemCode">
+        <MappingFragment StoreEntitySet="ResItemCodes">
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="MainCategoryId" ColumnName="MainCategoryId" />
+          <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+          <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+          <ScalarProperty Name="Property2Id" ColumnName="Property2Id" />
+          <ScalarProperty Name="MenuSalesId" ColumnName="MenuSalesId" />
+          <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
+          <ScalarProperty Name="SalesPrice" ColumnName="SalesPrice" />
+          <ScalarProperty Name="OpenQty" ColumnName="OpenQty" />
+          <ScalarProperty Name="CurrentQty" ColumnName="CurrentQty" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResItemTypes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResItemType">
+        <MappingFragment StoreEntitySet="ResItemTypes">
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="TypeNameA" ColumnName="TypeNameA" />
+          <ScalarProperty Name="TypeNameE" ColumnName="TypeNameE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResJOBCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResJOBCode">
+        <MappingFragment StoreEntitySet="ResJOBCodes">
+          <ScalarProperty Name="JobId" ColumnName="JobId" />
+          <ScalarProperty Name="JobNameA" ColumnName="JobNameA" />
+          <ScalarProperty Name="JobNameE" ColumnName="JobNameE" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResMainCategoryCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResMainCategoryCode">
+        <MappingFragment StoreEntitySet="ResMainCategoryCodes">
+          <ScalarProperty Name="MainCategoryId" ColumnName="MainCategoryId" />
+          <ScalarProperty Name="MainCategoryNameA" ColumnName="MainCategoryNameA" />
+          <ScalarProperty Name="MainCategoryNameE" ColumnName="MainCategoryNameE" />
+          <ScalarProperty Name="PrintGroupNo" ColumnName="PrintGroupNo" />
+          <ScalarProperty Name="ShowInInvoice" ColumnName="ShowInInvoice" />
+          <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+          <ScalarProperty Name="CountableStatus" ColumnName="CountableStatus" />
+          <ScalarProperty Name="MainImage" ColumnName="MainImage" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResMenuSalesCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResMenuSalesCode">
+        <MappingFragment StoreEntitySet="ResMenuSalesCodes">
+          <ScalarProperty Name="MenuSalesId" ColumnName="MenuSalesId" />
+          <ScalarProperty Name="MenuSalesNameA" ColumnName="MenuSalesNameA" />
+          <ScalarProperty Name="MenuSalesNameE" ColumnName="MenuSalesNameE" />
+          <ScalarProperty Name="seq" ColumnName="seq" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResOrderDtls">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResOrderDtl">
+        <MappingFragment StoreEntitySet="ResOrderDtl">
+          <ScalarProperty Name="OrederId" ColumnName="OrederId" />
+          <ScalarProperty Name="SeqNo" ColumnName="SeqNo" />
+          <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+          <ScalarProperty Name="CookStatus" ColumnName="CookStatus" />
+          <ScalarProperty Name="CookStatusTime" ColumnName="CookStatusTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResOrderHds">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResOrderHd">
+        <MappingFragment StoreEntitySet="ResOrderHd">
+          <ScalarProperty Name="OrederId" ColumnName="OrederId" />
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+          <ScalarProperty Name="OrderDt" ColumnName="OrderDt" />
+          <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+          <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="CustId" ColumnName="CustId" />
+          <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+          <ScalarProperty Name="PriceAdd" ColumnName="PriceAdd" />
+          <ScalarProperty Name="DiscountRatio" ColumnName="DiscountRatio" />
+          <ScalarProperty Name="DiscountVal" ColumnName="DiscountVal" />
+          <ScalarProperty Name="ServiceVal" ColumnName="ServiceVal" />
+          <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+          <ScalarProperty Name="CashVal" ColumnName="CashVal" />
+          <ScalarProperty Name="RemainderVal" ColumnName="RemainderVal" />
+          <ScalarProperty Name="SwDelete" ColumnName="SwDelete" />
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="DeliveryId" ColumnName="DeliveryId" />
+          <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+          <ScalarProperty Name="ToDeliveryTime" ColumnName="ToDeliveryTime" />
+          <ScalarProperty Name="DeliveryTimeRequired" ColumnName="DeliveryTimeRequired" />
+          <ScalarProperty Name="FromDeliveryTime" ColumnName="FromDeliveryTime" />
+          <ScalarProperty Name="TableNo" ColumnName="TableNo" />
+          <ScalarProperty Name="PeopleCount" ColumnName="PeopleCount" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserNameDeleted" ColumnName="UserNameDeleted" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResOrderStatus">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResOrderStatu">
+        <MappingFragment StoreEntitySet="ResOrderStatus">
+          <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+          <ScalarProperty Name="StatusNameA" ColumnName="StatusNameA" />
+          <ScalarProperty Name="StatusNameE" ColumnName="StatusNameE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResOrderTypes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResOrderType">
+        <MappingFragment StoreEntitySet="ResOrderTypes">
+          <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+          <ScalarProperty Name="SaleNameA" ColumnName="SaleNameA" />
+          <ScalarProperty Name="SaleNameE" ColumnName="SaleNameE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResPayments">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResPayment">
+        <MappingFragment StoreEntitySet="ResPayment">
+          <ScalarProperty Name="DocNo" ColumnName="DocNo" />
+          <ScalarProperty Name="OrederId" ColumnName="OrederId" />
+          <ScalarProperty Name="CashVal" ColumnName="CashVal" />
+          <ScalarProperty Name="CardVal" ColumnName="CardVal" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResProperty2Codes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResProperty2Codes">
+        <MappingFragment StoreEntitySet="ResProperty2Codes">
+          <ScalarProperty Name="Property2Id" ColumnName="Property2Id" />
+          <ScalarProperty Name="Property2NameA" ColumnName="Property2NameA" />
+          <ScalarProperty Name="Property2NameE" ColumnName="Property2NameE" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResPropertyCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResPropertyCode">
+        <MappingFragment StoreEntitySet="ResPropertyCodes">
+          <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+          <ScalarProperty Name="PropertyNameA" ColumnName="PropertyNameA" />
+          <ScalarProperty Name="PropertyNameE" ColumnName="PropertyNameE" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResShiftsCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResShiftsCode">
+        <MappingFragment StoreEntitySet="ResShiftsCodes">
+          <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+          <ScalarProperty Name="ShiftNameE" ColumnName="ShiftNameE" />
+          <ScalarProperty Name="ShiftNamea" ColumnName="ShiftNamea" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResStoresCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResStoresCode">
+        <MappingFragment StoreEntitySet="ResStoresCodes">
+          <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+          <ScalarProperty Name="BranchNameA" ColumnName="BranchNameA" />
+          <ScalarProperty Name="BranchNameE" ColumnName="BranchNameE" />
+          <ScalarProperty Name="GovId" ColumnName="GovId" />
+          <ScalarProperty Name="AddressA" ColumnName="AddressA" />
+          <ScalarProperty Name="AddressE" ColumnName="AddressE" />
+          <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+          <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+          <ScalarProperty Name="Tel3" ColumnName="Tel3" />
+          <ScalarProperty Name="ServiceRatio" ColumnName="ServiceRatio" />
+          <ScalarProperty Name="MinChargeVal" ColumnName="MinChargeVal" />
+          <ScalarProperty Name="StartDt" ColumnName="StartDt" />
+          <ScalarProperty Name="CloseSw" ColumnName="CloseSw" />
+          <ScalarProperty Name="CloseDt" ColumnName="CloseDt" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResTablesCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResTablesCode">
+        <MappingFragment StoreEntitySet="ResTablesCodes">
+          <ScalarProperty Name="TableNo" ColumnName="TableNo" />
+          <ScalarProperty Name="TableName" ColumnName="TableName" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResTablesStatusCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResTablesStatusCode">
+        <MappingFragment StoreEntitySet="ResTablesStatusCodes">
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="StatusDesc" ColumnName="StatusDesc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResTransTypes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResTransType">
+        <MappingFragment StoreEntitySet="ResTransTypes">
+          <ScalarProperty Name="trans_type" ColumnName="trans_type" />
+          <ScalarProperty Name="TransNameE" ColumnName="TransNameE" />
+          <ScalarProperty Name="TransNameA" ColumnName="TransNameA" />
+          <ScalarProperty Name="TransFunction" ColumnName="TransFunction" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ResWorkStatus">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResWorkStatu">
+        <MappingFragment StoreEntitySet="ResWorkStatus">
+          <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+          <ScalarProperty Name="WorkStatusNameA" ColumnName="WorkStatusNameA" />
+          <ScalarProperty Name="WorkStatusNameE" ColumnName="WorkStatusNameE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecForms">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.SecForm">
+        <MappingFragment StoreEntitySet="SecForms">
+          <ScalarProperty Name="ModuleNo" ColumnName="ModuleNo" />
+          <ScalarProperty Name="FormNo" ColumnName="FormNo" />
+          <ScalarProperty Name="FormNameA" ColumnName="FormNameA" />
+          <ScalarProperty Name="FormNameE" ColumnName="FormNameE" />
+          <ScalarProperty Name="FormUrl" ColumnName="FormUrl" />
+          <ScalarProperty Name="MenuNo" ColumnName="MenuNo" />
+          <ScalarProperty Name="rank" ColumnName="rank" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecMenues">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.SecMenue">
+        <MappingFragment StoreEntitySet="SecMenues">
+          <ScalarProperty Name="ModuleNo" ColumnName="ModuleNo" />
+          <ScalarProperty Name="MenuNo" ColumnName="MenuNo" />
+          <ScalarProperty Name="MenuNameA" ColumnName="MenuNameA" />
+          <ScalarProperty Name="MenuNameE" ColumnName="MenuNameE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecPermissions">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.SecPermission">
+        <MappingFragment StoreEntitySet="SecPermissions">
+          <ScalarProperty Name="ModuleNo" ColumnName="ModuleNo" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="FormNo" ColumnName="FormNo" />
+          <ScalarProperty Name="UpdatSw" ColumnName="UpdatSw" />
+          <ScalarProperty Name="InsertSw" ColumnName="InsertSw" />
+          <ScalarProperty Name="DeleteSw" ColumnName="DeleteSw" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecSystems">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.SecSystem">
+        <MappingFragment StoreEntitySet="SecSystems">
+          <ScalarProperty Name="ModuleNo" ColumnName="ModuleNo" />
+          <ScalarProperty Name="ModuleNameA" ColumnName="ModuleNameA" />
+          <ScalarProperty Name="ModuleNameE" ColumnName="ModuleNameE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SecUsers">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.SecUser">
+        <MappingFragment StoreEntitySet="SecUsers">
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="UserPasswd" ColumnName="UserPasswd" />
+          <ScalarProperty Name="SwSpecialUser" ColumnName="SwSpecialUser" />
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+          <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="ResOrderDtlInstruction" TypeName="res_for_sheratonModel.ResOrderDtlInstruction" StoreEntitySet="ResOrderDtlInstruction">
+      <EndProperty Name="ResInstructionCodes">
+        <ScalarProperty Name="InstructionId" ColumnName="InstructionId" />
+      </EndProperty>
+      <EndProperty Name="ResOrderDtl">
+        <ScalarProperty Name="OrederId" ColumnName="OrederId" />
+        <ScalarProperty Name="SeqNo" ColumnName="SeqNo" />
+      </EndProperty>
+    </AssociationSetMapping>
+    <EntitySetMapping Name="ResSubCategoryCodes">
+      <EntityTypeMapping TypeName="res_for_sheratonModel.ResSubCategoryCode">
+        <MappingFragment StoreEntitySet="ResSubCategoryCodes">
+          <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="SubImage" ColumnName="SubImage" />
+          <ScalarProperty Name="SubCategoryNameE" ColumnName="SubCategoryNameE" />
+          <ScalarProperty Name="SubCategoryNameA" ColumnName="SubCategoryNameA" />
+          <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+          <ScalarProperty Name="MainCategoryId" ColumnName="MainCategoryId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

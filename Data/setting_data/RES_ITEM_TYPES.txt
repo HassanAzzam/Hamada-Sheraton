@@ -1,0 +1,4 @@
+0	Ûםׁ דÚׁÝ	not defined
+1	דהÊּ	product
+2	ד־ׂהל	stock
+NULL	NULL	NULL

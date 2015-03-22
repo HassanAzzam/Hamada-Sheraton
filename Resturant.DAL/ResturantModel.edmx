@@ -1,0 +1,2311 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="res_for_sheratonModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ResAreaCodes">
+          <Key>
+            <PropertyRef Name="GovId" />
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="GovId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="AreaId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="AreaNameA" Type="varchar" MaxLength="150" />
+          <Property Name="AreaNameE" Type="varchar" MaxLength="150" />
+          <Property Name="ServiceVal" Type="numeric" Precision="7" Scale="2" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="InsertDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ResCookStatusCodes">
+          <Key>
+            <PropertyRef Name="CookStatus" />
+          </Key>
+          <Property Name="CookStatus" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="CookStatusNameA" Type="varchar" MaxLength="50" />
+          <Property Name="CookStatusNameE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ResCustomer">
+          <Key>
+            <PropertyRef Name="CustId" />
+          </Key>
+          <Property Name="CustId" Type="numeric" Precision="9" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustNameA" Type="varchar" MaxLength="80" />
+          <Property Name="CustNameE" Type="varchar" MaxLength="80" />
+          <Property Name="CustAddressA" Type="nvarchar" MaxLength="150" />
+          <Property Name="CustAddressE" Type="nvarchar" MaxLength="150" />
+          <Property Name="GovId" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="AreaId" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="Street" Type="nvarchar" MaxLength="50" />
+          <Property Name="BuildingNo" Type="int" />
+          <Property Name="ApartmentNo" Type="int" />
+          <Property Name="Tel1" Type="varchar" MaxLength="15" />
+          <Property Name="Tel2" Type="varchar" MaxLength="15" />
+          <Property Name="Tel3" Type="varchar" MaxLength="15" />
+          <Property Name="Comment" Type="nvarchar" MaxLength="150" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="InsertDt" Type="datetime" />
+          <Property Name="CustType" Type="numeric" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityType Name="ResCustomerTypes">
+          <Key>
+            <PropertyRef Name="CustType" />
+          </Key>
+          <Property Name="CustType" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="CustTypeNameA" Type="varchar" MaxLength="50" />
+          <Property Name="CustTypeNameE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ResDeliveryStatus">
+          <Key>
+            <PropertyRef Name="DeliveryStatus" />
+          </Key>
+          <Property Name="DeliveryStatus" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="DeliveryStatusNameA" Type="varchar" MaxLength="50" />
+          <Property Name="DeliveryStatusNameE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ResEmployeeBasic">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="numeric" Precision="7" Scale="0" Nullable="false" />
+          <Property Name="EmpName" Type="varchar" MaxLength="150" />
+          <Property Name="JobId" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="WorkStatus" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="Tel1" Type="varchar" MaxLength="15" />
+          <Property Name="Tel2" Type="varchar" MaxLength="15" />
+          <Property Name="InsertDt" Type="datetime" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ResGovCodes">
+          <Key>
+            <PropertyRef Name="GovId" />
+          </Key>
+          <Property Name="GovId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="GovNameA" Type="varchar" MaxLength="150" />
+          <Property Name="GovNameE" Type="varchar" MaxLength="150" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="InsertDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ResInstructionCodes">
+          <Key>
+            <PropertyRef Name="InstructionId" />
+          </Key>
+          <Property Name="InstructionId" Type="numeric" Precision="3" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InstructionNameA" Type="varchar" MaxLength="100" />
+          <Property Name="InstructionNameE" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="ResItemCodes">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="ItemId" Type="numeric" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="MainCategoryId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="SubCategoryId" Type="numeric" Precision="7" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PropertyId" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="Property2Id" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="MenuSalesId" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="CostPrice" Type="numeric" Precision="12" Scale="2" />
+          <Property Name="SalesPrice" Type="numeric" Precision="12" Scale="2" />
+          <Property Name="OpenQty" Type="numeric" Precision="12" Scale="2" />
+          <Property Name="CurrentQty" Type="numeric" Precision="12" Scale="2" />
+          <Property Name="Comment" Type="varchar" MaxLength="100" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="InsertDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ResItemTypes">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="TypeNameA" Type="varchar" MaxLength="50" />
+          <Property Name="TypeNameE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ResJOBCodes">
+          <Key>
+            <PropertyRef Name="JobId" />
+          </Key>
+          <Property Name="JobId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="JobNameA" Type="varchar" MaxLength="100" />
+          <Property Name="JobNameE" Type="varchar" MaxLength="100" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="InsertDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ResMainCategoryCodes">
+          <Key>
+            <PropertyRef Name="MainCategoryId" />
+          </Key>
+          <Property Name="MainCategoryId" Type="numeric" Precision="3" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MainCategoryNameA" Type="varchar" MaxLength="150" />
+          <Property Name="MainCategoryNameE" Type="varchar" MaxLength="150" />
+          <Property Name="PrintGroupNo" Type="numeric" Precision="3" Scale="0" />
+          <Property Name="ShowInInvoice" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="TypeId" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="InsertDt" Type="datetime" />
+          <Property Name="CountableStatus" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="MainImage" Type="image" />
+        </EntityType>
+        <EntityType Name="ResMenuSalesCodes">
+          <Key>
+            <PropertyRef Name="MenuSalesId" />
+          </Key>
+          <Property Name="MenuSalesId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="MenuSalesNameA" Type="varchar" MaxLength="50" />
+          <Property Name="MenuSalesNameE" Type="varchar" MaxLength="50" />
+          <Property Name="seq" Type="numeric" Precision="3" Scale="0" />
+        </EntityType>
+        <EntityType Name="ResOrderDtl">
+          <Key>
+            <PropertyRef Name="OrederId" />
+            <PropertyRef Name="SeqNo" />
+          </Key>
+          <Property Name="OrederId" Type="numeric" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="SeqNo" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="ItemId" Type="numeric" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="Qty" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="Price" Type="numeric" Precision="12" Scale="2" />
+          <Property Name="CookStatus" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="CookStatusTime" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ResOrderDtlInstruction">
+          <Key>
+            <PropertyRef Name="OrederId" />
+            <PropertyRef Name="SeqNo" />
+            <PropertyRef Name="InstructionId" />
+          </Key>
+          <Property Name="OrederId" Type="numeric" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="SeqNo" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+          <Property Name="InstructionId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+        </EntityType>
+        <EntityType Name="ResOrderHd">
+          <Key>
+            <PropertyRef Name="OrederId" />
+          </Key>
+          <Property Name="OrederId" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BranchId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="OrderNo" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="OrderDt" Type="datetime" Nullable="false" />
+          <Property Name="OrderType" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="OrderTime" Type="datetime" />
+          <Property Name="ShiftId" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="CustId" Type="numeric" Precision="9" Scale="0" Nullable="false" />
+          <Property Name="TotalPrice" Type="numeric" Precision="12" Scale="2" />
+          <Property Name="PriceAdd" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="DiscountRatio" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="DiscountVal" Type="numeric" Precision="9" Scale="2" />
+          <Property Name="ServiceVal" Type="numeric" Precision="9" Scale="0" />
+          <Property Name="NetPrice" Type="numeric" Precision="12" Scale="2" />
+          <Property Name="CashVal" Type="numeric" Precision="12" Scale="2" />
+          <Property Name="RemainderVal" Type="numeric" Precision="12" Scale="2" />
+          <Property Name="SwDelete" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="OrderStatus" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="DeliveryId" Type="numeric" Precision="7" Scale="0" />
+          <Property Name="DeliveryStatus" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="ToDeliveryTime" Type="datetime" />
+          <Property Name="DeliveryTimeRequired" Type="datetime" />
+          <Property Name="FromDeliveryTime" Type="datetime" />
+          <Property Name="TableNo" Type="int" />
+          <Property Name="PeopleCount" Type="int" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="UserNameDeleted" Type="varchar" MaxLength="100" />
+          <Property Name="Comment" Type="varchar" MaxLength="150" />
+          <Property Name="InsertDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ResOrderStatus">
+          <Key>
+            <PropertyRef Name="OrderStatus" />
+          </Key>
+          <Property Name="OrderStatus" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="StatusNameA" Type="varchar" MaxLength="50" />
+          <Property Name="StatusNameE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ResOrderTypes">
+          <Key>
+            <PropertyRef Name="OrderType" />
+          </Key>
+          <Property Name="OrderType" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="SaleNameA" Type="varchar" MaxLength="50" />
+          <Property Name="SaleNameE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ResPayment">
+          <Key>
+            <PropertyRef Name="DocNo" />
+          </Key>
+          <Property Name="DocNo" Type="numeric" Precision="12" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="OrederId" Type="numeric" Precision="12" Scale="0" Nullable="false" />
+          <Property Name="CashVal" Type="numeric" Precision="12" Scale="2" Nullable="false" />
+          <Property Name="CardVal" Type="numeric" Precision="12" Scale="2" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="InsertDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ResProperty2Codes">
+          <Key>
+            <PropertyRef Name="Property2Id" />
+          </Key>
+          <Property Name="Property2Id" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="Property2NameA" Type="varchar" MaxLength="50" />
+          <Property Name="Property2NameE" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="InsertDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ResPropertyCodes">
+          <Key>
+            <PropertyRef Name="PropertyId" />
+          </Key>
+          <Property Name="PropertyId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="PropertyNameA" Type="varchar" MaxLength="50" />
+          <Property Name="PropertyNameE" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="InsertDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ResShiftsCodes">
+          <Key>
+            <PropertyRef Name="ShiftId" />
+          </Key>
+          <Property Name="ShiftId" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="ShiftNameE" Type="varchar" MaxLength="50" />
+          <Property Name="ShiftNamea" Type="varchar" MaxLength="50" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="InsertDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ResStoresCodes">
+          <Key>
+            <PropertyRef Name="BranchId" />
+          </Key>
+          <Property Name="BranchId" Type="numeric" Precision="3" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BranchNameA" Type="varchar" MaxLength="100" />
+          <Property Name="BranchNameE" Type="varchar" MaxLength="100" />
+          <Property Name="GovId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="AddressA" Type="varchar" MaxLength="150" />
+          <Property Name="AddressE" Type="varchar" MaxLength="150" />
+          <Property Name="Tel1" Type="varchar" MaxLength="15" />
+          <Property Name="Tel2" Type="varchar" MaxLength="15" />
+          <Property Name="Tel3" Type="varchar" MaxLength="15" />
+          <Property Name="ServiceRatio" Type="numeric" Precision="5" Scale="2" />
+          <Property Name="MinChargeVal" Type="numeric" Precision="12" Scale="2" />
+          <Property Name="StartDt" Type="datetime" />
+          <Property Name="CloseSw" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="CloseDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ResSubCategoryCodes">
+          <Key>
+            <PropertyRef Name="MainCategoryId" />
+            <PropertyRef Name="SubCategoryId" />
+          </Key>
+          <Property Name="MainCategoryId" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="SubCategoryId" Type="numeric" Precision="7" Scale="0" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="SubCategoryNameA" Type="varchar" MaxLength="150" />
+          <Property Name="SubCategoryNameE" Type="varchar" MaxLength="150" />
+          <Property Name="SubImage" Type="image" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" />
+          <Property Name="InsertDt" Type="datetime" />
+        </EntityType>
+        <EntityType Name="ResTablesCodes">
+          <Key>
+            <PropertyRef Name="TableNo" />
+          </Key>
+          <Property Name="TableNo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="TableName" Type="varchar" MaxLength="50" />
+          <Property Name="StatusId" Type="numeric" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityType Name="ResTablesStatusCodes">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="numeric" Precision="1" Scale="0" Nullable="false" />
+          <Property Name="StatusDesc" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="ResTransTypes">
+          <Key>
+            <PropertyRef Name="trans_type" />
+          </Key>
+          <Property Name="trans_type" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="TransNameE" Type="varchar" MaxLength="30" />
+          <Property Name="TransNameA" Type="varchar" MaxLength="30" />
+          <Property Name="TransFunction" Type="numeric" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityType Name="ResWorkStatus">
+          <Key>
+            <PropertyRef Name="WorkStatus" />
+          </Key>
+          <Property Name="WorkStatus" Type="numeric" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="WorkStatusNameA" Type="varchar" MaxLength="50" />
+          <Property Name="WorkStatusNameE" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="SecForms">
+          <Key>
+            <PropertyRef Name="ModuleNo" />
+            <PropertyRef Name="FormNo" />
+          </Key>
+          <Property Name="ModuleNo" Type="int" Nullable="false" />
+          <Property Name="FormNo" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="FormNameA" Type="varchar" MaxLength="150" />
+          <Property Name="FormNameE" Type="varchar" MaxLength="150" />
+          <Property Name="FormUrl" Type="varchar" MaxLength="150" />
+          <Property Name="MenuNo" Type="numeric" Precision="2" Scale="0" />
+          <Property Name="rank" Type="int" />
+        </EntityType>
+        <EntityType Name="SecMenues">
+          <Key>
+            <PropertyRef Name="ModuleNo" />
+            <PropertyRef Name="MenuNo" />
+          </Key>
+          <Property Name="ModuleNo" Type="int" Nullable="false" />
+          <Property Name="MenuNo" Type="numeric" Precision="2" Scale="0" Nullable="false" />
+          <Property Name="MenuNameA" Type="varchar" MaxLength="100" />
+          <Property Name="MenuNameE" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SecPermissions">
+          <Key>
+            <PropertyRef Name="ModuleNo" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="FormNo" />
+          </Key>
+          <Property Name="ModuleNo" Type="int" Nullable="false" />
+          <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="FormNo" Type="numeric" Precision="3" Scale="0" Nullable="false" />
+          <Property Name="UpdatSw" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="InsertSw" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="DeleteSw" Type="numeric" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityType Name="SecSystems">
+          <Key>
+            <PropertyRef Name="ModuleNo" />
+          </Key>
+          <Property Name="ModuleNo" Type="int" Nullable="false" />
+          <Property Name="ModuleNameA" Type="varchar" MaxLength="100" />
+          <Property Name="ModuleNameE" Type="varchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="SecUsers">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="varchar" MaxLength="100" Nullable="false" />
+          <Property Name="UserPasswd" Type="varchar" MaxLength="50" />
+          <Property Name="SwSpecialUser" Type="numeric" Precision="1" Scale="0" />
+          <Property Name="InsertDt" Type="datetime" />
+          <Property Name="EmpId" Type="numeric" Precision="7" Scale="0" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_ResAreaCodes_ResGovCodes">
+          <End Role="ResGovCodes" Type="Self.ResGovCodes" Multiplicity="1" />
+          <End Role="ResAreaCodes" Type="Self.ResAreaCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResGovCodes">
+              <PropertyRef Name="GovId" />
+            </Principal>
+            <Dependent Role="ResAreaCodes">
+              <PropertyRef Name="GovId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResCustomer_ResAreaCodes">
+          <End Role="ResAreaCodes" Type="Self.ResAreaCodes" Multiplicity="0..1" />
+          <End Role="ResCustomer" Type="Self.ResCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResAreaCodes">
+              <PropertyRef Name="GovId" />
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="ResCustomer">
+              <PropertyRef Name="GovId" />
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResCustomer_ResCustomerTypes">
+          <End Role="ResCustomerTypes" Type="Self.ResCustomerTypes" Multiplicity="0..1" />
+          <End Role="ResCustomer" Type="Self.ResCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResCustomerTypes">
+              <PropertyRef Name="CustType" />
+            </Principal>
+            <Dependent Role="ResCustomer">
+              <PropertyRef Name="CustType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResEmployeeBasic_ResJOBCodes">
+          <End Role="ResJOBCodes" Type="Self.ResJOBCodes" Multiplicity="0..1" />
+          <End Role="ResEmployeeBasic" Type="Self.ResEmployeeBasic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResJOBCodes">
+              <PropertyRef Name="JobId" />
+            </Principal>
+            <Dependent Role="ResEmployeeBasic">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResItemCodes_ResMenuSalesCodes">
+          <End Role="ResMenuSalesCodes" Type="Self.ResMenuSalesCodes" Multiplicity="0..1" />
+          <End Role="ResItemCodes" Type="Self.ResItemCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResMenuSalesCodes">
+              <PropertyRef Name="MenuSalesId" />
+            </Principal>
+            <Dependent Role="ResItemCodes">
+              <PropertyRef Name="MenuSalesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResItemCodes_ResProperty2Codes">
+          <End Role="ResProperty2Codes" Type="Self.ResProperty2Codes" Multiplicity="0..1" />
+          <End Role="ResItemCodes" Type="Self.ResItemCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResProperty2Codes">
+              <PropertyRef Name="Property2Id" />
+            </Principal>
+            <Dependent Role="ResItemCodes">
+              <PropertyRef Name="Property2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResItemCodes_ResPropertyCodes">
+          <End Role="ResPropertyCodes" Type="Self.ResPropertyCodes" Multiplicity="0..1" />
+          <End Role="ResItemCodes" Type="Self.ResItemCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResPropertyCodes">
+              <PropertyRef Name="PropertyId" />
+            </Principal>
+            <Dependent Role="ResItemCodes">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResItemCodes_ResSusCategoryCodes">
+          <End Role="ResSubCategoryCodes" Type="Self.ResSubCategoryCodes" Multiplicity="1" />
+          <End Role="ResItemCodes" Type="Self.ResItemCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResSubCategoryCodes">
+              <PropertyRef Name="MainCategoryId" />
+              <PropertyRef Name="SubCategoryId" />
+            </Principal>
+            <Dependent Role="ResItemCodes">
+              <PropertyRef Name="MainCategoryId" />
+              <PropertyRef Name="SubCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResMainCategoryCodes_ResItemTypes">
+          <End Role="ResItemTypes" Type="Self.ResItemTypes" Multiplicity="0..1" />
+          <End Role="ResMainCategoryCodes" Type="Self.ResMainCategoryCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResItemTypes">
+              <PropertyRef Name="TypeId" />
+            </Principal>
+            <Dependent Role="ResMainCategoryCodes">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResOrderDtl_ResOrderHd">
+          <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="1" />
+          <End Role="ResOrderDtl" Type="Self.ResOrderDtl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResOrderHd">
+              <PropertyRef Name="OrederId" />
+            </Principal>
+            <Dependent Role="ResOrderDtl">
+              <PropertyRef Name="OrederId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResOrderDtlInstruction_ResInstructionCodes">
+          <End Role="ResInstructionCodes" Type="Self.ResInstructionCodes" Multiplicity="1" />
+          <End Role="ResOrderDtlInstruction" Type="Self.ResOrderDtlInstruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResInstructionCodes">
+              <PropertyRef Name="InstructionId" />
+            </Principal>
+            <Dependent Role="ResOrderDtlInstruction">
+              <PropertyRef Name="InstructionId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResOrderDtlInstruction_ResOrderDtl">
+          <End Role="ResOrderDtl" Type="Self.ResOrderDtl" Multiplicity="1" />
+          <End Role="ResOrderDtlInstruction" Type="Self.ResOrderDtlInstruction" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResOrderDtl">
+              <PropertyRef Name="OrederId" />
+              <PropertyRef Name="SeqNo" />
+            </Principal>
+            <Dependent Role="ResOrderDtlInstruction">
+              <PropertyRef Name="OrederId" />
+              <PropertyRef Name="SeqNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResOrderHd_ResDeliveryStatus">
+          <End Role="ResDeliveryStatus" Type="Self.ResDeliveryStatus" Multiplicity="0..1" />
+          <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResDeliveryStatus">
+              <PropertyRef Name="DeliveryStatus" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="DeliveryStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResPayment_ResOrderHd1">
+          <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="1" />
+          <End Role="ResPayment" Type="Self.ResPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResOrderHd">
+              <PropertyRef Name="OrederId" />
+            </Principal>
+            <Dependent Role="ResPayment">
+              <PropertyRef Name="OrederId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_DTL_ResItemCodes">
+          <End Role="ResItemCodes" Type="Self.ResItemCodes" Multiplicity="1" />
+          <End Role="ResOrderDtl" Type="Self.ResOrderDtl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResItemCodes">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="ResOrderDtl">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_DTL_ResKITCHEN_STATUSCodes">
+          <End Role="ResCookStatusCodes" Type="Self.ResCookStatusCodes" Multiplicity="0..1" />
+          <End Role="ResOrderDtl" Type="Self.ResOrderDtl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResCookStatusCodes">
+              <PropertyRef Name="CookStatus" />
+            </Principal>
+            <Dependent Role="ResOrderDtl">
+              <PropertyRef Name="CookStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResCustomer">
+          <End Role="ResCustomer" Type="Self.ResCustomer" Multiplicity="1" />
+          <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResCustomer">
+              <PropertyRef Name="CustId" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="CustId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResEmployeeBasic">
+          <End Role="ResEmployeeBasic" Type="Self.ResEmployeeBasic" Multiplicity="0..1" />
+          <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResEmployeeBasic">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="DeliveryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResOrderStatus">
+          <End Role="ResOrderStatus" Type="Self.ResOrderStatus" Multiplicity="0..1" />
+          <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResOrderStatus">
+              <PropertyRef Name="OrderStatus" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="OrderStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResSALES_TYPES">
+          <End Role="ResOrderTypes" Type="Self.ResOrderTypes" Multiplicity="0..1" />
+          <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResOrderTypes">
+              <PropertyRef Name="OrderType" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="OrderType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResShiftsCodes">
+          <End Role="ResShiftsCodes" Type="Self.ResShiftsCodes" Multiplicity="1" />
+          <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResShiftsCodes">
+              <PropertyRef Name="ShiftId" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="ShiftId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResStoresCodes">
+          <End Role="ResStoresCodes" Type="Self.ResStoresCodes" Multiplicity="1" />
+          <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResStoresCodes">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResTablesCodes">
+          <End Role="ResTablesCodes" Type="Self.ResTablesCodes" Multiplicity="0..1" />
+          <End Role="ResOrderHd" Type="Self.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResTablesCodes">
+              <PropertyRef Name="TableNo" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="TableNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResStoresCodes_ResGovCodes">
+          <End Role="ResGovCodes" Type="Self.ResGovCodes" Multiplicity="1" />
+          <End Role="ResStoresCodes" Type="Self.ResStoresCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResGovCodes">
+              <PropertyRef Name="GovId" />
+            </Principal>
+            <Dependent Role="ResStoresCodes">
+              <PropertyRef Name="GovId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSusCategoryCodes_ResMainCategoryCodes">
+          <End Role="ResMainCategoryCodes" Type="Self.ResMainCategoryCodes" Multiplicity="1" />
+          <End Role="ResSubCategoryCodes" Type="Self.ResSubCategoryCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResMainCategoryCodes">
+              <PropertyRef Name="MainCategoryId" />
+            </Principal>
+            <Dependent Role="ResSubCategoryCodes">
+              <PropertyRef Name="MainCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResTablesCodes_ResTablesStatusCodes">
+          <End Role="ResTablesStatusCodes" Type="Self.ResTablesStatusCodes" Multiplicity="0..1" />
+          <End Role="ResTablesCodes" Type="Self.ResTablesCodes" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResTablesStatusCodes">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="ResTablesCodes">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecForms_SecSystems">
+          <End Role="SecSystems" Type="Self.SecSystems" Multiplicity="1" />
+          <End Role="SecForms" Type="Self.SecForms" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecSystems">
+              <PropertyRef Name="ModuleNo" />
+            </Principal>
+            <Dependent Role="SecForms">
+              <PropertyRef Name="ModuleNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecMenues_SecSystems">
+          <End Role="SecSystems" Type="Self.SecSystems" Multiplicity="1" />
+          <End Role="SecMenues" Type="Self.SecMenues" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecSystems">
+              <PropertyRef Name="ModuleNo" />
+            </Principal>
+            <Dependent Role="SecMenues">
+              <PropertyRef Name="ModuleNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecPermissions_SecForms">
+          <End Role="SecForms" Type="Self.SecForms" Multiplicity="1" />
+          <End Role="SecPermissions" Type="Self.SecPermissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecForms">
+              <PropertyRef Name="ModuleNo" />
+              <PropertyRef Name="FormNo" />
+            </Principal>
+            <Dependent Role="SecPermissions">
+              <PropertyRef Name="ModuleNo" />
+              <PropertyRef Name="FormNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecPermissions_SecUsers">
+          <End Role="SecUsers" Type="Self.SecUsers" Multiplicity="1" />
+          <End Role="SecPermissions" Type="Self.SecPermissions" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecUsers">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="SecPermissions">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="res_for_sheratonModelStoreContainer">
+          <EntitySet Name="ResAreaCodes" EntityType="Self.ResAreaCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResCookStatusCodes" EntityType="Self.ResCookStatusCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResCustomer" EntityType="Self.ResCustomer" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResCustomerTypes" EntityType="Self.ResCustomerTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResDeliveryStatus" EntityType="Self.ResDeliveryStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResEmployeeBasic" EntityType="Self.ResEmployeeBasic" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResGovCodes" EntityType="Self.ResGovCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResInstructionCodes" EntityType="Self.ResInstructionCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResItemCodes" EntityType="Self.ResItemCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResItemTypes" EntityType="Self.ResItemTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResJOBCodes" EntityType="Self.ResJOBCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResMainCategoryCodes" EntityType="Self.ResMainCategoryCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResMenuSalesCodes" EntityType="Self.ResMenuSalesCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResOrderDtl" EntityType="Self.ResOrderDtl" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResOrderDtlInstruction" EntityType="Self.ResOrderDtlInstruction" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResOrderHd" EntityType="Self.ResOrderHd" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResOrderStatus" EntityType="Self.ResOrderStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResOrderTypes" EntityType="Self.ResOrderTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResPayment" EntityType="Self.ResPayment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResProperty2Codes" EntityType="Self.ResProperty2Codes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResPropertyCodes" EntityType="Self.ResPropertyCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResShiftsCodes" EntityType="Self.ResShiftsCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResStoresCodes" EntityType="Self.ResStoresCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResSubCategoryCodes" EntityType="Self.ResSubCategoryCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResTablesCodes" EntityType="Self.ResTablesCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResTablesStatusCodes" EntityType="Self.ResTablesStatusCodes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResTransTypes" EntityType="Self.ResTransTypes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ResWorkStatus" EntityType="Self.ResWorkStatus" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SecForms" EntityType="Self.SecForms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SecMenues" EntityType="Self.SecMenues" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SecPermissions" EntityType="Self.SecPermissions" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SecSystems" EntityType="Self.SecSystems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SecUsers" EntityType="Self.SecUsers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ResAreaCodes_ResGovCodes" Association="Self.FK_ResAreaCodes_ResGovCodes">
+            <End Role="ResGovCodes" EntitySet="ResGovCodes" />
+            <End Role="ResAreaCodes" EntitySet="ResAreaCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResCustomer_ResAreaCodes" Association="Self.FK_ResCustomer_ResAreaCodes">
+            <End Role="ResAreaCodes" EntitySet="ResAreaCodes" />
+            <End Role="ResCustomer" EntitySet="ResCustomer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResCustomer_ResCustomerTypes" Association="Self.FK_ResCustomer_ResCustomerTypes">
+            <End Role="ResCustomerTypes" EntitySet="ResCustomerTypes" />
+            <End Role="ResCustomer" EntitySet="ResCustomer" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResEmployeeBasic_ResJOBCodes" Association="Self.FK_ResEmployeeBasic_ResJOBCodes">
+            <End Role="ResJOBCodes" EntitySet="ResJOBCodes" />
+            <End Role="ResEmployeeBasic" EntitySet="ResEmployeeBasic" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResItemCodes_ResMenuSalesCodes" Association="Self.FK_ResItemCodes_ResMenuSalesCodes">
+            <End Role="ResMenuSalesCodes" EntitySet="ResMenuSalesCodes" />
+            <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResItemCodes_ResProperty2Codes" Association="Self.FK_ResItemCodes_ResProperty2Codes">
+            <End Role="ResProperty2Codes" EntitySet="ResProperty2Codes" />
+            <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResItemCodes_ResPropertyCodes" Association="Self.FK_ResItemCodes_ResPropertyCodes">
+            <End Role="ResPropertyCodes" EntitySet="ResPropertyCodes" />
+            <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResItemCodes_ResSusCategoryCodes" Association="Self.FK_ResItemCodes_ResSusCategoryCodes">
+            <End Role="ResSubCategoryCodes" EntitySet="ResSubCategoryCodes" />
+            <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResMainCategoryCodes_ResItemTypes" Association="Self.FK_ResMainCategoryCodes_ResItemTypes">
+            <End Role="ResItemTypes" EntitySet="ResItemTypes" />
+            <End Role="ResMainCategoryCodes" EntitySet="ResMainCategoryCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResOrderDtl_ResOrderHd" Association="Self.FK_ResOrderDtl_ResOrderHd">
+            <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+            <End Role="ResOrderDtl" EntitySet="ResOrderDtl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResOrderDtlInstruction_ResInstructionCodes" Association="Self.FK_ResOrderDtlInstruction_ResInstructionCodes">
+            <End Role="ResInstructionCodes" EntitySet="ResInstructionCodes" />
+            <End Role="ResOrderDtlInstruction" EntitySet="ResOrderDtlInstruction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResOrderDtlInstruction_ResOrderDtl" Association="Self.FK_ResOrderDtlInstruction_ResOrderDtl">
+            <End Role="ResOrderDtl" EntitySet="ResOrderDtl" />
+            <End Role="ResOrderDtlInstruction" EntitySet="ResOrderDtlInstruction" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResOrderHd_ResDeliveryStatus" Association="Self.FK_ResOrderHd_ResDeliveryStatus">
+            <End Role="ResDeliveryStatus" EntitySet="ResDeliveryStatus" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResPayment_ResOrderHd1" Association="Self.FK_ResPayment_ResOrderHd1">
+            <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+            <End Role="ResPayment" EntitySet="ResPayment" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_DTL_ResItemCodes" Association="Self.FK_ResSALES_DTL_ResItemCodes">
+            <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+            <End Role="ResOrderDtl" EntitySet="ResOrderDtl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_DTL_ResKITCHEN_STATUSCodes" Association="Self.FK_ResSALES_DTL_ResKITCHEN_STATUSCodes">
+            <End Role="ResCookStatusCodes" EntitySet="ResCookStatusCodes" />
+            <End Role="ResOrderDtl" EntitySet="ResOrderDtl" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResCustomer" Association="Self.FK_ResSALES_HD_ResCustomer">
+            <End Role="ResCustomer" EntitySet="ResCustomer" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResEmployeeBasic" Association="Self.FK_ResSALES_HD_ResEmployeeBasic">
+            <End Role="ResEmployeeBasic" EntitySet="ResEmployeeBasic" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResOrderStatus" Association="Self.FK_ResSALES_HD_ResOrderStatus">
+            <End Role="ResOrderStatus" EntitySet="ResOrderStatus" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResSALES_TYPES" Association="Self.FK_ResSALES_HD_ResSALES_TYPES">
+            <End Role="ResOrderTypes" EntitySet="ResOrderTypes" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResShiftsCodes" Association="Self.FK_ResSALES_HD_ResShiftsCodes">
+            <End Role="ResShiftsCodes" EntitySet="ResShiftsCodes" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResStoresCodes" Association="Self.FK_ResSALES_HD_ResStoresCodes">
+            <End Role="ResStoresCodes" EntitySet="ResStoresCodes" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResTablesCodes" Association="Self.FK_ResSALES_HD_ResTablesCodes">
+            <End Role="ResTablesCodes" EntitySet="ResTablesCodes" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHd" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResStoresCodes_ResGovCodes" Association="Self.FK_ResStoresCodes_ResGovCodes">
+            <End Role="ResGovCodes" EntitySet="ResGovCodes" />
+            <End Role="ResStoresCodes" EntitySet="ResStoresCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSusCategoryCodes_ResMainCategoryCodes" Association="Self.FK_ResSusCategoryCodes_ResMainCategoryCodes">
+            <End Role="ResMainCategoryCodes" EntitySet="ResMainCategoryCodes" />
+            <End Role="ResSubCategoryCodes" EntitySet="ResSubCategoryCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResTablesCodes_ResTablesStatusCodes" Association="Self.FK_ResTablesCodes_ResTablesStatusCodes">
+            <End Role="ResTablesStatusCodes" EntitySet="ResTablesStatusCodes" />
+            <End Role="ResTablesCodes" EntitySet="ResTablesCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecForms_SecSystems" Association="Self.FK_SecForms_SecSystems">
+            <End Role="SecSystems" EntitySet="SecSystems" />
+            <End Role="SecForms" EntitySet="SecForms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecMenues_SecSystems" Association="Self.FK_SecMenues_SecSystems">
+            <End Role="SecSystems" EntitySet="SecSystems" />
+            <End Role="SecMenues" EntitySet="SecMenues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecPermissions_SecForms" Association="Self.FK_SecPermissions_SecForms">
+            <End Role="SecForms" EntitySet="SecForms" />
+            <End Role="SecPermissions" EntitySet="SecPermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecPermissions_SecUsers" Association="Self.FK_SecPermissions_SecUsers">
+            <End Role="SecUsers" EntitySet="SecUsers" />
+            <End Role="SecPermissions" EntitySet="SecPermissions" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="res_for_sheratonModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="res_for_sheratonEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="ResAreaCodes" EntityType="res_for_sheratonModel.ResAreaCode" />
+          <EntitySet Name="ResCookStatusCodes" EntityType="res_for_sheratonModel.ResCookStatusCode" />
+          <EntitySet Name="ResCustomers" EntityType="res_for_sheratonModel.ResCustomer" />
+          <EntitySet Name="ResCustomerTypes" EntityType="res_for_sheratonModel.ResCustomerType" />
+          <EntitySet Name="ResDeliveryStatus" EntityType="res_for_sheratonModel.ResDeliveryStatu" />
+          <EntitySet Name="ResEmployeeBasics" EntityType="res_for_sheratonModel.ResEmployeeBasic" />
+          <EntitySet Name="ResGovCodes" EntityType="res_for_sheratonModel.ResGovCode" />
+          <EntitySet Name="ResInstructionCodes" EntityType="res_for_sheratonModel.ResInstructionCode" />
+          <EntitySet Name="ResItemCodes" EntityType="res_for_sheratonModel.ResItemCode" />
+          <EntitySet Name="ResItemTypes" EntityType="res_for_sheratonModel.ResItemType" />
+          <EntitySet Name="ResJOBCodes" EntityType="res_for_sheratonModel.ResJOBCode" />
+          <EntitySet Name="ResMainCategoryCodes" EntityType="res_for_sheratonModel.ResMainCategoryCode" />
+          <EntitySet Name="ResMenuSalesCodes" EntityType="res_for_sheratonModel.ResMenuSalesCode" />
+          <EntitySet Name="ResOrderDtls" EntityType="res_for_sheratonModel.ResOrderDtl" />
+          <EntitySet Name="ResOrderHds" EntityType="res_for_sheratonModel.ResOrderHd" />
+          <EntitySet Name="ResOrderStatus" EntityType="res_for_sheratonModel.ResOrderStatu" />
+          <EntitySet Name="ResOrderTypes" EntityType="res_for_sheratonModel.ResOrderType" />
+          <EntitySet Name="ResPayments" EntityType="res_for_sheratonModel.ResPayment" />
+          <EntitySet Name="ResProperty2Codes" EntityType="res_for_sheratonModel.ResProperty2Codes" />
+          <EntitySet Name="ResPropertyCodes" EntityType="res_for_sheratonModel.ResPropertyCode" />
+          <EntitySet Name="ResShiftsCodes" EntityType="res_for_sheratonModel.ResShiftsCode" />
+          <EntitySet Name="ResStoresCodes" EntityType="res_for_sheratonModel.ResStoresCode" />
+          <EntitySet Name="ResTablesCodes" EntityType="res_for_sheratonModel.ResTablesCode" />
+          <EntitySet Name="ResTablesStatusCodes" EntityType="res_for_sheratonModel.ResTablesStatusCode" />
+          <EntitySet Name="ResTransTypes" EntityType="res_for_sheratonModel.ResTransType" />
+          <EntitySet Name="ResWorkStatus" EntityType="res_for_sheratonModel.ResWorkStatu" />
+          <EntitySet Name="SecForms" EntityType="res_for_sheratonModel.SecForm" />
+          <EntitySet Name="SecMenues" EntityType="res_for_sheratonModel.SecMenue" />
+          <EntitySet Name="SecPermissions" EntityType="res_for_sheratonModel.SecPermission" />
+          <EntitySet Name="SecSystems" EntityType="res_for_sheratonModel.SecSystem" />
+          <EntitySet Name="SecUsers" EntityType="res_for_sheratonModel.SecUser" />
+          <EntitySet Name="sysdiagrams" EntityType="res_for_sheratonModel.sysdiagram" />
+          <AssociationSet Name="FK_ResAreaCodes_ResGovCodes" Association="res_for_sheratonModel.FK_ResAreaCodes_ResGovCodes">
+            <End Role="ResGovCodes" EntitySet="ResGovCodes" />
+            <End Role="ResAreaCodes" EntitySet="ResAreaCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResCustomer_ResAreaCodes" Association="res_for_sheratonModel.FK_ResCustomer_ResAreaCodes">
+            <End Role="ResAreaCodes" EntitySet="ResAreaCodes" />
+            <End Role="ResCustomer" EntitySet="ResCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_DTL_ResKITCHEN_STATUSCodes" Association="res_for_sheratonModel.FK_ResSALES_DTL_ResKITCHEN_STATUSCodes">
+            <End Role="ResCookStatusCodes" EntitySet="ResCookStatusCodes" />
+            <End Role="ResOrderDtl" EntitySet="ResOrderDtls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResCustomer_ResCustomerTypes" Association="res_for_sheratonModel.FK_ResCustomer_ResCustomerTypes">
+            <End Role="ResCustomerTypes" EntitySet="ResCustomerTypes" />
+            <End Role="ResCustomer" EntitySet="ResCustomers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResCustomer" Association="res_for_sheratonModel.FK_ResSALES_HD_ResCustomer">
+            <End Role="ResCustomer" EntitySet="ResCustomers" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResOrderHd_ResDeliveryStatus" Association="res_for_sheratonModel.FK_ResOrderHd_ResDeliveryStatus">
+            <End Role="ResDeliveryStatus" EntitySet="ResDeliveryStatus" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResEmployeeBasic_ResJOBCodes" Association="res_for_sheratonModel.FK_ResEmployeeBasic_ResJOBCodes">
+            <End Role="ResJOBCodes" EntitySet="ResJOBCodes" />
+            <End Role="ResEmployeeBasic" EntitySet="ResEmployeeBasics" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResEmployeeBasic" Association="res_for_sheratonModel.FK_ResSALES_HD_ResEmployeeBasic">
+            <End Role="ResEmployeeBasic" EntitySet="ResEmployeeBasics" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResStoresCodes_ResGovCodes" Association="res_for_sheratonModel.FK_ResStoresCodes_ResGovCodes">
+            <End Role="ResGovCodes" EntitySet="ResGovCodes" />
+            <End Role="ResStoresCodes" EntitySet="ResStoresCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResItemCodes_ResMenuSalesCodes" Association="res_for_sheratonModel.FK_ResItemCodes_ResMenuSalesCodes">
+            <End Role="ResMenuSalesCodes" EntitySet="ResMenuSalesCodes" />
+            <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResItemCodes_ResProperty2Codes" Association="res_for_sheratonModel.FK_ResItemCodes_ResProperty2Codes">
+            <End Role="ResProperty2Codes" EntitySet="ResProperty2Codes" />
+            <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResItemCodes_ResPropertyCodes" Association="res_for_sheratonModel.FK_ResItemCodes_ResPropertyCodes">
+            <End Role="ResPropertyCodes" EntitySet="ResPropertyCodes" />
+            <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_DTL_ResItemCodes" Association="res_for_sheratonModel.FK_ResSALES_DTL_ResItemCodes">
+            <End Role="ResItemCodes" EntitySet="ResItemCodes" />
+            <End Role="ResOrderDtl" EntitySet="ResOrderDtls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResMainCategoryCodes_ResItemTypes" Association="res_for_sheratonModel.FK_ResMainCategoryCodes_ResItemTypes">
+            <End Role="ResItemTypes" EntitySet="ResItemTypes" />
+            <End Role="ResMainCategoryCodes" EntitySet="ResMainCategoryCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResOrderDtl_ResOrderHd" Association="res_for_sheratonModel.FK_ResOrderDtl_ResOrderHd">
+            <End Role="ResOrderHd" EntitySet="ResOrderHds" />
+            <End Role="ResOrderDtl" EntitySet="ResOrderDtls" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResPayment_ResOrderHd1" Association="res_for_sheratonModel.FK_ResPayment_ResOrderHd1">
+            <End Role="ResOrderHd" EntitySet="ResOrderHds" />
+            <End Role="ResPayment" EntitySet="ResPayments" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResOrderStatus" Association="res_for_sheratonModel.FK_ResSALES_HD_ResOrderStatus">
+            <End Role="ResOrderStatus" EntitySet="ResOrderStatus" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResSALES_TYPES" Association="res_for_sheratonModel.FK_ResSALES_HD_ResSALES_TYPES">
+            <End Role="ResOrderTypes" EntitySet="ResOrderTypes" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResShiftsCodes" Association="res_for_sheratonModel.FK_ResSALES_HD_ResShiftsCodes">
+            <End Role="ResShiftsCodes" EntitySet="ResShiftsCodes" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResStoresCodes" Association="res_for_sheratonModel.FK_ResSALES_HD_ResStoresCodes">
+            <End Role="ResStoresCodes" EntitySet="ResStoresCodes" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSALES_HD_ResTablesCodes" Association="res_for_sheratonModel.FK_ResSALES_HD_ResTablesCodes">
+            <End Role="ResTablesCodes" EntitySet="ResTablesCodes" />
+            <End Role="ResOrderHd" EntitySet="ResOrderHds" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResTablesCodes_ResTablesStatusCodes" Association="res_for_sheratonModel.FK_ResTablesCodes_ResTablesStatusCodes">
+            <End Role="ResTablesStatusCodes" EntitySet="ResTablesStatusCodes" />
+            <End Role="ResTablesCodes" EntitySet="ResTablesCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecForms_SecSystems" Association="res_for_sheratonModel.FK_SecForms_SecSystems">
+            <End Role="SecSystems" EntitySet="SecSystems" />
+            <End Role="SecForms" EntitySet="SecForms" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecPermissions_SecForms" Association="res_for_sheratonModel.FK_SecPermissions_SecForms">
+            <End Role="SecForms" EntitySet="SecForms" />
+            <End Role="SecPermissions" EntitySet="SecPermissions" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecMenues_SecSystems" Association="res_for_sheratonModel.FK_SecMenues_SecSystems">
+            <End Role="SecSystems" EntitySet="SecSystems" />
+            <End Role="SecMenues" EntitySet="SecMenues" />
+          </AssociationSet>
+          <AssociationSet Name="FK_SecPermissions_SecUsers" Association="res_for_sheratonModel.FK_SecPermissions_SecUsers">
+            <End Role="SecUsers" EntitySet="SecUsers" />
+            <End Role="SecPermissions" EntitySet="SecPermissions" />
+          </AssociationSet>
+          <AssociationSet Name="ResOrderDtlInstruction" Association="res_for_sheratonModel.ResOrderDtlInstruction">
+            <End Role="ResInstructionCodes" EntitySet="ResInstructionCodes" />
+            <End Role="ResOrderDtl" EntitySet="ResOrderDtls" />
+          </AssociationSet>
+          <EntitySet Name="ResSubCategoryCodes" EntityType="res_for_sheratonModel.ResSubCategoryCode" />
+          <AssociationSet Name="FK_ResItemCodes_ResSusCategoryCodes1" Association="res_for_sheratonModel.FK_ResItemCodes_ResSusCategoryCodes1">
+            <End Role="ResSubCategoryCode" EntitySet="ResSubCategoryCodes" />
+            <End Role="ResItemCode" EntitySet="ResItemCodes" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ResSusCategoryCodes_ResMainCategoryCodes1" Association="res_for_sheratonModel.FK_ResSusCategoryCodes_ResMainCategoryCodes1">
+            <End Role="ResMainCategoryCode" EntitySet="ResMainCategoryCodes" />
+            <End Role="ResSubCategoryCode" EntitySet="ResSubCategoryCodes" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="ResAreaCode">
+          <Key>
+            <PropertyRef Name="GovId" />
+            <PropertyRef Name="AreaId" />
+          </Key>
+          <Property Name="GovId" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="AreaId" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="AreaNameA" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="AreaNameE" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="ServiceVal" Type="Decimal" Precision="7" Scale="2" />
+          <Property Name="UserName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ResGovCode" Relationship="res_for_sheratonModel.FK_ResAreaCodes_ResGovCodes" FromRole="ResAreaCodes" ToRole="ResGovCodes" />
+          <NavigationProperty Name="ResCustomers" Relationship="res_for_sheratonModel.FK_ResCustomer_ResAreaCodes" FromRole="ResAreaCodes" ToRole="ResCustomer" />
+        </EntityType>
+        <EntityType Name="ResCookStatusCode">
+          <Key>
+            <PropertyRef Name="CookStatus" />
+          </Key>
+          <Property Name="CookStatus" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="CookStatusNameA" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CookStatusNameE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ResOrderDtls" Relationship="res_for_sheratonModel.FK_ResSALES_DTL_ResKITCHEN_STATUSCodes" FromRole="ResCookStatusCodes" ToRole="ResOrderDtl" />
+        </EntityType>
+        <EntityType Name="ResCustomer">
+          <Key>
+            <PropertyRef Name="CustId" />
+          </Key>
+          <Property Name="CustId" Type="Decimal" Nullable="false" Precision="9" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="CustNameA" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="CustNameE" Type="String" MaxLength="80" Unicode="false" FixedLength="false" />
+          <Property Name="CustAddressA" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="CustAddressE" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="GovId" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="AreaId" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="Street" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+          <Property Name="BuildingNo" Type="Int32" />
+          <Property Name="ApartmentNo" Type="Int32" />
+          <Property Name="Tel1" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Tel2" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Tel3" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Comment" Type="String" MaxLength="150" Unicode="true" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <Property Name="CustType" Type="Decimal" Precision="1" Scale="0" />
+          <NavigationProperty Name="ResAreaCode" Relationship="res_for_sheratonModel.FK_ResCustomer_ResAreaCodes" FromRole="ResCustomer" ToRole="ResAreaCodes" />
+          <NavigationProperty Name="ResCustomerType" Relationship="res_for_sheratonModel.FK_ResCustomer_ResCustomerTypes" FromRole="ResCustomer" ToRole="ResCustomerTypes" />
+          <NavigationProperty Name="ResOrderHds" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResCustomer" FromRole="ResCustomer" ToRole="ResOrderHd" />
+        </EntityType>
+        <EntityType Name="ResCustomerType">
+          <Key>
+            <PropertyRef Name="CustType" />
+          </Key>
+          <Property Name="CustType" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="CustTypeNameA" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="CustTypeNameE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ResCustomers" Relationship="res_for_sheratonModel.FK_ResCustomer_ResCustomerTypes" FromRole="ResCustomerTypes" ToRole="ResCustomer" />
+        </EntityType>
+        <EntityType Name="ResDeliveryStatu">
+          <Key>
+            <PropertyRef Name="DeliveryStatus" />
+          </Key>
+          <Property Name="DeliveryStatus" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="DeliveryStatusNameA" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="DeliveryStatusNameE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ResOrderHds" Relationship="res_for_sheratonModel.FK_ResOrderHd_ResDeliveryStatus" FromRole="ResDeliveryStatus" ToRole="ResOrderHd" />
+        </EntityType>
+        <EntityType Name="ResEmployeeBasic">
+          <Key>
+            <PropertyRef Name="EmpId" />
+          </Key>
+          <Property Name="EmpId" Type="Decimal" Nullable="false" Precision="7" Scale="0" />
+          <Property Name="EmpName" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="JobId" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="WorkStatus" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="Tel1" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Tel2" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <Property Name="UserName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ResJOBCode" Relationship="res_for_sheratonModel.FK_ResEmployeeBasic_ResJOBCodes" FromRole="ResEmployeeBasic" ToRole="ResJOBCodes" />
+          <NavigationProperty Name="ResOrderHds" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResEmployeeBasic" FromRole="ResEmployeeBasic" ToRole="ResOrderHd" />
+        </EntityType>
+        <EntityType Name="ResGovCode">
+          <Key>
+            <PropertyRef Name="GovId" />
+          </Key>
+          <Property Name="GovId" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="GovNameA" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="GovNameE" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ResAreaCodes" Relationship="res_for_sheratonModel.FK_ResAreaCodes_ResGovCodes" FromRole="ResGovCodes" ToRole="ResAreaCodes" />
+          <NavigationProperty Name="ResStoresCodes" Relationship="res_for_sheratonModel.FK_ResStoresCodes_ResGovCodes" FromRole="ResGovCodes" ToRole="ResStoresCodes" />
+        </EntityType>
+        <EntityType Name="ResInstructionCode">
+          <Key>
+            <PropertyRef Name="InstructionId" />
+          </Key>
+          <Property Name="InstructionId" Type="Decimal" Nullable="false" Precision="3" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="InstructionNameA" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InstructionNameE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ResOrderDtls" Relationship="res_for_sheratonModel.ResOrderDtlInstruction" FromRole="ResInstructionCodes" ToRole="ResOrderDtl" />
+        </EntityType>
+        <EntityType Name="ResItemCode">
+          <Key>
+            <PropertyRef Name="ItemId" />
+          </Key>
+          <Property Name="ItemId" Type="Decimal" Nullable="false" Precision="12" Scale="0" />
+          <Property Name="MainCategoryId" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="SubCategoryId" Type="Decimal" Nullable="false" Precision="7" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="PropertyId" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="Property2Id" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="MenuSalesId" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="CostPrice" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="SalesPrice" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="OpenQty" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="CurrentQty" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="Comment" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ResMenuSalesCode" Relationship="res_for_sheratonModel.FK_ResItemCodes_ResMenuSalesCodes" FromRole="ResItemCodes" ToRole="ResMenuSalesCodes" />
+          <NavigationProperty Name="ResProperty2Codes" Relationship="res_for_sheratonModel.FK_ResItemCodes_ResProperty2Codes" FromRole="ResItemCodes" ToRole="ResProperty2Codes" />
+          <NavigationProperty Name="ResPropertyCode" Relationship="res_for_sheratonModel.FK_ResItemCodes_ResPropertyCodes" FromRole="ResItemCodes" ToRole="ResPropertyCodes" />
+          <NavigationProperty Name="ResOrderDtls" Relationship="res_for_sheratonModel.FK_ResSALES_DTL_ResItemCodes" FromRole="ResItemCodes" ToRole="ResOrderDtl" />
+          <NavigationProperty Name="ResSubCategoryCode" Relationship="res_for_sheratonModel.FK_ResItemCodes_ResSusCategoryCodes1" FromRole="ResItemCode" ToRole="ResSubCategoryCode" />
+        </EntityType>
+        <EntityType Name="ResItemType">
+          <Key>
+            <PropertyRef Name="TypeId" />
+          </Key>
+          <Property Name="TypeId" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="TypeNameA" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="TypeNameE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ResMainCategoryCodes" Relationship="res_for_sheratonModel.FK_ResMainCategoryCodes_ResItemTypes" FromRole="ResItemTypes" ToRole="ResMainCategoryCodes" />
+        </EntityType>
+        <EntityType Name="ResJOBCode">
+          <Key>
+            <PropertyRef Name="JobId" />
+          </Key>
+          <Property Name="JobId" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="JobNameA" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="JobNameE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ResEmployeeBasics" Relationship="res_for_sheratonModel.FK_ResEmployeeBasic_ResJOBCodes" FromRole="ResJOBCodes" ToRole="ResEmployeeBasic" />
+        </EntityType>
+        <EntityType Name="ResMainCategoryCode">
+          <Key>
+            <PropertyRef Name="MainCategoryId" />
+          </Key>
+          <Property Name="MainCategoryId" Type="Decimal" Nullable="false" Precision="3" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="MainCategoryNameA" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="MainCategoryNameE" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="PrintGroupNo" Type="Decimal" Precision="3" Scale="0" />
+          <Property Name="ShowInInvoice" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="TypeId" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="UserName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <Property Name="CountableStatus" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="MainImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="ResItemType" Relationship="res_for_sheratonModel.FK_ResMainCategoryCodes_ResItemTypes" FromRole="ResMainCategoryCodes" ToRole="ResItemTypes" />
+          <NavigationProperty Name="ResSubCategoryCodes" Relationship="res_for_sheratonModel.FK_ResSusCategoryCodes_ResMainCategoryCodes1" FromRole="ResMainCategoryCode" ToRole="ResSubCategoryCode" />
+        </EntityType>
+        <EntityType Name="ResMenuSalesCode">
+          <Key>
+            <PropertyRef Name="MenuSalesId" />
+          </Key>
+          <Property Name="MenuSalesId" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="MenuSalesNameA" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="MenuSalesNameE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="seq" Type="Decimal" Precision="3" Scale="0" />
+          <NavigationProperty Name="ResItemCodes" Relationship="res_for_sheratonModel.FK_ResItemCodes_ResMenuSalesCodes" FromRole="ResMenuSalesCodes" ToRole="ResItemCodes" />
+        </EntityType>
+        <EntityType Name="ResOrderDtl">
+          <Key>
+            <PropertyRef Name="OrederId" />
+            <PropertyRef Name="SeqNo" />
+          </Key>
+          <Property Name="OrederId" Type="Decimal" Nullable="false" Precision="12" Scale="0" />
+          <Property Name="SeqNo" Type="Decimal" Nullable="false" Precision="4" Scale="0" />
+          <Property Name="ItemId" Type="Decimal" Nullable="false" Precision="12" Scale="0" />
+          <Property Name="Qty" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="Price" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="CookStatus" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="CookStatusTime" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ResCookStatusCode" Relationship="res_for_sheratonModel.FK_ResSALES_DTL_ResKITCHEN_STATUSCodes" FromRole="ResOrderDtl" ToRole="ResCookStatusCodes" />
+          <NavigationProperty Name="ResItemCode" Relationship="res_for_sheratonModel.FK_ResSALES_DTL_ResItemCodes" FromRole="ResOrderDtl" ToRole="ResItemCodes" />
+          <NavigationProperty Name="ResOrderHd" Relationship="res_for_sheratonModel.FK_ResOrderDtl_ResOrderHd" FromRole="ResOrderDtl" ToRole="ResOrderHd" />
+          <NavigationProperty Name="ResInstructionCodes" Relationship="res_for_sheratonModel.ResOrderDtlInstruction" FromRole="ResOrderDtl" ToRole="ResInstructionCodes" />
+        </EntityType>
+        <EntityType Name="ResOrderHd">
+          <Key>
+            <PropertyRef Name="OrederId" />
+          </Key>
+          <Property Name="OrederId" Type="Decimal" Nullable="false" Precision="12" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BranchId" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="OrderNo" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+          <Property Name="OrderDt" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="OrderType" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="OrderTime" Type="DateTime" Precision="3" />
+          <Property Name="ShiftId" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="CustId" Type="Decimal" Nullable="false" Precision="9" Scale="0" />
+          <Property Name="TotalPrice" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="PriceAdd" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="DiscountRatio" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="DiscountVal" Type="Decimal" Precision="9" Scale="2" />
+          <Property Name="ServiceVal" Type="Decimal" Precision="9" Scale="0" />
+          <Property Name="NetPrice" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="CashVal" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="RemainderVal" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="SwDelete" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="OrderStatus" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="DeliveryId" Type="Decimal" Precision="7" Scale="0" />
+          <Property Name="DeliveryStatus" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="ToDeliveryTime" Type="DateTime" Precision="3" />
+          <Property Name="DeliveryTimeRequired" Type="DateTime" Precision="3" />
+          <Property Name="FromDeliveryTime" Type="DateTime" Precision="3" />
+          <Property Name="TableNo" Type="Int32" />
+          <Property Name="PeopleCount" Type="Int32" />
+          <Property Name="UserName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="UserNameDeleted" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="Comment" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ResCustomer" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResCustomer" FromRole="ResOrderHd" ToRole="ResCustomer" />
+          <NavigationProperty Name="ResDeliveryStatu" Relationship="res_for_sheratonModel.FK_ResOrderHd_ResDeliveryStatus" FromRole="ResOrderHd" ToRole="ResDeliveryStatus" />
+          <NavigationProperty Name="ResEmployeeBasic" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResEmployeeBasic" FromRole="ResOrderHd" ToRole="ResEmployeeBasic" />
+          <NavigationProperty Name="ResOrderDtls" Relationship="res_for_sheratonModel.FK_ResOrderDtl_ResOrderHd" FromRole="ResOrderHd" ToRole="ResOrderDtl" />
+          <NavigationProperty Name="ResPayments" Relationship="res_for_sheratonModel.FK_ResPayment_ResOrderHd1" FromRole="ResOrderHd" ToRole="ResPayment" />
+          <NavigationProperty Name="ResOrderStatu" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResOrderStatus" FromRole="ResOrderHd" ToRole="ResOrderStatus" />
+          <NavigationProperty Name="ResOrderType" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResSALES_TYPES" FromRole="ResOrderHd" ToRole="ResOrderTypes" />
+          <NavigationProperty Name="ResShiftsCode" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResShiftsCodes" FromRole="ResOrderHd" ToRole="ResShiftsCodes" />
+          <NavigationProperty Name="ResStoresCode" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResStoresCodes" FromRole="ResOrderHd" ToRole="ResStoresCodes" />
+          <NavigationProperty Name="ResTablesCode" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResTablesCodes" FromRole="ResOrderHd" ToRole="ResTablesCodes" />
+        </EntityType>
+        <EntityType Name="ResOrderStatu">
+          <Key>
+            <PropertyRef Name="OrderStatus" />
+          </Key>
+          <Property Name="OrderStatus" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="StatusNameA" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StatusNameE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ResOrderHds" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResOrderStatus" FromRole="ResOrderStatus" ToRole="ResOrderHd" />
+        </EntityType>
+        <EntityType Name="ResOrderType">
+          <Key>
+            <PropertyRef Name="OrderType" />
+          </Key>
+          <Property Name="OrderType" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="SaleNameA" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SaleNameE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ResOrderHds" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResSALES_TYPES" FromRole="ResOrderTypes" ToRole="ResOrderHd" />
+        </EntityType>
+        <EntityType Name="ResPayment">
+          <Key>
+            <PropertyRef Name="DocNo" />
+          </Key>
+          <Property Name="DocNo" Type="Decimal" Nullable="false" Precision="12" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="OrederId" Type="Decimal" Nullable="false" Precision="12" Scale="0" />
+          <Property Name="CashVal" Type="Decimal" Nullable="false" Precision="12" Scale="2" />
+          <Property Name="CardVal" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="UserName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ResOrderHd" Relationship="res_for_sheratonModel.FK_ResPayment_ResOrderHd1" FromRole="ResPayment" ToRole="ResOrderHd" />
+        </EntityType>
+        <EntityType Name="ResProperty2Codes">
+          <Key>
+            <PropertyRef Name="Property2Id" />
+          </Key>
+          <Property Name="Property2Id" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="Property2NameA" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Property2NameE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ResItemCodes" Relationship="res_for_sheratonModel.FK_ResItemCodes_ResProperty2Codes" FromRole="ResProperty2Codes" ToRole="ResItemCodes" />
+        </EntityType>
+        <EntityType Name="ResPropertyCode">
+          <Key>
+            <PropertyRef Name="PropertyId" />
+          </Key>
+          <Property Name="PropertyId" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="PropertyNameA" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="PropertyNameE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ResItemCodes" Relationship="res_for_sheratonModel.FK_ResItemCodes_ResPropertyCodes" FromRole="ResPropertyCodes" ToRole="ResItemCodes" />
+        </EntityType>
+        <EntityType Name="ResShiftsCode">
+          <Key>
+            <PropertyRef Name="ShiftId" />
+          </Key>
+          <Property Name="ShiftId" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="ShiftNameE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="ShiftNamea" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ResOrderHds" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResShiftsCodes" FromRole="ResShiftsCodes" ToRole="ResOrderHd" />
+        </EntityType>
+        <EntityType Name="ResStoresCode">
+          <Key>
+            <PropertyRef Name="BranchId" />
+          </Key>
+          <Property Name="BranchId" Type="Decimal" Nullable="false" Precision="3" Scale="0" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BranchNameA" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="BranchNameE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="GovId" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="AddressA" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="AddressE" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="Tel1" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Tel2" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="Tel3" Type="String" MaxLength="15" Unicode="false" FixedLength="false" />
+          <Property Name="ServiceRatio" Type="Decimal" Precision="5" Scale="2" />
+          <Property Name="MinChargeVal" Type="Decimal" Precision="12" Scale="2" />
+          <Property Name="StartDt" Type="DateTime" Precision="3" />
+          <Property Name="CloseSw" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="CloseDt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ResGovCode" Relationship="res_for_sheratonModel.FK_ResStoresCodes_ResGovCodes" FromRole="ResStoresCodes" ToRole="ResGovCodes" />
+          <NavigationProperty Name="ResOrderHds" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResStoresCodes" FromRole="ResStoresCodes" ToRole="ResOrderHd" />
+        </EntityType>
+        <EntityType Name="ResTablesCode">
+          <Key>
+            <PropertyRef Name="TableNo" />
+          </Key>
+          <Property Name="TableNo" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="TableName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="StatusId" Type="Decimal" Precision="1" Scale="0" />
+          <NavigationProperty Name="ResOrderHds" Relationship="res_for_sheratonModel.FK_ResSALES_HD_ResTablesCodes" FromRole="ResTablesCodes" ToRole="ResOrderHd" />
+          <NavigationProperty Name="ResTablesStatusCode" Relationship="res_for_sheratonModel.FK_ResTablesCodes_ResTablesStatusCodes" FromRole="ResTablesCodes" ToRole="ResTablesStatusCodes" />
+        </EntityType>
+        <EntityType Name="ResTablesStatusCode">
+          <Key>
+            <PropertyRef Name="StatusId" />
+          </Key>
+          <Property Name="StatusId" Type="Decimal" Nullable="false" Precision="1" Scale="0" />
+          <Property Name="StatusDesc" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="ResTablesCodes" Relationship="res_for_sheratonModel.FK_ResTablesCodes_ResTablesStatusCodes" FromRole="ResTablesStatusCodes" ToRole="ResTablesCodes" />
+        </EntityType>
+        <EntityType Name="ResTransType">
+          <Key>
+            <PropertyRef Name="trans_type" />
+          </Key>
+          <Property Name="trans_type" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="TransNameE" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="TransNameA" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="TransFunction" Type="Decimal" Precision="1" Scale="0" />
+        </EntityType>
+        <EntityType Name="ResWorkStatu">
+          <Key>
+            <PropertyRef Name="WorkStatus" />
+          </Key>
+          <Property Name="WorkStatus" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+          <Property Name="WorkStatusNameA" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="WorkStatusNameE" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="SecForm">
+          <Key>
+            <PropertyRef Name="ModuleNo" />
+            <PropertyRef Name="FormNo" />
+          </Key>
+          <Property Name="ModuleNo" Type="Int32" Nullable="false" />
+          <Property Name="FormNo" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="FormNameA" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="FormNameE" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="FormUrl" Type="String" MaxLength="150" Unicode="false" FixedLength="false" />
+          <Property Name="MenuNo" Type="Decimal" Precision="2" Scale="0" />
+          <Property Name="rank" Type="Int32" />
+          <NavigationProperty Name="SecSystem" Relationship="res_for_sheratonModel.FK_SecForms_SecSystems" FromRole="SecForms" ToRole="SecSystems" />
+          <NavigationProperty Name="SecPermissions" Relationship="res_for_sheratonModel.FK_SecPermissions_SecForms" FromRole="SecForms" ToRole="SecPermissions" />
+        </EntityType>
+        <EntityType Name="SecMenue">
+          <Key>
+            <PropertyRef Name="ModuleNo" />
+            <PropertyRef Name="MenuNo" />
+          </Key>
+          <Property Name="ModuleNo" Type="Int32" Nullable="false" />
+          <Property Name="MenuNo" Type="Decimal" Nullable="false" Precision="2" Scale="0" />
+          <Property Name="MenuNameA" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="MenuNameE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SecSystem" Relationship="res_for_sheratonModel.FK_SecMenues_SecSystems" FromRole="SecMenues" ToRole="SecSystems" />
+        </EntityType>
+        <EntityType Name="SecPermission">
+          <Key>
+            <PropertyRef Name="ModuleNo" />
+            <PropertyRef Name="UserName" />
+            <PropertyRef Name="FormNo" />
+          </Key>
+          <Property Name="ModuleNo" Type="Int32" Nullable="false" />
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="FormNo" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="UpdatSw" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="InsertSw" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="DeleteSw" Type="Decimal" Precision="1" Scale="0" />
+          <NavigationProperty Name="SecForm" Relationship="res_for_sheratonModel.FK_SecPermissions_SecForms" FromRole="SecPermissions" ToRole="SecForms" />
+          <NavigationProperty Name="SecUser" Relationship="res_for_sheratonModel.FK_SecPermissions_SecUsers" FromRole="SecPermissions" ToRole="SecUsers" />
+        </EntityType>
+        <EntityType Name="SecSystem">
+          <Key>
+            <PropertyRef Name="ModuleNo" />
+          </Key>
+          <Property Name="ModuleNo" Type="Int32" Nullable="false" />
+          <Property Name="ModuleNameA" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="ModuleNameE" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+          <NavigationProperty Name="SecForms" Relationship="res_for_sheratonModel.FK_SecForms_SecSystems" FromRole="SecSystems" ToRole="SecForms" />
+          <NavigationProperty Name="SecMenues" Relationship="res_for_sheratonModel.FK_SecMenues_SecSystems" FromRole="SecSystems" ToRole="SecMenues" />
+        </EntityType>
+        <EntityType Name="SecUser">
+          <Key>
+            <PropertyRef Name="UserName" />
+          </Key>
+          <Property Name="UserName" Type="String" Nullable="false" MaxLength="100" Unicode="false" FixedLength="false" />
+          <Property Name="UserPasswd" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="SwSpecialUser" Type="Decimal" Precision="1" Scale="0" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <Property Name="EmpId" Type="Decimal" Precision="7" Scale="0" />
+          <NavigationProperty Name="SecPermissions" Relationship="res_for_sheratonModel.FK_SecPermissions_SecUsers" FromRole="SecUsers" ToRole="SecPermissions" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_ResAreaCodes_ResGovCodes">
+          <End Role="ResGovCodes" Type="res_for_sheratonModel.ResGovCode" Multiplicity="1" />
+          <End Role="ResAreaCodes" Type="res_for_sheratonModel.ResAreaCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResGovCodes">
+              <PropertyRef Name="GovId" />
+            </Principal>
+            <Dependent Role="ResAreaCodes">
+              <PropertyRef Name="GovId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResCustomer_ResAreaCodes">
+          <End Role="ResAreaCodes" Type="res_for_sheratonModel.ResAreaCode" Multiplicity="0..1" />
+          <End Role="ResCustomer" Type="res_for_sheratonModel.ResCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResAreaCodes">
+              <PropertyRef Name="GovId" />
+              <PropertyRef Name="AreaId" />
+            </Principal>
+            <Dependent Role="ResCustomer">
+              <PropertyRef Name="GovId" />
+              <PropertyRef Name="AreaId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_DTL_ResKITCHEN_STATUSCodes">
+          <End Role="ResCookStatusCodes" Type="res_for_sheratonModel.ResCookStatusCode" Multiplicity="0..1" />
+          <End Role="ResOrderDtl" Type="res_for_sheratonModel.ResOrderDtl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResCookStatusCodes">
+              <PropertyRef Name="CookStatus" />
+            </Principal>
+            <Dependent Role="ResOrderDtl">
+              <PropertyRef Name="CookStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResCustomer_ResCustomerTypes">
+          <End Role="ResCustomerTypes" Type="res_for_sheratonModel.ResCustomerType" Multiplicity="0..1" />
+          <End Role="ResCustomer" Type="res_for_sheratonModel.ResCustomer" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResCustomerTypes">
+              <PropertyRef Name="CustType" />
+            </Principal>
+            <Dependent Role="ResCustomer">
+              <PropertyRef Name="CustType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResCustomer">
+          <End Role="ResCustomer" Type="res_for_sheratonModel.ResCustomer" Multiplicity="1" />
+          <End Role="ResOrderHd" Type="res_for_sheratonModel.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResCustomer">
+              <PropertyRef Name="CustId" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="CustId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResOrderHd_ResDeliveryStatus">
+          <End Role="ResDeliveryStatus" Type="res_for_sheratonModel.ResDeliveryStatu" Multiplicity="0..1" />
+          <End Role="ResOrderHd" Type="res_for_sheratonModel.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResDeliveryStatus">
+              <PropertyRef Name="DeliveryStatus" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="DeliveryStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResEmployeeBasic_ResJOBCodes">
+          <End Role="ResJOBCodes" Type="res_for_sheratonModel.ResJOBCode" Multiplicity="0..1" />
+          <End Role="ResEmployeeBasic" Type="res_for_sheratonModel.ResEmployeeBasic" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResJOBCodes">
+              <PropertyRef Name="JobId" />
+            </Principal>
+            <Dependent Role="ResEmployeeBasic">
+              <PropertyRef Name="JobId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResEmployeeBasic">
+          <End Role="ResEmployeeBasic" Type="res_for_sheratonModel.ResEmployeeBasic" Multiplicity="0..1" />
+          <End Role="ResOrderHd" Type="res_for_sheratonModel.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResEmployeeBasic">
+              <PropertyRef Name="EmpId" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="DeliveryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResStoresCodes_ResGovCodes">
+          <End Role="ResGovCodes" Type="res_for_sheratonModel.ResGovCode" Multiplicity="1" />
+          <End Role="ResStoresCodes" Type="res_for_sheratonModel.ResStoresCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResGovCodes">
+              <PropertyRef Name="GovId" />
+            </Principal>
+            <Dependent Role="ResStoresCodes">
+              <PropertyRef Name="GovId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResItemCodes_ResMenuSalesCodes">
+          <End Role="ResMenuSalesCodes" Type="res_for_sheratonModel.ResMenuSalesCode" Multiplicity="0..1" />
+          <End Role="ResItemCodes" Type="res_for_sheratonModel.ResItemCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResMenuSalesCodes">
+              <PropertyRef Name="MenuSalesId" />
+            </Principal>
+            <Dependent Role="ResItemCodes">
+              <PropertyRef Name="MenuSalesId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResItemCodes_ResProperty2Codes">
+          <End Role="ResProperty2Codes" Type="res_for_sheratonModel.ResProperty2Codes" Multiplicity="0..1" />
+          <End Role="ResItemCodes" Type="res_for_sheratonModel.ResItemCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResProperty2Codes">
+              <PropertyRef Name="Property2Id" />
+            </Principal>
+            <Dependent Role="ResItemCodes">
+              <PropertyRef Name="Property2Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResItemCodes_ResPropertyCodes">
+          <End Role="ResPropertyCodes" Type="res_for_sheratonModel.ResPropertyCode" Multiplicity="0..1" />
+          <End Role="ResItemCodes" Type="res_for_sheratonModel.ResItemCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResPropertyCodes">
+              <PropertyRef Name="PropertyId" />
+            </Principal>
+            <Dependent Role="ResItemCodes">
+              <PropertyRef Name="PropertyId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_DTL_ResItemCodes">
+          <End Role="ResItemCodes" Type="res_for_sheratonModel.ResItemCode" Multiplicity="1" />
+          <End Role="ResOrderDtl" Type="res_for_sheratonModel.ResOrderDtl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResItemCodes">
+              <PropertyRef Name="ItemId" />
+            </Principal>
+            <Dependent Role="ResOrderDtl">
+              <PropertyRef Name="ItemId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResMainCategoryCodes_ResItemTypes">
+          <End Role="ResItemTypes" Type="res_for_sheratonModel.ResItemType" Multiplicity="0..1" />
+          <End Role="ResMainCategoryCodes" Type="res_for_sheratonModel.ResMainCategoryCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResItemTypes">
+              <PropertyRef Name="TypeId" />
+            </Principal>
+            <Dependent Role="ResMainCategoryCodes">
+              <PropertyRef Name="TypeId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResOrderDtl_ResOrderHd">
+          <End Role="ResOrderHd" Type="res_for_sheratonModel.ResOrderHd" Multiplicity="1" />
+          <End Role="ResOrderDtl" Type="res_for_sheratonModel.ResOrderDtl" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResOrderHd">
+              <PropertyRef Name="OrederId" />
+            </Principal>
+            <Dependent Role="ResOrderDtl">
+              <PropertyRef Name="OrederId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResPayment_ResOrderHd1">
+          <End Role="ResOrderHd" Type="res_for_sheratonModel.ResOrderHd" Multiplicity="1" />
+          <End Role="ResPayment" Type="res_for_sheratonModel.ResPayment" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResOrderHd">
+              <PropertyRef Name="OrederId" />
+            </Principal>
+            <Dependent Role="ResPayment">
+              <PropertyRef Name="OrederId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResOrderStatus">
+          <End Role="ResOrderStatus" Type="res_for_sheratonModel.ResOrderStatu" Multiplicity="0..1" />
+          <End Role="ResOrderHd" Type="res_for_sheratonModel.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResOrderStatus">
+              <PropertyRef Name="OrderStatus" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="OrderStatus" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResSALES_TYPES">
+          <End Role="ResOrderTypes" Type="res_for_sheratonModel.ResOrderType" Multiplicity="0..1" />
+          <End Role="ResOrderHd" Type="res_for_sheratonModel.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResOrderTypes">
+              <PropertyRef Name="OrderType" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="OrderType" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResShiftsCodes">
+          <End Role="ResShiftsCodes" Type="res_for_sheratonModel.ResShiftsCode" Multiplicity="1" />
+          <End Role="ResOrderHd" Type="res_for_sheratonModel.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResShiftsCodes">
+              <PropertyRef Name="ShiftId" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="ShiftId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResStoresCodes">
+          <End Role="ResStoresCodes" Type="res_for_sheratonModel.ResStoresCode" Multiplicity="1" />
+          <End Role="ResOrderHd" Type="res_for_sheratonModel.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResStoresCodes">
+              <PropertyRef Name="BranchId" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="BranchId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSALES_HD_ResTablesCodes">
+          <End Role="ResTablesCodes" Type="res_for_sheratonModel.ResTablesCode" Multiplicity="0..1" />
+          <End Role="ResOrderHd" Type="res_for_sheratonModel.ResOrderHd" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResTablesCodes">
+              <PropertyRef Name="TableNo" />
+            </Principal>
+            <Dependent Role="ResOrderHd">
+              <PropertyRef Name="TableNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResTablesCodes_ResTablesStatusCodes">
+          <End Role="ResTablesStatusCodes" Type="res_for_sheratonModel.ResTablesStatusCode" Multiplicity="0..1" />
+          <End Role="ResTablesCodes" Type="res_for_sheratonModel.ResTablesCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResTablesStatusCodes">
+              <PropertyRef Name="StatusId" />
+            </Principal>
+            <Dependent Role="ResTablesCodes">
+              <PropertyRef Name="StatusId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecForms_SecSystems">
+          <End Role="SecSystems" Type="res_for_sheratonModel.SecSystem" Multiplicity="1" />
+          <End Role="SecForms" Type="res_for_sheratonModel.SecForm" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecSystems">
+              <PropertyRef Name="ModuleNo" />
+            </Principal>
+            <Dependent Role="SecForms">
+              <PropertyRef Name="ModuleNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecPermissions_SecForms">
+          <End Role="SecForms" Type="res_for_sheratonModel.SecForm" Multiplicity="1" />
+          <End Role="SecPermissions" Type="res_for_sheratonModel.SecPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecForms">
+              <PropertyRef Name="ModuleNo" />
+              <PropertyRef Name="FormNo" />
+            </Principal>
+            <Dependent Role="SecPermissions">
+              <PropertyRef Name="ModuleNo" />
+              <PropertyRef Name="FormNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecMenues_SecSystems">
+          <End Role="SecSystems" Type="res_for_sheratonModel.SecSystem" Multiplicity="1" />
+          <End Role="SecMenues" Type="res_for_sheratonModel.SecMenue" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecSystems">
+              <PropertyRef Name="ModuleNo" />
+            </Principal>
+            <Dependent Role="SecMenues">
+              <PropertyRef Name="ModuleNo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_SecPermissions_SecUsers">
+          <End Role="SecUsers" Type="res_for_sheratonModel.SecUser" Multiplicity="1" />
+          <End Role="SecPermissions" Type="res_for_sheratonModel.SecPermission" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="SecUsers">
+              <PropertyRef Name="UserName" />
+            </Principal>
+            <Dependent Role="SecPermissions">
+              <PropertyRef Name="UserName" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="ResOrderDtlInstruction">
+          <End Role="ResInstructionCodes" Type="res_for_sheratonModel.ResInstructionCode" Multiplicity="*" />
+          <End Role="ResOrderDtl" Type="res_for_sheratonModel.ResOrderDtl" Multiplicity="*" />
+        </Association>
+        <EntityType Name="ResSubCategoryCode">
+          <Key>
+            <PropertyRef Name="MainCategoryId" />
+            <PropertyRef Name="SubCategoryId" />
+          </Key>
+          <Property Name="MainCategoryId" Type="Decimal" Nullable="false" Precision="3" Scale="0" />
+          <Property Name="SubCategoryId" Type="Decimal" Nullable="false" Precision="7" Scale="0" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="SubCategoryNameA" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SubCategoryNameE" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
+          <Property Name="SubImage" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="UserName" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="InsertDt" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="ResItemCodes" Relationship="res_for_sheratonModel.FK_ResItemCodes_ResSusCategoryCodes1" FromRole="ResSubCategoryCode" ToRole="ResItemCode" />
+          <NavigationProperty Name="ResMainCategoryCode" Relationship="res_for_sheratonModel.FK_ResSusCategoryCodes_ResMainCategoryCodes1" FromRole="ResSubCategoryCode" ToRole="ResMainCategoryCode" />
+        </EntityType>
+        <Association Name="FK_ResItemCodes_ResSusCategoryCodes1">
+          <End Type="res_for_sheratonModel.ResSubCategoryCode" Role="ResSubCategoryCode" Multiplicity="1" />
+          <End Type="res_for_sheratonModel.ResItemCode" Role="ResItemCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResSubCategoryCode">
+              <PropertyRef Name="MainCategoryId" />
+              <PropertyRef Name="SubCategoryId" />
+            </Principal>
+            <Dependent Role="ResItemCode">
+              <PropertyRef Name="MainCategoryId" />
+              <PropertyRef Name="SubCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ResSusCategoryCodes_ResMainCategoryCodes1">
+          <End Type="res_for_sheratonModel.ResMainCategoryCode" Role="ResMainCategoryCode" Multiplicity="1" />
+          <End Type="res_for_sheratonModel.ResSubCategoryCode" Role="ResSubCategoryCode" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ResMainCategoryCode">
+              <PropertyRef Name="MainCategoryId" />
+            </Principal>
+            <Dependent Role="ResSubCategoryCode">
+              <PropertyRef Name="MainCategoryId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="res_for_sheratonModelStoreContainer" CdmEntityContainer="res_for_sheratonEntities">
+          <EntitySetMapping Name="ResAreaCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResAreaCode">
+              <MappingFragment StoreEntitySet="ResAreaCodes">
+                <ScalarProperty Name="GovId" ColumnName="GovId" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="AreaNameA" ColumnName="AreaNameA" />
+                <ScalarProperty Name="AreaNameE" ColumnName="AreaNameE" />
+                <ScalarProperty Name="ServiceVal" ColumnName="ServiceVal" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResCookStatusCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResCookStatusCode">
+              <MappingFragment StoreEntitySet="ResCookStatusCodes">
+                <ScalarProperty Name="CookStatus" ColumnName="CookStatus" />
+                <ScalarProperty Name="CookStatusNameA" ColumnName="CookStatusNameA" />
+                <ScalarProperty Name="CookStatusNameE" ColumnName="CookStatusNameE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResCustomers">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResCustomer">
+              <MappingFragment StoreEntitySet="ResCustomer">
+                <ScalarProperty Name="CustId" ColumnName="CustId" />
+                <ScalarProperty Name="CustNameA" ColumnName="CustNameA" />
+                <ScalarProperty Name="CustNameE" ColumnName="CustNameE" />
+                <ScalarProperty Name="CustAddressA" ColumnName="CustAddressA" />
+                <ScalarProperty Name="CustAddressE" ColumnName="CustAddressE" />
+                <ScalarProperty Name="GovId" ColumnName="GovId" />
+                <ScalarProperty Name="AreaId" ColumnName="AreaId" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="BuildingNo" ColumnName="BuildingNo" />
+                <ScalarProperty Name="ApartmentNo" ColumnName="ApartmentNo" />
+                <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+                <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+                <ScalarProperty Name="Tel3" ColumnName="Tel3" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+                <ScalarProperty Name="CustType" ColumnName="CustType" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResCustomerTypes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResCustomerType">
+              <MappingFragment StoreEntitySet="ResCustomerTypes">
+                <ScalarProperty Name="CustType" ColumnName="CustType" />
+                <ScalarProperty Name="CustTypeNameA" ColumnName="CustTypeNameA" />
+                <ScalarProperty Name="CustTypeNameE" ColumnName="CustTypeNameE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResDeliveryStatus">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResDeliveryStatu">
+              <MappingFragment StoreEntitySet="ResDeliveryStatus">
+                <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+                <ScalarProperty Name="DeliveryStatusNameA" ColumnName="DeliveryStatusNameA" />
+                <ScalarProperty Name="DeliveryStatusNameE" ColumnName="DeliveryStatusNameE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResEmployeeBasics">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResEmployeeBasic">
+              <MappingFragment StoreEntitySet="ResEmployeeBasic">
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+                <ScalarProperty Name="EmpName" ColumnName="EmpName" />
+                <ScalarProperty Name="JobId" ColumnName="JobId" />
+                <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+                <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+                <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResGovCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResGovCode">
+              <MappingFragment StoreEntitySet="ResGovCodes">
+                <ScalarProperty Name="GovId" ColumnName="GovId" />
+                <ScalarProperty Name="GovNameA" ColumnName="GovNameA" />
+                <ScalarProperty Name="GovNameE" ColumnName="GovNameE" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResInstructionCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResInstructionCode">
+              <MappingFragment StoreEntitySet="ResInstructionCodes">
+                <ScalarProperty Name="InstructionId" ColumnName="InstructionId" />
+                <ScalarProperty Name="InstructionNameA" ColumnName="InstructionNameA" />
+                <ScalarProperty Name="InstructionNameE" ColumnName="InstructionNameE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResItemCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResItemCode">
+              <MappingFragment StoreEntitySet="ResItemCodes">
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="MainCategoryId" ColumnName="MainCategoryId" />
+                <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+                <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+                <ScalarProperty Name="Property2Id" ColumnName="Property2Id" />
+                <ScalarProperty Name="MenuSalesId" ColumnName="MenuSalesId" />
+                <ScalarProperty Name="CostPrice" ColumnName="CostPrice" />
+                <ScalarProperty Name="SalesPrice" ColumnName="SalesPrice" />
+                <ScalarProperty Name="OpenQty" ColumnName="OpenQty" />
+                <ScalarProperty Name="CurrentQty" ColumnName="CurrentQty" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResItemTypes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResItemType">
+              <MappingFragment StoreEntitySet="ResItemTypes">
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="TypeNameA" ColumnName="TypeNameA" />
+                <ScalarProperty Name="TypeNameE" ColumnName="TypeNameE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResJOBCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResJOBCode">
+              <MappingFragment StoreEntitySet="ResJOBCodes">
+                <ScalarProperty Name="JobId" ColumnName="JobId" />
+                <ScalarProperty Name="JobNameA" ColumnName="JobNameA" />
+                <ScalarProperty Name="JobNameE" ColumnName="JobNameE" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResMainCategoryCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResMainCategoryCode">
+              <MappingFragment StoreEntitySet="ResMainCategoryCodes">
+                <ScalarProperty Name="MainCategoryId" ColumnName="MainCategoryId" />
+                <ScalarProperty Name="MainCategoryNameA" ColumnName="MainCategoryNameA" />
+                <ScalarProperty Name="MainCategoryNameE" ColumnName="MainCategoryNameE" />
+                <ScalarProperty Name="PrintGroupNo" ColumnName="PrintGroupNo" />
+                <ScalarProperty Name="ShowInInvoice" ColumnName="ShowInInvoice" />
+                <ScalarProperty Name="TypeId" ColumnName="TypeId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+                <ScalarProperty Name="CountableStatus" ColumnName="CountableStatus" />
+                <ScalarProperty Name="MainImage" ColumnName="MainImage" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResMenuSalesCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResMenuSalesCode">
+              <MappingFragment StoreEntitySet="ResMenuSalesCodes">
+                <ScalarProperty Name="MenuSalesId" ColumnName="MenuSalesId" />
+                <ScalarProperty Name="MenuSalesNameA" ColumnName="MenuSalesNameA" />
+                <ScalarProperty Name="MenuSalesNameE" ColumnName="MenuSalesNameE" />
+                <ScalarProperty Name="seq" ColumnName="seq" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResOrderDtls">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResOrderDtl">
+              <MappingFragment StoreEntitySet="ResOrderDtl">
+                <ScalarProperty Name="OrederId" ColumnName="OrederId" />
+                <ScalarProperty Name="SeqNo" ColumnName="SeqNo" />
+                <ScalarProperty Name="ItemId" ColumnName="ItemId" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="CookStatus" ColumnName="CookStatus" />
+                <ScalarProperty Name="CookStatusTime" ColumnName="CookStatusTime" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResOrderHds">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResOrderHd">
+              <MappingFragment StoreEntitySet="ResOrderHd">
+                <ScalarProperty Name="OrederId" ColumnName="OrederId" />
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+                <ScalarProperty Name="OrderNo" ColumnName="OrderNo" />
+                <ScalarProperty Name="OrderDt" ColumnName="OrderDt" />
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="OrderTime" ColumnName="OrderTime" />
+                <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+                <ScalarProperty Name="CustId" ColumnName="CustId" />
+                <ScalarProperty Name="TotalPrice" ColumnName="TotalPrice" />
+                <ScalarProperty Name="PriceAdd" ColumnName="PriceAdd" />
+                <ScalarProperty Name="DiscountRatio" ColumnName="DiscountRatio" />
+                <ScalarProperty Name="DiscountVal" ColumnName="DiscountVal" />
+                <ScalarProperty Name="ServiceVal" ColumnName="ServiceVal" />
+                <ScalarProperty Name="NetPrice" ColumnName="NetPrice" />
+                <ScalarProperty Name="CashVal" ColumnName="CashVal" />
+                <ScalarProperty Name="RemainderVal" ColumnName="RemainderVal" />
+                <ScalarProperty Name="SwDelete" ColumnName="SwDelete" />
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="DeliveryId" ColumnName="DeliveryId" />
+                <ScalarProperty Name="DeliveryStatus" ColumnName="DeliveryStatus" />
+                <ScalarProperty Name="ToDeliveryTime" ColumnName="ToDeliveryTime" />
+                <ScalarProperty Name="DeliveryTimeRequired" ColumnName="DeliveryTimeRequired" />
+                <ScalarProperty Name="FromDeliveryTime" ColumnName="FromDeliveryTime" />
+                <ScalarProperty Name="TableNo" ColumnName="TableNo" />
+                <ScalarProperty Name="PeopleCount" ColumnName="PeopleCount" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserNameDeleted" ColumnName="UserNameDeleted" />
+                <ScalarProperty Name="Comment" ColumnName="Comment" />
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResOrderStatus">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResOrderStatu">
+              <MappingFragment StoreEntitySet="ResOrderStatus">
+                <ScalarProperty Name="OrderStatus" ColumnName="OrderStatus" />
+                <ScalarProperty Name="StatusNameA" ColumnName="StatusNameA" />
+                <ScalarProperty Name="StatusNameE" ColumnName="StatusNameE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResOrderTypes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResOrderType">
+              <MappingFragment StoreEntitySet="ResOrderTypes">
+                <ScalarProperty Name="OrderType" ColumnName="OrderType" />
+                <ScalarProperty Name="SaleNameA" ColumnName="SaleNameA" />
+                <ScalarProperty Name="SaleNameE" ColumnName="SaleNameE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResPayments">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResPayment">
+              <MappingFragment StoreEntitySet="ResPayment">
+                <ScalarProperty Name="DocNo" ColumnName="DocNo" />
+                <ScalarProperty Name="OrederId" ColumnName="OrederId" />
+                <ScalarProperty Name="CashVal" ColumnName="CashVal" />
+                <ScalarProperty Name="CardVal" ColumnName="CardVal" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResProperty2Codes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResProperty2Codes">
+              <MappingFragment StoreEntitySet="ResProperty2Codes">
+                <ScalarProperty Name="Property2Id" ColumnName="Property2Id" />
+                <ScalarProperty Name="Property2NameA" ColumnName="Property2NameA" />
+                <ScalarProperty Name="Property2NameE" ColumnName="Property2NameE" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResPropertyCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResPropertyCode">
+              <MappingFragment StoreEntitySet="ResPropertyCodes">
+                <ScalarProperty Name="PropertyId" ColumnName="PropertyId" />
+                <ScalarProperty Name="PropertyNameA" ColumnName="PropertyNameA" />
+                <ScalarProperty Name="PropertyNameE" ColumnName="PropertyNameE" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResShiftsCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResShiftsCode">
+              <MappingFragment StoreEntitySet="ResShiftsCodes">
+                <ScalarProperty Name="ShiftId" ColumnName="ShiftId" />
+                <ScalarProperty Name="ShiftNameE" ColumnName="ShiftNameE" />
+                <ScalarProperty Name="ShiftNamea" ColumnName="ShiftNamea" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResStoresCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResStoresCode">
+              <MappingFragment StoreEntitySet="ResStoresCodes">
+                <ScalarProperty Name="BranchId" ColumnName="BranchId" />
+                <ScalarProperty Name="BranchNameA" ColumnName="BranchNameA" />
+                <ScalarProperty Name="BranchNameE" ColumnName="BranchNameE" />
+                <ScalarProperty Name="GovId" ColumnName="GovId" />
+                <ScalarProperty Name="AddressA" ColumnName="AddressA" />
+                <ScalarProperty Name="AddressE" ColumnName="AddressE" />
+                <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+                <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+                <ScalarProperty Name="Tel3" ColumnName="Tel3" />
+                <ScalarProperty Name="ServiceRatio" ColumnName="ServiceRatio" />
+                <ScalarProperty Name="MinChargeVal" ColumnName="MinChargeVal" />
+                <ScalarProperty Name="StartDt" ColumnName="StartDt" />
+                <ScalarProperty Name="CloseSw" ColumnName="CloseSw" />
+                <ScalarProperty Name="CloseDt" ColumnName="CloseDt" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResTablesCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResTablesCode">
+              <MappingFragment StoreEntitySet="ResTablesCodes">
+                <ScalarProperty Name="TableNo" ColumnName="TableNo" />
+                <ScalarProperty Name="TableName" ColumnName="TableName" />
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResTablesStatusCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResTablesStatusCode">
+              <MappingFragment StoreEntitySet="ResTablesStatusCodes">
+                <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+                <ScalarProperty Name="StatusDesc" ColumnName="StatusDesc" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResTransTypes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResTransType">
+              <MappingFragment StoreEntitySet="ResTransTypes">
+                <ScalarProperty Name="trans_type" ColumnName="trans_type" />
+                <ScalarProperty Name="TransNameE" ColumnName="TransNameE" />
+                <ScalarProperty Name="TransNameA" ColumnName="TransNameA" />
+                <ScalarProperty Name="TransFunction" ColumnName="TransFunction" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ResWorkStatus">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResWorkStatu">
+              <MappingFragment StoreEntitySet="ResWorkStatus">
+                <ScalarProperty Name="WorkStatus" ColumnName="WorkStatus" />
+                <ScalarProperty Name="WorkStatusNameA" ColumnName="WorkStatusNameA" />
+                <ScalarProperty Name="WorkStatusNameE" ColumnName="WorkStatusNameE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecForms">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.SecForm">
+              <MappingFragment StoreEntitySet="SecForms">
+                <ScalarProperty Name="ModuleNo" ColumnName="ModuleNo" />
+                <ScalarProperty Name="FormNo" ColumnName="FormNo" />
+                <ScalarProperty Name="FormNameA" ColumnName="FormNameA" />
+                <ScalarProperty Name="FormNameE" ColumnName="FormNameE" />
+                <ScalarProperty Name="FormUrl" ColumnName="FormUrl" />
+                <ScalarProperty Name="MenuNo" ColumnName="MenuNo" />
+                <ScalarProperty Name="rank" ColumnName="rank" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecMenues">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.SecMenue">
+              <MappingFragment StoreEntitySet="SecMenues">
+                <ScalarProperty Name="ModuleNo" ColumnName="ModuleNo" />
+                <ScalarProperty Name="MenuNo" ColumnName="MenuNo" />
+                <ScalarProperty Name="MenuNameA" ColumnName="MenuNameA" />
+                <ScalarProperty Name="MenuNameE" ColumnName="MenuNameE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecPermissions">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.SecPermission">
+              <MappingFragment StoreEntitySet="SecPermissions">
+                <ScalarProperty Name="ModuleNo" ColumnName="ModuleNo" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="FormNo" ColumnName="FormNo" />
+                <ScalarProperty Name="UpdatSw" ColumnName="UpdatSw" />
+                <ScalarProperty Name="InsertSw" ColumnName="InsertSw" />
+                <ScalarProperty Name="DeleteSw" ColumnName="DeleteSw" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecSystems">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.SecSystem">
+              <MappingFragment StoreEntitySet="SecSystems">
+                <ScalarProperty Name="ModuleNo" ColumnName="ModuleNo" />
+                <ScalarProperty Name="ModuleNameA" ColumnName="ModuleNameA" />
+                <ScalarProperty Name="ModuleNameE" ColumnName="ModuleNameE" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="SecUsers">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.SecUser">
+              <MappingFragment StoreEntitySet="SecUsers">
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="UserPasswd" ColumnName="UserPasswd" />
+                <ScalarProperty Name="SwSpecialUser" ColumnName="SwSpecialUser" />
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+                <ScalarProperty Name="EmpId" ColumnName="EmpId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="ResOrderDtlInstruction" TypeName="res_for_sheratonModel.ResOrderDtlInstruction" StoreEntitySet="ResOrderDtlInstruction">
+            <EndProperty Name="ResInstructionCodes">
+              <ScalarProperty Name="InstructionId" ColumnName="InstructionId" />
+            </EndProperty>
+            <EndProperty Name="ResOrderDtl">
+              <ScalarProperty Name="OrederId" ColumnName="OrederId" />
+              <ScalarProperty Name="SeqNo" ColumnName="SeqNo" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <EntitySetMapping Name="ResSubCategoryCodes">
+            <EntityTypeMapping TypeName="res_for_sheratonModel.ResSubCategoryCode">
+              <MappingFragment StoreEntitySet="ResSubCategoryCodes">
+                <ScalarProperty Name="InsertDt" ColumnName="InsertDt" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="SubImage" ColumnName="SubImage" />
+                <ScalarProperty Name="SubCategoryNameE" ColumnName="SubCategoryNameE" />
+                <ScalarProperty Name="SubCategoryNameA" ColumnName="SubCategoryNameA" />
+                <ScalarProperty Name="SubCategoryId" ColumnName="SubCategoryId" />
+                <ScalarProperty Name="MainCategoryId" ColumnName="MainCategoryId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

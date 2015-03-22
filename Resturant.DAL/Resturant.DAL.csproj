@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{03A8439D-2ADC-4F25-9DE0-613B03C47B40}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Resturant.DAL</RootNamespace>
+    <AssemblyName>Resturant.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResAreaCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResCookStatusCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResCustomer.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResCustomerType.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResDeliveryStatu.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResEmployeeBasic.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResGovCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResInstructionCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResItemCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResItemType.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResJOBCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResMainCategoryCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResMenuSalesCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResOrderDtl.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResOrderHd.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResOrderStatu.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResOrderType.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResPayment.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResProperty2Codes.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResPropertyCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResShiftsCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResStoresCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResSubCategoryCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResTablesCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResTablesStatusCode.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResTransType.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResturantModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResturantModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResturantModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ResturantModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ResturantModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ResWorkStatu.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecForm.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecMenue.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecPermission.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecSystem.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="SecUser.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>ResturantModel.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ResturantModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ResturantModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <None Include="ResturantModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ResturantModel.edmx</DependentUpon>
+      <LastGenOutput>ResturantModel.Context.cs</LastGenOutput>
+    </None>
+    <None Include="ResturantModel.edmx.diagram">
+      <DependentUpon>ResturantModel.edmx</DependentUpon>
+    </None>
+    <None Include="ResturantModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ResturantModel.edmx</DependentUpon>
+      <LastGenOutput>ResturantModel.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,21 @@
+1	1	„œÌ‰… «·⁄»Ê— 	Obour City 	NULL
+1	2	«·ﬁ«Â—… «·ÃœÌœ… 	New Cairo 	NULL
+1	3	«·‘—Êﬁ 	El Shorouk 	NULL
+1	4	 6√ﬂ Ê»— 	6th of October 	NULL
+1	5	Õ·Ê«‰ 	Helwan 	NULL
+1	6	Ê”ÿ «·»·œ 	Downtown 	NULL
+1	7	«·„ﬁÿ„ 	Mokatam 	NULL
+1	8	ÿ „’—«”ﬂ‰œ—Ì… ’Õ—«ÊÌ	C AlexDesertRoad	NULL
+1	9	«·ÃÌ“… 	Giza 	NULL
+1	10	«·⁄ÃÊ“… 	Agouza 	NULL
+1	11	«·„Â‰œ”Ì‰ 	Mohandeseen 	NULL
+1	12	«·Â—„ 	El-Haram 	NULL
+1	13	„’— «·ÃœÌœ… 	Heliopolis 	NULL
+1	14	„œÌ‰… ‰’— 	Nasr City 	NULL
+1	15	Ã«—œ‰ ”Ì Ì 	Garden City 	NULL
+1	16	«·„⁄«œÌ 	Maadi 	NULL
+1	17	«·“„«·ﬂ 	Zamalek 	NULL
+1	18	«·œﬁÌ 	Dokki 	NULL
+1	19	√Œ—Ï	Others	NULL
+26	20	€—» ÿ‰ÿ«	West Tanta	NULL
+NULL	NULL	NULL	NULL	NULL

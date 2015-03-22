@@ -1,0 +1,6 @@
+0	€Ì— „⁄—›	not defined	NULL	NULL
+1	’€Ì—	small	NULL	NULL
+2	„ Ê”ÿ	meduim	NULL	NULL
+3	ﬂ»Ì—	larg	NULL	NULL
+4	ﬂ»Ì— Ãœ«	extra larg	NULL	NULL
+NULL	NULL	NULL	NULL	NULL

@@ -1,0 +1,4 @@
+0	б«нжћѕ	not defined
+1	гд“б	home
+2	‘—яе	company
+NULL	NULL	NULL

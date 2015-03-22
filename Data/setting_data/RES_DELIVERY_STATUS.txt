@@ -1,0 +1,4 @@
+0	€Ì— „” ·„Â	not recieved
+1	«” ·«„	to delivery
+2	 „ «” ·«„Â« „‰ «·ÿÌ«—	from delivery
+NULL	NULL	NULL

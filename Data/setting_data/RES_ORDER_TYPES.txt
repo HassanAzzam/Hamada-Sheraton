@@ -1,0 +1,5 @@
+0	б«нжћѕ	not defined
+1	’«бе	table
+2	 ня «ж«м	takeaway
+3	ѕбнЁ—м	deleivery
+NULL	NULL	NULL

@@ -1,0 +1,23 @@
+1	«·ﬁ«Â—…	Cairo	NULL
+2	«·«”ﬂ‰œ—Ì…	Alexandria	NULL
+26	ÿ‰ÿ«	Tanta	NULL
+27	«·€—œﬁ…	Hurghada	NULL
+28	»Ê—”⁄Ìœ	Portsaid	NULL
+29	«·≈”„«⁄Ì·Ì…	Ismailia	NULL
+30	«·›ÌÊ„	Fayoum	NULL
+31	‘—„ «·‘ÌŒ	Sharm El Sheikh	NULL
+32	«·€—»Ì…	Gharbeya	NULL
+33	«·‘—ﬁÌ…	Sharkeya	NULL
+34	«·„‰’Ê—…	Mansoura	NULL
+35	«·«ﬁ’—	Luxor	NULL
+36	«·„‰Ê›Ì…	Monufeya	NULL
+37	ﬁ‰«	Kena	NULL
+38	œ„Ì«ÿ	Domyat	NULL
+39	œ„‰ÂÊ—	Damanhour	NULL
+40	«·„‰Ì«	Minya	NULL
+41	«·œﬁÂ·ÌÂ	Dakahleya	NULL
+42	‘„«· ”Ì‰«¡	North Sinai	NULL
+43	«·”ÊÌ”	Suez	NULL
+44	«”ÌÊÿ	Asyut	NULL
+45	”ÊÂ«Ã 	Sohag	NULL
+NULL	NULL	NULL	NULL

@@ -1,0 +1,4 @@
+0	ΫνΡ γΪΡέ	not defined	NULL	NULL
+1	ΘαΟμ	ΘαΟμ	NULL	NULL
+2	ΤΗγμ	ΤΗγμ	NULL	NULL
+NULL	NULL	NULL	NULL	NULL

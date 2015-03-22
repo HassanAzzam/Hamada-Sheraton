@@ -1,0 +1,14 @@
+﻿<Window x:Class="Resturant.NewDelivery"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="NewDelivery" Height="245.455" Width="643.387" WindowStyle="None" AllowsTransparency="True">
+    <Window.Effect>
+        <DropShadowEffect BlurRadius="27" Direction="0" ShadowDepth="0"/>
+    </Window.Effect>
+    <Grid Margin="0,0,-15,2">
+        <Label Content=": رقم هاتف العميل" HorizontalAlignment="Left" Margin="410,77,0,0" VerticalAlignment="Top" FontSize="16" FontWeight="Medium"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="110,81,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="295" FontSize="16" FontWeight="Medium"/>
+        <Button x:Name="SearchBtn" Content="بحث" HorizontalAlignment="Left" Margin="259,152,0,0" VerticalAlignment="Top" Width="127" Height="41" FontSize="16" Click="SearchBtn_Click"/>
+
+    </Grid>
+</Window>

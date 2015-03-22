@@ -1,0 +1,2191 @@
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResAreaCodesInsert]    Script Date: 02/26/2015 20:25:07 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+CREATE PROCEDURE [dbo].[ResAreaCodesInsert] 
+	 @GovId numeric(3,0),
+	  @AreaId numeric(3,0),
+      @AreaNameA varchar(150),
+      @AreaNameE varchar(150),
+      @ServiceVal numeric(7,0),
+      @UserName varchar(100)
+      
+AS
+BEGIN
+INsert into ResAreaCodes
+ ( GovId,
+	  AreaId ,
+      AreaNameA ,
+      AreaNameE,
+      ServiceVal ,
+      UserName ,
+      InsertDt )
+Select @GovId,
+	  @AreaId ,
+      @AreaNameA ,
+      @AreaNameE,
+      @ServiceVal ,
+      @UserName ,
+     convert(datetime,getdate(),102)
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResAreaCodesLoadAll]    Script Date: 02/26/2015 20:25:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+create PROCEDURE [dbo].[ResAreaCodesLoadAll] 
+	 @GovId numeric(3,0)
+	      
+AS
+BEGIN
+	select GovId,
+	AreaId,
+	AreaNameA ,
+    AreaNameE,
+    ServiceVal
+    from ResAreaCodes
+          
+END
+ 
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResAreaCodesLoadByGovId]    Script Date: 02/26/2015 20:25:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+create PROCEDURE [dbo].[ResAreaCodesLoadByGovId] 
+	 @GovId numeric(3,0)
+	      
+AS
+BEGIN
+	select GovId,
+	AreaId,
+	AreaNameA ,
+    AreaNameE,
+    ServiceVal
+    from ResAreaCodes
+     where GovId=@GovId
+     
+END
+ 
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResAreaCodesUpdate]    Script Date: 02/26/2015 20:25:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+create PROCEDURE [dbo].[ResAreaCodesUpdate] 
+	 @GovId numeric(3,0),
+	  @AreaId numeric(3,0),
+      @AreaNameA varchar(150),
+      @AreaNameE varchar(150),
+      @ServiceVal numeric(7,0),
+      @UserName varchar(100)
+      
+AS
+BEGIN
+update ResAreaCodes
+ set      AreaNameA=@AreaNameA ,
+      AreaNameE=@AreaNameE,
+      ServiceVal=@ServiceVal
+     where GovId=@GovId
+     and AreaId=@AreaId
+END
+ 
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResCustomerInsert]    Script Date: 02/26/2015 20:25:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResCustomerInsert] 
+	@CustNameA varchar(80),@CustNameE varchar(80),@CustAddressA nvarchar(150)
+	,@CustAddressE nvarchar(150),
+	@GovId numeric(3, 0),@AreaId numeric(3, 0),@Street nvarchar(50),@BuildingNo int,
+	@ApartmentNo int,@Tel1 varchar(15),@Tel2 varchar(15) ,@Tel3 varchar(15),
+	@Comment nvarchar(150),@UserName varchar(100)
+AS
+BEGIN
+INsert into ResCustomer 
+(  CustNameA, CustNameE, CustAddressA, CustAddressE, GovId, 
+AreaId, Street, BuildingNo, ApartmentNo, Tel1, Tel2, Tel3, Comment, UserName, 
+                      InsertDt)
+SELECT  @CustNameA, @CustNameE, @CustAddressA, @CustAddressE, @GovId,
+ @AreaId, @Street, @BuildingNo, @ApartmentNo, @Tel1, @Tel2, @Tel3, @Comment, @UserName, 
+  convert(datetime,getdate(),102)
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResCustomerLoadAll]    Script Date: 02/26/2015 20:25:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResCustomerLoadAll] 
+
+AS
+BEGIN
+
+SELECT CustId, CustNameA, CustNameE, CustAddressA, CustAddressE, GovId, AreaId, Street, BuildingNo, ApartmentNo, Tel1, Tel2, Tel3, Comment, UserName, 
+       InsertDt from ResCustomer 
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResCustomerLoadById]    Script Date: 02/26/2015 20:25:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResCustomerLoadById] 
+@CustId numeric(9,0) 
+
+AS
+BEGIN
+
+SELECT CustId, CustNameA, CustNameE, CustAddressA, CustAddressE, GovId, AreaId, Street, BuildingNo, ApartmentNo, Tel1, Tel2, Tel3, Comment, UserName, 
+       InsertDt from ResCustomer 
+       where CustId=@CustId
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResCustomerLoadByName]    Script Date: 02/26/2015 20:25:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResCustomerLoadByName]
+@CustNameA varchar(80) 
+
+AS
+BEGIN
+
+SELECT CustId, CustNameA, CustNameE, CustAddressA, CustAddressE, GovId, AreaId, Street, BuildingNo, ApartmentNo, Tel1, Tel2, Tel3, Comment, UserName, 
+       InsertDt from ResCustomer 
+       where CustNameA like @CustNameA
+     
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResCustomerLoadByTel]    Script Date: 02/26/2015 20:25:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResCustomerLoadByTel]
+@Tel1 varchar(15) 
+
+AS
+BEGIN
+
+SELECT CustId, CustNameA, CustNameE, CustAddressA, CustAddressE, GovId, AreaId, Street, BuildingNo, ApartmentNo, Tel1, Tel2, Tel3, Comment, UserName, 
+       InsertDt from ResCustomer 
+       where Tel1=@Tel1
+       or Tel2=@Tel1
+       or Tel3=@Tel1
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResCustomerUpdate]    Script Date: 02/26/2015 20:25:08 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+
+create PROCEDURE [dbo].[ResCustomerUpdate] 
+	@CustId numeric(9,0),@CustNameA varchar(80),@CustNameE varchar(80),@CustAddressA nvarchar(150)
+	,@CustAddressE nvarchar(150),
+	@GovId numeric(3, 0),@AreaId numeric(3, 0),@Street nvarchar(50),@BuildingNo int,
+	@ApartmentNo int,@Tel1 varchar(15),@Tel2 varchar(15) ,@Tel3 varchar(15),
+	@Comment nvarchar(150)
+AS
+BEGIN
+update ResCustomer 
+set   CustNameA=@CustNameA, 
+      CustNameE=@CustNameE,
+      CustAddressA=@CustAddressA,
+      CustAddressE=@CustAddressE,
+      GovId=@GovId, 
+      AreaId=@AreaId,
+      Street=@Street,
+      BuildingNo=@BuildingNo,
+      ApartmentNo=@ApartmentNo,
+      Tel1=@Tel1,
+      Tel2=@Tel2,
+      Tel3=@Tel3,
+      Comment=@Comment 
+  where CustId=@CustId
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResEmployeeBasicInsert]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResEmployeeBasicInsert] 
+	 @EmpId numeric(7,0),
+      @EmpName varchar(150),
+      @JobId numeric(3,0),
+      @WorkStatus numeric(1,0),
+       @Tel1 varchar(15),
+      @Tel2 varchar(15)
+      
+      
+AS
+BEGIN
+INsert into ResEmployeeBasic
+ (  EmpId,
+      EmpName,
+      JobId,
+      WorkStatus ,
+      Tel1,
+      Tel2,
+      InsertDt)
+Select @EmpId,
+      @EmpName,
+      @JobId,
+      @WorkStatus,
+      @Tel1,
+      @Tel2,
+     convert(datetime,SYSDATETIME(),102)
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResEmployeeBasicLoadAll]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResEmployeeBasicLoadAll] 
+	            
+AS
+BEGIN
+select EmpId,
+      EmpName,
+      JobId,
+      WorkStatus ,
+      Tel1,
+      Tel2
+      from ResEmployeeBasic
+      
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResEmployeeBasicLoadById]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResEmployeeBasicLoadById] 
+	 @EmpId numeric(7,0)
+           
+AS
+BEGIN
+select EmpId,
+      EmpName,
+      JobId,
+      WorkStatus ,
+      Tel1,
+      Tel2
+      from ResEmployeeBasic
+      where EmpId = @EmpId
+
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResEmployeeBasicUpdate]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResEmployeeBasicUpdate] 
+ @EmpId numeric(7,0),
+      @EmpName varchar(150),
+      @JobId numeric(3,0),
+      @WorkStatus numeric(1,0),
+      @Tel1 varchar(15),
+      @Tel2 varchar(15)	            
+AS
+BEGIN
+
+update ResEmployeeBasic
+set   EmpName=@EmpName,
+      JobId=@JobId,
+      WorkStatus=@WorkStatus ,
+      Tel1=@Tel1,
+      Tel2=@Tel2
+      where EmpId=@EmpId
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResGovCodesInsert]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResGovCodesInsert] 
+	 @GovId numeric(3,0),
+      @GovNameA varchar(150),
+      @GovNameE varchar(150),
+      @UserName varchar(100)
+      
+AS
+BEGIN
+INsert into ResGovCodes
+ ( GovId,
+      GovNameA,
+      GovNameE,
+      UserName,
+      InsertDt )
+Select @GovId,
+      @GovNameA,
+      @GovNameE,
+      @UserName,
+     convert(datetime,getdate(),102)
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResGovCodesLoadAll]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResGovCodesLoadAll] 
+
+AS
+BEGIN
+
+SELECT   GovId,
+      GovNameA,
+      GovNameE,
+      InsertDt
+  FROM ResGovCodes 
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResGovCodesLoadByGovId]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResGovCodesLoadByGovId] 
+@GovId numeric(3,0)
+AS
+BEGIN
+
+SELECT   GovId,
+      GovNameA,
+      GovNameE,
+      InsertDt
+  FROM ResGovCodes
+  where GovId=@GovId 
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResGovCodesUpdate]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResGovCodesUpdate] 
+	 @GovId numeric(3,0),
+      @GovNameA varchar(150),
+      @GovNameE varchar(150)
+     
+      
+AS
+BEGIN
+update ResGovCodes
+set 
+      GovNameA=@GovNameA,
+      GovNameE=@GovNameE
+   where GovId=@GovId
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResItemCodesInsert]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResItemCodesInsert] 
+ @ItemId   NUMERIC(3,0)
+      ,  @MainCategoryId NUMERIC(3,0)    
+      ,  @SubCategoryId  NUMERIC(7,0) 
+      ,  @PropertyId  NUMERIC(1,0)
+      ,  @CostPrice  NUMERIC(12,2) 
+      ,  @SalesPrice   NUMERIC(12,2)
+      ,  @OpenQty   NUMERIC(12,2) 
+      ,  @CurrentQty   NUMERIC(12,2) 
+      ,  @Comment  varchar(100)
+      ,  @UserName varchar(100)  
+AS
+BEGIN
+insert into ResItemCodes
+	( ItemId 
+      ,  MainCategoryId  
+      ,  SubCategoryId 
+      ,  PropertyId  
+      ,  CostPrice 
+      ,  SalesPrice 
+      ,  OpenQty
+      ,  CurrentQty  
+      ,  Comment
+      ,  UserName  
+      ,  InsertDt  
+      )
+SELECT   @ItemId  
+      ,  @MainCategoryId  
+      ,  @SubCategoryId  
+      ,  @PropertyId  
+      ,  @CostPrice  
+      ,  @SalesPrice  
+      ,  @OpenQty  
+      ,  @CurrentQty  
+      ,  @Comment  
+      ,  @UserName  
+      , convert(datetime,getdate(),102)
+  
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResItemCodesLoadAll]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResItemCodesLoadAll] 
+ 
+AS
+BEGIN
+
+SELECT   ItemId  
+      ,  MainCategoryId  
+      ,  SubCategoryId  
+      ,  PropertyId  
+      ,  CostPrice  
+      ,  SalesPrice  
+      ,  OpenQty  
+      ,  CurrentQty  
+      ,  Comment  
+      
+      
+  FROM    ResItemCodes 
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResItemCodesLoadByItemId]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResItemCodesLoadByItemId] 
+ @itemId  numeric(12,0)
+AS
+BEGIN
+
+SELECT   ItemId  
+      ,  MainCategoryId  
+      ,  SubCategoryId  
+       ,  PropertyId  
+      ,  CostPrice  
+      ,  SalesPrice  
+      ,  OpenQty  
+      ,  CurrentQty  
+      ,  Comment  
+      
+      
+  FROM    ResItemCodes
+  where ItemId=@ItemId 
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResItemCodesLoadByMainCategory]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResItemCodesLoadByMainCategory] 
+ @MainCategoryId  numeric(3,0)
+AS
+BEGIN
+
+SELECT   ItemId  
+      ,  MainCategoryId  
+      ,  SubCategoryId  
+       ,  PropertyId  
+      ,  CostPrice  
+      ,  SalesPrice  
+      ,  OpenQty  
+      ,  CurrentQty  
+      ,  Comment  
+      
+      
+  FROM    ResItemCodes
+  where MainCategoryId=@MainCategoryId 
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResItemCodesLoadBySubCategory]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResItemCodesLoadBySubCategory] 
+ @MainCategoryId  numeric(3,0),
+  @SubCategoryId  numeric(7,0)
+AS
+BEGIN
+
+SELECT   ItemId  
+      ,  MainCategoryId  
+      ,  SubCategoryId  
+      ,  PropertyId  
+      ,  CostPrice  
+      ,  SalesPrice  
+      ,  OpenQty  
+      ,  CurrentQty  
+      ,  Comment  
+      
+      
+  FROM    ResItemCodes
+  where MainCategoryId=@MainCategoryId
+  and SubCategoryId=@SubCategoryId 
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResItemCodesUpdate]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResItemCodesUpdate] 
+ @ItemId   NUMERIC(3,0)
+      ,  @MainCategoryId NUMERIC(3,0)    
+      ,  @SubCategoryId  NUMERIC(7,0) 
+       ,  @PropertyId  NUMERIC(1,0)
+      ,  @CostPrice  NUMERIC(12,2) 
+      ,  @SalesPrice   NUMERIC(12,2)
+      ,  @OpenQty   NUMERIC(12,2) 
+      ,  @CurrentQty   NUMERIC(12,2) 
+      ,  @Comment  varchar(100)
+      
+AS
+BEGIN
+update  ResItemCodes
+	set  MainCategoryId =@MainCategoryId 
+      ,  SubCategoryId =@SubCategoryId
+       ,  PropertyId  =@PropertyId
+      ,  CostPrice =@CostPrice
+      ,  SalesPrice=@SalesPrice 
+      ,  OpenQty=@OpenQty
+      ,  CurrentQty =@CurrentQty 
+      ,  Comment=@Comment
+     where ItemId=@ItemId
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResJOBCodesInsert]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResJOBCodesInsert] 
+	 @JobId numeric(3,0),
+      @JobNameA varchar(100),
+      @JobNameE varchar(100),
+      @UserName varchar(100),
+      @InsertDt datetime
+      
+AS
+BEGIN
+INsert into ResJOBCodes
+ ( JobId,
+      JobNameA ,
+      JobNameE ,
+      UserName,
+      InsertDt )
+Select  @JobId,
+      @JobNameA ,
+      @JobNameE,
+      @UserName,      
+     convert(datetime,getdate(),102)
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResJOBCodesLoadAll]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResJOBCodesLoadAll] 
+	  
+      
+AS
+BEGIN
+   select JobId,
+      JobNameA ,
+      JobNameE 
+      from ResJOBCodes
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResJOBCodesLoadById]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResJOBCodesLoadById] 
+@JobId numeric(3,0)	  
+      
+AS
+BEGIN
+   select JobId,
+      JobNameA ,
+      JobNameE 
+      from ResJOBCodes
+      where JobId=@JobId
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResJOBCodesUpdate]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResJOBCodesUpdate] 
+	 @JobId numeric(3,0),
+      @JobNameA varchar(100),
+      @JobNameE varchar(100)
+     
+      
+AS
+BEGIN
+update  ResJOBCodes
+set 
+       JobNameA=@JobNameA ,
+      JobNameE =@JobNameE
+where JobId=@JobId
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResMainCategoryCodesInsert]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResMainCategoryCodesInsert] 
+@MainCategoryId numeric(3,0),	  
+   @MainCategoryNameA varchar(150) ,
+     @MainCategoryNameE varchar(150),
+     @PrintGroupNo numeric(3,0),
+     @ShowInInvoice numeric(1,0),
+     @MainImage image,
+     @TypeId numeric(1,0),
+     @UserName varchar(100)   
+AS
+BEGIN
+insert into ResMainCategoryCodes
+      (MainCategoryId,
+       MainCategoryNameA ,
+       MainCategoryNameE,
+       PrintGroupNo,
+       ShowInInvoice,
+       MainImage,
+       TypeId,
+       UserName,
+       InsertDt)
+   values( @MainCategoryId,
+		   @MainCategoryNameA ,
+           @MainCategoryNameE,
+           @PrintGroupNo,
+           @ShowInInvoice,
+           @MainImage,
+           @TypeId,
+           @UserName,
+           convert(datetime,SYSDATETIME(),102))
+     
+     
+      
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResMainCategoryCodesLoadAll]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResMainCategoryCodesLoadAll] 
+@MainCategoryId numeric(3,0)	  
+      
+AS
+BEGIN
+   select MainCategoryId,
+      MainCategoryNameA ,
+     MainCategoryNameE,
+     PrintGroupNo,
+     ShowInInvoice,
+     MainImage,
+     TypeId
+     
+      from ResMainCategoryCodes
+      
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResMainCategoryCodesLoadById]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResMainCategoryCodesLoadById] 
+@MainCategoryId numeric(3,0)	  
+      
+AS
+BEGIN
+   select MainCategoryId,
+      MainCategoryNameA ,
+     MainCategoryNameE,
+     PrintGroupNo,
+     ShowInInvoice,
+     MainImage,
+     TypeId
+     
+      from ResMainCategoryCodes
+      where MainCategoryId=@MainCategoryId
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResMainCategoryCodesUpdate]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResMainCategoryCodesUpdate] 
+@MainCategoryId numeric(3,0),	  
+   @MainCategoryNameA varchar(150) ,
+     @MainCategoryNameE varchar(150),
+     @PrintGroupNo numeric(3,0),
+     @ShowInInvoice numeric(1,0),
+     @MainImage image,
+     @TypeId numeric(1,0)
+        
+AS
+BEGIN
+update  ResMainCategoryCodes
+      set  MainCategoryNameA =@MainCategoryNameA,
+       MainCategoryNameE=@MainCategoryNameE,
+       PrintGroupNo=@PrintGroupNo,
+       ShowInInvoice=@ShowInInvoice,
+       MainImage=@MainImage,
+       TypeId=@TypeId
+     where  MainCategoryId=@MainCategoryId
+    
+      
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResOrderDtlInsert]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResOrderDtlInsert] 
+	 @OrederId numeric(12,0),
+      @SeqNo numeric(4,0),
+      @ItemId numeric(12,0),
+      @Qty numeric(9,2),
+      @Price numeric(12,2),
+      @CookStatus numeric(1,0),
+      @CookStatusTime datetime
+   
+AS
+BEGIN
+INsert into ResOrderDtl
+ (   OrederId ,
+      SeqNo ,
+      ItemId,
+      Qty ,
+      Price,
+      CookStatus,
+      CookStatusTime)
+Select  @OrederId ,
+      @SeqNo ,
+      @ItemId,
+      @Qty ,
+      @Price,
+      @CookStatus,
+      @CookStatusTime
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResOrderDtlLoadByOrderId]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResOrderDtlLoadByOrderId] 
+	 @OrederId numeric(12,0)
+   AS
+BEGIN
+select  OrederId ,
+        SeqNo ,
+        ItemId,
+        Qty ,
+        Price,
+        CookStatus,
+        CookStatusTime
+from ResOrderDtl
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResOrderDtlUpdate]    Script Date: 02/26/2015 20:25:09 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResOrderDtlUpdate] 
+	 @OrederId numeric(12,0),
+      @SeqNo numeric(4,0),
+      @ItemId numeric(12,0),
+      @Qty numeric(9,2),
+      @Price numeric(12,2)
+   
+AS
+BEGIN
+update ResOrderDtl
+set  ItemId=  @ItemId,
+      Qty =@Qty,
+      Price=@Price
+      where OrederId=@OrederId
+      and   SeqNo=@SeqNo
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResOrderDtlUpdateCook]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResOrderDtlUpdateCook] 
+	  @OrederId numeric(12,0),
+      @SeqNo numeric(4,0),
+      @CookStatus numeric(1,0),
+      @CookStatusTime datetime
+   
+AS
+BEGIN
+update ResOrderDtl
+set  CookStatus=  @CookStatus,
+     CookStatusTime =@CookStatusTime
+where OrederId=@OrederId
+      and   SeqNo=@SeqNo
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResOrderHdInsert]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResOrderHdInsert] 
+	  @BranchId numeric(3,0),
+      @OrderNo numeric(9,0),
+      @OrderDt datetime,
+      @ShiftId numeric(1,0),
+      @CustId numeric(1,0),
+      @TotalPrice numeric(12,2),
+      @DiscountRatio numeric(12,2),
+      @DiscountVal numeric(9,2),
+      @ServiceVal numeric(9,0),
+      @NetPrice numeric(12,2),
+      @CashVal numeric(12,2),
+      @RemainderVal numeric(12,2),
+      @SwDelete numeric(1,0),
+      @OrderStatus numeric(1,0),
+      @DeliveryId numeric(7,0),
+      @DeliveryStatus numeric(1,0),
+      @DeliveryTimeRequired datetime,
+      @TableNo int,
+      @PeopleCount int,
+      @UserName varchar(100),
+      @UserNameDeleted numeric(7,0),
+      @Comment varchar(150)
+   
+AS
+BEGIN
+INsert into ResOrderHd
+ (   BranchId ,
+     OrderNo ,
+     OrderDt,
+     OrderTime,
+     ShiftId,
+     CustId,
+     TotalPrice,
+     DiscountRatio,
+     DiscountVal,
+     ServiceVal,
+     NetPrice,
+     CashVal,
+     RemainderVal,
+     SwDelete,
+     OrderStatus,
+     DeliveryId,
+     DeliveryStatus,
+     DeliveryTimeRequired,
+     TableNo,
+     PeopleCount,
+     UserName,
+     UserNameDeleted,
+     Comment,
+     InsertDt)
+Select  
+ @BranchId ,
+      @OrderNo ,
+      CONVERT(date,@OrderDt,102),
+      convert(datetime,GETDATE(),102),
+      @ShiftId,
+      @CustId,
+      @TotalPrice,
+      @DiscountRatio,
+      @DiscountVal,
+      @ServiceVal,
+      @NetPrice,
+      @CashVal,
+      @RemainderVal,
+      @SwDelete,
+      @OrderStatus,
+      @DeliveryId,
+      @DeliveryStatus,
+      @DeliveryTimeRequired,
+      @TableNo,
+      @PeopleCount,
+      @UserName,
+      @UserNameDeleted,
+      @Comment,
+      convert(datetime,GETDATE(),102)
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResOrderHdLoadAll]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResOrderHdLoadAll] 
+	  
+AS
+BEGIN
+select    BranchId ,
+     OrderNo ,
+     OrderDt,
+     OrderTime,
+     ShiftId,
+     CustId,
+     TotalPrice,
+     DiscountRatio,
+     DiscountVal,
+     ServiceVal,
+     NetPrice,
+     CashVal,
+     RemainderVal,
+     SwDelete,
+     OrderStatus,
+     DeliveryId,
+     DeliveryStatus,
+     DeliveryTimeRequired,
+     TableNo,
+     PeopleCount,
+     UserName,
+     UserNameDeleted,
+     Comment,
+     InsertDt
+     from ResOrderHd
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResOrderHdLoadById]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResOrderHdLoadById] 
+@OrederId numeric(12,0)	  
+AS
+BEGIN
+select    BranchId ,
+     OrderNo ,
+     OrderDt,
+     OrderTime,
+     ShiftId,
+     CustId,
+     TotalPrice,
+     DiscountRatio,
+     DiscountVal,
+     ServiceVal,
+     NetPrice,
+     CashVal,
+     RemainderVal,
+     SwDelete,
+     OrderStatus,
+     DeliveryId,
+     DeliveryStatus,
+     DeliveryTimeRequired,
+     TableNo,
+     PeopleCount,
+     UserName,
+     UserNameDeleted,
+     Comment,
+     InsertDt
+     from ResOrderHd
+     where OrederId=@OrederId
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResOrderHdUpdateCash]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+create PROCEDURE [dbo].[ResOrderHdUpdateCash] 
+      @OrederId numeric(12,0),
+	  @CashVal numeric(12,2),
+      @RemainderVal numeric(12,2)
+    
+
+AS
+BEGIN
+update ResOrderHd
+set  CashVal=@CashVal,
+     RemainderVal =@RemainderVal
+     where OrederId=@OrederId
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResOrderHdUpdateDelivery]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+create PROCEDURE [dbo].[ResOrderHdUpdateDelivery] 
+      @OrederId numeric(12,0),
+	  @DeliveryId numeric(7,0),
+      @DeliveryStatus numeric(1,0)
+    
+
+AS
+BEGIN
+update ResOrderHd
+set  DeliveryId=@DeliveryId,
+     DeliveryStatus =@DeliveryStatus
+     where OrederId=@OrederId
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResOrderHdUpdateOrderStatus]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+create PROCEDURE [dbo].[ResOrderHdUpdateOrderStatus] 
+      @OrederId numeric(12,0),
+	  @OrderStatus numeric(1,0)
+    
+
+AS
+BEGIN
+  update ResOrderHd
+  set  OrderStatus=@OrderStatus
+  where OrederId=@OrederId
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResPaymentInsert]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResPaymentInsert] 
+	  @OrederId numeric(12,0),
+      @CashVal numeric(12,2),
+      @CardVal numeric(12,2),
+      @UserName varchar(100)
+   
+AS
+BEGIN
+INsert into ResPayment
+ (   OrederId,
+      CashVal,
+      CardVal,
+      UserName,
+      InsertDt)
+Select  
+      @OrederId,
+      @CashVal,
+      @CardVal,
+      @UserName,
+      convert(datetime,GETDATE(),102)
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResPaymentLoadAll]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResPaymentLoadAll] 
+	 
+	   
+AS
+BEGIN
+Select DocNo,
+      OrederId,
+      CashVal,
+      CardVal
+      from ResPayment
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResPaymentLoadByDocNo]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResPaymentLoadByDocNo] 
+	@DocNo numeric(12,0) 
+	   
+AS
+BEGIN
+Select DocNo
+      OrederId,
+      CashVal,
+      CardVal
+      from ResPayment
+      where DocNo=@DocNo
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResPaymentUpdate]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResPaymentUpdate] 
+	  @DocNo numeric(12,0),
+	  @CashVal numeric(12,2),
+	  @CardVal numeric(12,2)
+      
+AS
+BEGIN
+update ResPayment
+ set  CashVal=@CashVal,
+      CardVal=@CardVal
+      where DocNo=@DocNo
+      
+
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResPropertyCodesInsert]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResPropertyCodesInsert] 
+	@PropertyId numeric (3,0), 
+	@PropertyNameA varchar(50),
+    @PropertyNameE varchar(50),
+    @UserName varchar(100)
+ AS
+BEGIN
+insert into ResPropertyCodes
+(PropertyId,
+      PropertyNameA,
+      PropertyNameE,
+      UserName,
+      InsertDt)
+Select @PropertyId,
+      @PropertyNameA,
+      @PropertyNameE,
+      @UserName,
+     convert(datetime,GETDATE(),102)
+          
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResPropertyCodesLoadAll]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResPropertyCodesLoadAll] 
+	 
+AS
+BEGIN
+Select PropertyId,
+      PropertyNameA,
+      PropertyNameE
+      from ResPropertyCodes
+     
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResPropertyCodesLoadById]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResPropertyCodesLoadById] 
+	@PropertyId numeric (3,0) 
+AS
+BEGIN
+Select PropertyId,
+      PropertyNameA,
+      PropertyNameE
+      from ResPropertyCodes
+      where PropertyId=@PropertyId
+     
+END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResShiftsCodesInsert]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[ResShiftsCodesInsert] 
+     @ShiftId numeric(1, 0),
+ @ShiftNameE varchar(50),
+ @ShiftNamea varchar(50),
+ @UserName  varchar(100)     
+AS
+BEGIN
+insert into ResShiftsCodes
+(ShiftId ,
+ ShiftNameE ,
+ ShiftNamea ,
+ UserName , 
+InsertDt)
+SELECT     @ShiftId,
+ @ShiftNameE,
+ @ShiftNamea,
+ @UserName, 
+convert(datetime,getdate(),102)
+
+END
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResShiftsCodesLoadAll]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[ResShiftsCodesLoadAll] 
+          
+AS
+BEGIN
+SELECT     ShiftId,
+ ShiftNameE,
+ ShiftNamea,
+ UserName, 
+InsertDt
+FROM         ResShiftsCodes
+
+END
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResShiftsCodesLoadById]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[ResShiftsCodesLoadById] 
+   @ShiftId  numeric(1,0)
+         
+AS
+BEGIN
+SELECT     ShiftId,
+ ShiftNameE,
+ ShiftNamea,
+ UserName, 
+InsertDt
+FROM         ResShiftsCodes
+where ShiftId=@ShiftId
+END
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResShiftsCodesUpdate]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[ResShiftsCodesUpdate] 
+     @ShiftId numeric(1, 0),
+ @ShiftNameE varchar(50),
+ @ShiftNamea varchar(50),
+ @UserName varchar(100)     
+AS
+BEGIN
+update  ResShiftsCodes
+set ShiftNameE=@ShiftNameE ,
+ ShiftNamea =@ShiftNamea
+where ShiftId=@ShiftId
+END
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResStoresCodesInsert]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+CREATE PROCEDURE [dbo].[ResStoresCodesInsert] 
+   @BranchNameA varchar(100),
+   @BranchNameE varchar(100),
+   @GovId numeric(3,0),
+   @AddressA varchar(150),
+   @AddressE varchar(150),
+   @Tel1 varchar(15),
+   @Tel2 varchar(15),
+   @Tel3 varchar(15), 
+   @ServiceRatio numeric(5, 2),
+   @MinChargeVal numeric(12, 2),
+   @StartDt datetime,
+   @CloseSw numeric(1, 0), 
+   @CloseDt datetime
+	       
+AS
+BEGIN
+insert into   ResStoresCodes
+  (   BranchNameA,
+     BranchNameE,
+     GovId,
+     AddressA,
+     AddressE,
+     Tel1,
+     Tel2,
+     Tel3, 
+     ServiceRatio,
+     MinChargeVal,
+     StartDt,
+     CloseSw, 
+     CloseDt)
+select 
+ @BranchNameA,
+ @BranchNameE,
+ @GovId,
+ @AddressA,
+ @AddressE,
+ @Tel1,
+ @Tel1,
+ @Tel3, 
+ @ServiceRatio,
+ @MinChargeVal,
+ @StartDt,
+ @CloseSw, 
+ @CloseDt
+
+
+END
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResStoresCodesLoadById]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[ResStoresCodesLoadById] 
+   @BranchId  numeric(3,0)
+         
+AS
+BEGIN
+select  BranchId,
+      BranchNameA,
+     BranchNameE,
+     GovId,
+     AddressA,
+     AddressE,
+     Tel1,
+     Tel2,
+     Tel3, 
+     ServiceRatio,
+     MinChargeVal,
+     StartDt,
+     CloseSw, 
+     CloseDt
+from ResStoresCodes
+where BranchId=@BranchId
+
+END
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResStoresCodesUpdate]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[ResStoresCodesUpdate] 
+   @BranchId  numeric(3,0),
+   @BranchNameA varchar(100),
+   @BranchNameE varchar(100),
+   @GovId numeric(3,0),
+   @AddressA varchar(150),
+   @AddressE varchar(150),
+   @Tel1 varchar(15),
+   @Tel2 varchar(15),
+   @Tel3 varchar(15), 
+   @ServiceRatio numeric(5, 2),
+   @MinChargeVal numeric(12, 2),
+   @StartDt datetime,
+   @CloseSw numeric(1, 0), 
+   @CloseDt datetime
+	       
+AS
+BEGIN
+Update  ResStoresCodes
+ set BranchNameA= @BranchNameA,
+     BranchNameE=@BranchNameE,
+     GovId=@GovId,
+     AddressA=@AddressA,
+     AddressE=@AddressE,
+     Tel1=@Tel1,
+     Tel2=@Tel1,
+     Tel3=@Tel3, 
+     ServiceRatio=@ServiceRatio,
+     MinChargeVal=@MinChargeVal,
+     StartDt=@StartDt,
+     CloseSw=@CloseSw, 
+     CloseDt=@CloseDt
+where BranchId=@BranchId
+
+END
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResSubCategoryCodesInsert]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResSubCategoryCodesInsert] 
+	@MainCategoryId numeric(3,0),
+	@SubCategoryId  numeric(7,0),
+	@SubCategoryNameA varchar(150),
+	@SubCategoryNameE varchar(150),
+	@SubImage image,
+	@UserName varchar(100),
+	@InsertDt datetime
+	
+AS
+BEGIN
+insert into ResSubCategoryCodes
+	(MainCategoryId,
+	SubCategoryId,
+	SubCategoryNameA,
+	SubCategoryNameE,
+	SubImage,
+	UserName,
+	InsertDt)
+  select 
+    @MainCategoryId,
+	@SubCategoryId,
+	@SubCategoryNameA,
+	@SubCategoryNameE,
+	@SubImage,
+	@UserName,
+	convert(datetime,SYSDATETIME(),102)
+  END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResSubCategoryCodesLoadAll]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+CREATE PROCEDURE [dbo].[ResSubCategoryCodesLoadAll] 
+	     
+AS
+BEGIN
+  select 
+    MainCategoryId ,
+	SubCategoryId ,
+	SubCategoryNameA ,
+	SubCategoryNameE,
+	SubImage 
+	from ResSusCategoryCodes
+	END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResSubCategoryCodesLoadById]    Script Date: 02/26/2015 20:25:10 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResSubCategoryCodesLoadById] 
+	@MainCategoryId numeric(3,0),
+	@SubCategoryId numeric(7,0)
+AS
+BEGIN
+  select 
+    MainCategoryId ,
+	SubCategoryId ,
+	SubCategoryNameA ,
+	SubCategoryNameE,
+	SubImage 
+	from ResSusCategoryCodes
+	where 
+	   MainCategoryId=@MainCategoryId
+	   and SubCategoryId=@SubCategoryId
+	END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResSubCategoryCodesUpdate]    Script Date: 02/26/2015 20:25:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+
+
+create PROCEDURE [dbo].[ResSubCategoryCodesUpdate] 
+	@MainCategoryId numeric(3,0),
+	@SubCategoryId  numeric(7,0),
+	@SubCategoryNameA varchar(150),
+	@SubCategoryNameE varchar(150),
+	@SubImage image
+	
+AS
+BEGIN
+update  ResSubCategoryCodes
+set SubCategoryNameA=@SubCategoryNameA,
+	SubCategoryNameE=@SubCategoryNameE,
+	SubImage=@SubImage
+	where MainCategoryId=@MainCategoryId
+	and SubCategoryId=@SubCategoryId
+  END
+
+
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResTablesCodeLoadAll]    Script Date: 02/26/2015 20:25:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+create PROCEDURE [dbo].[ResTablesCodeLoadAll] 
+     
+AS
+BEGIN
+select TableNo,TableName,StatusId
+from ResTablesCodes
+
+END
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResTablesCodeLoadById]    Script Date: 02/26/2015 20:25:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+CREATE PROCEDURE [dbo].[ResTablesCodeLoadById] 
+  @TableNo int,
+  @TableName varchar(50),
+   @StatusId numeric(1, 0 )     
+AS
+BEGIN
+select TableNo,TableName,StatusId
+from ResTablesCodes
+where tableno=@TableNo
+
+END
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResTablesCodesInsert]    Script Date: 02/26/2015 20:25:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+create PROCEDURE [dbo].[ResTablesCodesInsert] 
+   @TableName  varchar(50),
+  @StatusId numeric(1, 0 )     
+AS
+BEGIN
+insert into ResTablesCodes
+(TableName ,
+ StatusId )
+SELECT     @TableName,
+ @StatusId
+END
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResTablesCodesUpdate]    Script Date: 02/26/2015 20:25:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+create PROCEDURE [dbo].[ResTablesCodesUpdate] 
+  @TableNo int,
+   @TableName  varchar(50),
+  @StatusId numeric(1, 0 )     
+AS
+BEGIN
+update ResTablesCodes
+set TableName =@TableName,
+ StatusId=@StatusId 
+where tableno=@TableNo
+END
+
+
+GO
+
+/****** Object:  StoredProcedure [dbo].[ResTablesCodesUpdateStatus]    Script Date: 02/26/2015 20:25:11 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+create PROCEDURE [dbo].[ResTablesCodesUpdateStatus] 
+  @TableNo int,
+   @StatusId numeric(1, 0 )     
+AS
+BEGIN
+update ResTablesCodes
+set StatusId=@StatusId 
+where tableno=@TableNo
+END
+
+
+GO
+
+

@@ -1,0 +1,4 @@
+0	ÛíÑ ãÚÑİ	not defined
+1	ÇÑÓÇá	received
+2	Êã ÊÍÖíÑå	prepared
+NULL	NULL	NULL

@@ -1,0 +1,4 @@
+0	€Ì— „⁄—›	not defined
+1	›Ï «·„ÿ»Œ	cook order
+2	 „ «·«‰ Â«¡ ›Ï ﬁ”„ «· ”·Ì„« 	served
+NULL	NULL	NULL
